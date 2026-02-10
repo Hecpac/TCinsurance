@@ -1,0 +1,390 @@
+{
+  "baseUrl": "http://localhost:3100",
+  "results": [
+    {
+      "route": "/",
+      "url": "http://localhost:3100/",
+      "finalUrl": "http://localhost:3100/",
+      "status": 200,
+      "durationMs": 601,
+      "seo": {
+        "title": "TC Insurance, LLC | Seguros de Vida, Salud y Gastos Finales en Texas",
+        "description": "Firma boutique en Lewisville, Texas. Asesoria personalizada en seguros de salud, vida y gastos finales.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 56.90000000037253,
+          "domContentLoaded": 36.80000000074506,
+          "loadEventEnd": 56.90000000037253,
+          "responseEnd": 13.600000001490116,
+          "transferSize": 11690
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 44
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 44
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 60,
+        "totalContentLength": 208411
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/",
+        "violations": []
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-210126/home.png"
+      }
+    },
+    {
+      "route": "/servicios",
+      "url": "http://localhost:3100/servicios",
+      "finalUrl": "http://localhost:3100/servicios",
+      "status": 200,
+      "durationMs": 559,
+      "seo": {
+        "title": "Servicios | TC Insurance, LLC",
+        "description": "Catálogo técnico de coberturas: salud, vida, gastos finales, dental, Medicare, visión y pólizas de indemnización.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 35.5,
+          "domContentLoaded": 8.800000000745058,
+          "loadEventEnd": 35.5,
+          "responseEnd": 2.300000000745058,
+          "transferSize": 6256
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 32
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 32
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 36,
+        "totalContentLength": 95851
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/servicios",
+        "violations": []
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-210126/servicios.png"
+      }
+    },
+    {
+      "route": "/sobre-mi",
+      "url": "http://localhost:3100/sobre-mi",
+      "finalUrl": "http://localhost:3100/sobre-mi",
+      "status": 200,
+      "durationMs": 558,
+      "seo": {
+        "title": "Sobre Mí | TC Insurance, LLC",
+        "description": "Conoce a Tatiana Castañeda, founder y licensed insurance agent en Lewisville, Texas.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 25.5,
+          "domContentLoaded": 8,
+          "loadEventEnd": 25.5,
+          "responseEnd": 1.599999999627471,
+          "transferSize": 5929
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 20
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 20
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 36,
+        "totalContentLength": 123185
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/sobre-mi",
+        "violations": []
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-210126/sobre-mi.png"
+      }
+    },
+    {
+      "route": "/blog",
+      "url": "http://localhost:3100/blog",
+      "finalUrl": "http://localhost:3100/blog",
+      "status": 200,
+      "durationMs": 566,
+      "seo": {
+        "title": "Blog | TC Insurance",
+        "description": "Educación en seguros de salud, vida y gastos finales para familias en Texas.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 31.09999999962747,
+          "domContentLoaded": 7.800000000745058,
+          "loadEventEnd": 31.09999999962747,
+          "responseEnd": 1.700000001117587,
+          "transferSize": 5434
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 20
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 20
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 48,
+        "totalContentLength": 78863
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/blog",
+        "violations": []
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-210126/blog.png"
+      }
+    },
+    {
+      "route": "/blog/gastos-finales-arquitectura-financiera",
+      "url": "http://localhost:3100/blog/gastos-finales-arquitectura-financiera",
+      "finalUrl": "http://localhost:3100/blog/gastos-finales-arquitectura-financiera",
+      "status": 200,
+      "durationMs": 557,
+      "seo": {
+        "title": "Gastos Finales: La Última Pieza de la Arquitectura Financiera | TC Insurance",
+        "description": "El seguro de gastos finales como instrumento de liquidez inmediata para proteger a la familia en el momento más sensible.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 33.19999999925494,
+          "domContentLoaded": 7.900000000372529,
+          "loadEventEnd": 33.19999999925494,
+          "responseEnd": 1.799999998882413,
+          "transferSize": 6903
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 20
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 20
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 37,
+        "totalContentLength": 229505
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/blog/gastos-finales-arquitectura-financiera",
+        "violations": []
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-210126/blog__gastos-finales-arquitectura-financiera.png"
+      }
+    },
+    {
+      "route": "/privacidad",
+      "url": "http://localhost:3100/privacidad",
+      "finalUrl": "http://localhost:3100/privacidad",
+      "status": 200,
+      "durationMs": 552,
+      "seo": {
+        "title": "Política de Privacidad | TC Insurance, LLC",
+        "description": "Política de privacidad de TC Insurance, LLC para el tratamiento de datos personales en Texas, Estados Unidos.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 30.600000001490116,
+          "domContentLoaded": 7.600000001490116,
+          "loadEventEnd": 30.600000001490116,
+          "responseEnd": 1.6000000014901161,
+          "transferSize": 5381
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 20
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 20
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 35,
+        "totalContentLength": 78863
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/privacidad",
+        "violations": []
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-210126/privacidad.png"
+      }
+    },
+    {
+      "route": "/terminos",
+      "url": "http://localhost:3100/terminos",
+      "finalUrl": "http://localhost:3100/terminos",
+      "status": 200,
+      "durationMs": 546,
+      "seo": {
+        "title": "Términos de Uso | TC Insurance, LLC",
+        "description": "Términos de uso y alcance informativo de los servicios de asesoría en seguros de TC Insurance, LLC.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 29.300000000745058,
+          "domContentLoaded": 7.200000001117587,
+          "loadEventEnd": 29.300000000745058,
+          "responseEnd": 1.5,
+          "transferSize": 5348
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 16
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 16
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 35,
+        "totalContentLength": 78863
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/terminos",
+        "violations": []
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-210126/terminos.png"
+      }
+    }
+  ]
+}

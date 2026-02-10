@@ -1,0 +1,620 @@
+{
+  "baseUrl": "http://localhost:3100",
+  "results": [
+    {
+      "route": "/",
+      "url": "http://localhost:3100/",
+      "finalUrl": "http://localhost:3100/",
+      "status": 200,
+      "durationMs": 663,
+      "seo": {
+        "title": "TC Insurance, LLC | Seguros de Vida, Salud y Gastos Finales en Texas",
+        "description": "Firma boutique en Lewisville, Texas. Asesoria personalizada en seguros de salud, vida y gastos finales.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 133.59999999962747,
+          "domContentLoaded": 39.09999999962747,
+          "loadEventEnd": 133.59999999962747,
+          "responseEnd": 17.799999998882413,
+          "transferSize": 11631
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 120
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 120
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 41,
+        "totalContentLength": 164849
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/",
+        "violations": [
+          {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "description": "Ensure landmarks are unique",
+            "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".md\\:col-start-7.pb-10.border-swiss-paper\\/20 > nav"
+                ],
+                "html": "<nav class=\"flex flex-col gap-2\">",
+                "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+              }
+            ]
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".bottom-6"
+                ],
+                "html": "<a aria-label=\"Ir a contacto para agendar asesoria gratuita\" class=\"fixed bottom-6 right-6 z-[70] border border-swiss-black bg-swiss-black px-5 py-3 text-meta text-swiss-paper shadow-lg transition-all duration-300 hover:bg-swiss-red translate-y-0 opacity-100\" href=\"/#contacto\">Asesoria Gratuita</a>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-205018/home.png"
+      }
+    },
+    {
+      "route": "/servicios",
+      "url": "http://localhost:3100/servicios",
+      "finalUrl": "http://localhost:3100/servicios",
+      "status": 200,
+      "durationMs": 563,
+      "seo": {
+        "title": "Servicios | TC Insurance, LLC",
+        "description": "Catálogo técnico de coberturas: salud, vida, gastos finales, dental, Medicare, visión y pólizas de indemnización.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 28.09999999962747,
+          "domContentLoaded": 9,
+          "loadEventEnd": 28.09999999962747,
+          "responseEnd": 2.199999999254942,
+          "transferSize": 6230
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 20
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 20
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 39,
+        "totalContentLength": 96611
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/servicios",
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  "article:nth-child(1) > .text-swiss-red.group-hover\\:text-swiss-paper"
+                ],
+                "html": "<p class=\"text-meta text-swiss-red transition-colors duration-300 group-hover:text-swiss-paper\">01</p>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.14 (foreground color: #c96e5b, background color: #f2f0eb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "article:nth-child(2) > .text-swiss-red.group-hover\\:text-swiss-paper"
+                ],
+                "html": "<p class=\"text-meta text-swiss-red transition-colors duration-300 group-hover:text-swiss-paper\">02</p>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.34 (foreground color: #d38d7d, background color: #f2f0eb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "article:nth-child(2) > .group-hover\\:text-swiss-paper\\/85.text-body.text-swiss-gray"
+                ],
+                "html": "<p class=\"text-body text-swiss-gray mt-4 transition-colors duration-300 group-hover:text-swiss-paper/85\">Proteccion financiera para garantizar estabilidad economica de tus beneficiarios ante eventualidades.</p>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #817d77, background color: #f2f0eb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "article:nth-child(2) > .mt-7.flex-wrap.gap-2 > .px-2.py-1.text-swiss-black\\/75:nth-child(1)"
+                ],
+                "html": "<span class=\"border border-swiss-black/20 px-2 py-1 text-meta text-swiss-black/75 transition-colors duration-300 group-hover:border-swiss-paper/35 group-hover:text-swiss-paper/80\">Beneficio por Fallecimiento</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.09 (foreground color: #757472, background color: #f2f0eb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "article:nth-child(2) > .mt-7.flex-wrap.gap-2 > .px-2.py-1.text-swiss-black\\/75:nth-child(2)"
+                ],
+                "html": "<span class=\"border border-swiss-black/20 px-2 py-1 text-meta text-swiss-black/75 transition-colors duration-300 group-hover:border-swiss-paper/35 group-hover:text-swiss-paper/80\">Proteccion Familiar</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.09 (foreground color: #757472, background color: #f2f0eb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "article:nth-child(3) > .text-swiss-red.group-hover\\:text-swiss-paper"
+                ],
+                "html": "<p class=\"text-meta text-swiss-red transition-colors duration-300 group-hover:text-swiss-paper\">03</p>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.21 (foreground color: #ead7cf, background color: #f2f0eb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "article:nth-child(3) > h3"
+                ],
+                "html": "<h3 class=\"mt-4 text-2xl font-semibold tracking-tight\">Final Expense</h3>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.49 (foreground color: #c8c6c2, background color: #f2f0eb, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1"
+              },
+              {
+                "target": [
+                  "article:nth-child(3) > .group-hover\\:text-swiss-paper\\/85.text-body.text-swiss-gray"
+                ],
+                "html": "<p class=\"text-body text-swiss-gray mt-4 transition-colors duration-300 group-hover:text-swiss-paper/85\">Soluciones preventivas para cubrir costos funerarios y proteger a la familia en momentos criticos.</p>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.31 (foreground color: #d6d3ce, background color: #f2f0eb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "article:nth-child(3) > .mt-7.flex-wrap.gap-2 > .px-2.py-1.text-swiss-black\\/75:nth-child(1)"
+                ],
+                "html": "<span class=\"border border-swiss-black/20 px-2 py-1 text-meta text-swiss-black/75 transition-colors duration-300 group-hover:border-swiss-paper/35 group-hover:text-swiss-paper/80\">Liquidez Inmediata</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.33 (foreground color: #d3d1cd, background color: #f2f0eb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "article:nth-child(3) > .mt-7.flex-wrap.gap-2 > .px-2.py-1.text-swiss-black\\/75:nth-child(2)"
+                ],
+                "html": "<span class=\"border border-swiss-black/20 px-2 py-1 text-meta text-swiss-black/75 transition-colors duration-300 group-hover:border-swiss-paper/35 group-hover:text-swiss-paper/80\">Costo Funerario</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.33 (foreground color: #d3d1cd, background color: #f2f0eb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".bottom-6"
+                ],
+                "html": "<a aria-label=\"Ir a contacto para agendar asesoria gratuita\" class=\"fixed bottom-6 right-6 z-[70] border border-swiss-black bg-swiss-black px-5 py-3 text-meta text-swiss-paper shadow-lg transition-all duration-300 hover:bg-swiss-red translate-y-0 opacity-100\" href=\"/#contacto\">Asesoria Gratuita</a>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-205018/servicios.png"
+      }
+    },
+    {
+      "route": "/sobre-mi",
+      "url": "http://localhost:3100/sobre-mi",
+      "finalUrl": "http://localhost:3100/sobre-mi",
+      "status": 200,
+      "durationMs": 564,
+      "seo": {
+        "title": "Sobre Mí | TC Insurance, LLC",
+        "description": "Conoce a Tatiana Castañeda, founder y licensed insurance agent en Lewisville, Texas.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 31.600000001490116,
+          "domContentLoaded": 8.400000000372529,
+          "loadEventEnd": 31.600000001490116,
+          "responseEnd": 1.700000001117587,
+          "transferSize": 5911
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 20
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 20
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 39,
+        "totalContentLength": 123945
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/sobre-mi",
+        "violations": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".bottom-6"
+                ],
+                "html": "<a aria-label=\"Ir a contacto para agendar asesoria gratuita\" class=\"fixed bottom-6 right-6 z-[70] border border-swiss-black bg-swiss-black px-5 py-3 text-meta text-swiss-paper shadow-lg transition-all duration-300 hover:bg-swiss-red translate-y-0 opacity-100\" href=\"/#contacto\">Asesoria Gratuita</a>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-205018/sobre-mi.png"
+      }
+    },
+    {
+      "route": "/blog",
+      "url": "http://localhost:3100/blog",
+      "finalUrl": "http://localhost:3100/blog",
+      "status": 200,
+      "durationMs": 577,
+      "seo": {
+        "title": "Blog | TC Insurance",
+        "description": "Educación en seguros de salud, vida y gastos finales para familias en Texas.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 32.40000000037253,
+          "domContentLoaded": 8.199999999254942,
+          "loadEventEnd": 32.40000000037253,
+          "responseEnd": 1.599999999627471,
+          "transferSize": 5417
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 20
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 20
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 51,
+        "totalContentLength": 79623
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/blog",
+        "violations": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".bottom-6"
+                ],
+                "html": "<a aria-label=\"Ir a contacto para agendar asesoria gratuita\" class=\"fixed bottom-6 right-6 z-[70] border border-swiss-black bg-swiss-black px-5 py-3 text-meta text-swiss-paper shadow-lg transition-all duration-300 hover:bg-swiss-red translate-y-0 opacity-100\" href=\"/#contacto\">Asesoria Gratuita</a>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-205018/blog.png"
+      }
+    },
+    {
+      "route": "/blog/gastos-finales-arquitectura-financiera",
+      "url": "http://localhost:3100/blog/gastos-finales-arquitectura-financiera",
+      "finalUrl": "http://localhost:3100/blog/gastos-finales-arquitectura-financiera",
+      "status": 200,
+      "durationMs": 578,
+      "seo": {
+        "title": "Gastos Finales: La Última Pieza de la Arquitectura Financiera | TC Insurance",
+        "description": "El seguro de gastos finales como instrumento de liquidez inmediata para proteger a la familia en el momento más sensible.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 32.90000000037253,
+          "domContentLoaded": 8.599999999627471,
+          "loadEventEnd": 32.90000000037253,
+          "responseEnd": 2,
+          "transferSize": 6885
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 20
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 20
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 40,
+        "totalContentLength": 230265
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/blog/gastos-finales-arquitectura-financiera",
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".text-swiss-red"
+                ],
+                "html": "<p class=\"text-meta text-swiss-red\">LEGADO (LEGACY)</p>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.26 (foreground color: #c86a57, background color: #f2f0eb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".bottom-6"
+                ],
+                "html": "<a aria-label=\"Ir a contacto para agendar asesoria gratuita\" class=\"fixed bottom-6 right-6 z-[70] border border-swiss-black bg-swiss-black px-5 py-3 text-meta text-swiss-paper shadow-lg transition-all duration-300 hover:bg-swiss-red translate-y-0 opacity-100\" href=\"/#contacto\">Asesoria Gratuita</a>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-205018/blog__gastos-finales-arquitectura-financiera.png"
+      }
+    },
+    {
+      "route": "/privacidad",
+      "url": "http://localhost:3100/privacidad",
+      "finalUrl": "http://localhost:3100/privacidad",
+      "status": 200,
+      "durationMs": 563,
+      "seo": {
+        "title": "Política de Privacidad | TC Insurance, LLC",
+        "description": "Política de privacidad de TC Insurance, LLC para el tratamiento de datos personales en Texas, Estados Unidos.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 38.20000000111759,
+          "domContentLoaded": 13.200000001117587,
+          "loadEventEnd": 38.20000000111759,
+          "responseEnd": 6.400000000372529,
+          "transferSize": 5363
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 24
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 24
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 38,
+        "totalContentLength": 79623
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/privacidad",
+        "violations": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".bottom-6"
+                ],
+                "html": "<a aria-label=\"Ir a contacto para agendar asesoria gratuita\" class=\"fixed bottom-6 right-6 z-[70] border border-swiss-black bg-swiss-black px-5 py-3 text-meta text-swiss-paper shadow-lg transition-all duration-300 hover:bg-swiss-red translate-y-0 opacity-100\" href=\"/#contacto\">Asesoria Gratuita</a>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-205018/privacidad.png"
+      }
+    },
+    {
+      "route": "/terminos",
+      "url": "http://localhost:3100/terminos",
+      "finalUrl": "http://localhost:3100/terminos",
+      "status": 200,
+      "durationMs": 562,
+      "seo": {
+        "title": "Términos de Uso | TC Insurance, LLC",
+        "description": "Términos de uso y alcance informativo de los servicios de asesoría en seguros de TC Insurance, LLC.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 38.399999998509884,
+          "domContentLoaded": 12.799999998882413,
+          "loadEventEnd": 38.399999998509884,
+          "responseEnd": 6.399999998509884,
+          "transferSize": 5334
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 36
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 36
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 38,
+        "totalContentLength": 79623
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3100/terminos",
+        "violations": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".bottom-6"
+                ],
+                "html": "<a aria-label=\"Ir a contacto para agendar asesoria gratuita\" class=\"fixed bottom-6 right-6 z-[70] border border-swiss-black bg-swiss-black px-5 py-3 text-meta text-swiss-paper shadow-lg transition-all duration-300 hover:bg-swiss-red translate-y-0 opacity-100\" href=\"/#contacto\">Asesoria Gratuita</a>",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260207-205018/terminos.png"
+      }
+    }
+  ]
+}

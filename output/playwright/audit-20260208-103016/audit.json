@@ -1,0 +1,815 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "results": [
+    {
+      "route": "/",
+      "url": "http://localhost:3000/",
+      "finalUrl": "http://localhost:3000/",
+      "status": 200,
+      "durationMs": 1076,
+      "seo": {
+        "title": "TC Insurance Agency Services, LLC | Seguros de Vida, Salud y Gastos Finales en Texas",
+        "description": "Firma boutique en Lewisville, Texas. Asesoría personalizada en seguros de salud, vida y gastos finales.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 286.8999999985099,
+          "domContentLoaded": 163.29999999701977,
+          "loadEventEnd": 286.8999999985099,
+          "responseEnd": 97.39999999850988,
+          "transferSize": 35484
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 168
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 168
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 34,
+        "totalContentLength": 105046
+      },
+      "consoleMessages": [
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        },
+        {
+          "type": "log",
+          "text": "[HMR] connected",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+          "location": {
+            "url": "http://localhost:3000/_next/image?url=%2Fhero-video-poster.jpg&w=750&q=75",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+          "location": {
+            "url": "http://localhost:3000/_next/image?url=%2Fhero-video-poster.jpg&w=750&q=75",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "type": "warning",
+          "text": "Image with src \"/tatiana-castaneda-placeholder.jpg\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        }
+      ],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [
+        {
+          "url": "http://localhost:3000/_next/image?url=%2Fhero-video-poster.jpg&w=750&q=75",
+          "status": 400,
+          "type": "image"
+        },
+        {
+          "url": "http://localhost:3000/_next/image?url=%2Fhero-video-poster.jpg&w=750&q=75",
+          "status": 400,
+          "type": "image"
+        }
+      ],
+      "axe": {
+        "url": "http://localhost:3000/",
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".footer-watermark"
+                ],
+                "html": "<p class=\"footer-watermark\" aria-hidden=\"true\">TC INSURANCE</p>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.5 (foreground color: #2f3540, background color: #111318, font size: 120.0pt (160px), font weight: bold). Expected contrast ratio of 3:1"
+              }
+            ]
+          },
+          {
+            "id": "heading-order",
+            "impact": "moderate",
+            "description": "Ensure the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/heading-order?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".service-card.service-card--carousel[data-carousel-card=\"true\"]:nth-child(1) > .service-card__title"
+                ],
+                "html": "<h3 class=\"service-card__title\">Health Insurance</h3>",
+                "failureSummary": "Fix any of the following:\n  Heading order invalid"
+              }
+            ]
+          },
+          {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-redundant-alt?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".h-\\[2\\.7rem\\]"
+                ],
+                "html": "<img alt=\"TC Insurance Agency ...\" width=\"205\" height=\"139\" decoding=\"async\" data-nimg=\"1\" class=\"h-[2.7rem] w-auto ob...\" style=\"color:transparent\" sizes=\"(min-width: 768px) 1...\" srcset=\"/_next/image?url=%2F...\" src=\"/_next/image?url=%2F...\">",
+                "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+              },
+              {
+                "target": [
+                  ".h-\\[5rem\\]"
+                ],
+                "html": "<img alt=\"TC Insurance Agency ...\" loading=\"lazy\" width=\"205\" height=\"139\" decoding=\"async\" data-nimg=\"1\" class=\"h-[5rem] w-auto obje...\" style=\"color:transparent\" sizes=\"(min-width: 768px) 2...\" srcset=\"/_next/image?url=%2F...\" src=\"/_next/image?url=%2F...\">",
+                "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+              }
+            ]
+          },
+          {
+            "id": "landmark-complementary-is-top-level",
+            "impact": "moderate",
+            "description": "Ensure the complementary landmark or aside is at top level",
+            "help": "Aside should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-complementary-is-top-level?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  "aside[data-testid=\"cta-inline-after_services\"]"
+                ],
+                "html": "<aside data-cta-inline-card=\"true\" data-testid=\"cta-inline-after_services\" data-agent-context=\"cta-inline-after_services\" class=\"col-span-12 border border-m3-outline-variant bg-m3-surface-container-low p-6 md:p-8\">",
+                "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
+              },
+              {
+                "target": [
+                  "aside[data-testid=\"cta-inline-after_process\"]"
+                ],
+                "html": "<aside data-cta-inline-card=\"true\" data-testid=\"cta-inline-after_process\" data-agent-context=\"cta-inline-after_process\" class=\"col-span-12 border border-m3-outline-variant bg-m3-surface-container-low p-6 md:p-8\">",
+                "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
+              },
+              {
+                "target": [
+                  "aside[data-testid=\"cta-inline-after_blog_grid\"]"
+                ],
+                "html": "<aside data-cta-inline-card=\"true\" data-testid=\"cta-inline-after_blog_grid\" data-agent-context=\"cta-inline-after_blog_grid\" class=\"col-span-12 border border-m3-outline-variant bg-m3-surface-container-low p-6 md:p-8\">",
+                "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260208-103016/home.png"
+      }
+    },
+    {
+      "route": "/servicios",
+      "url": "http://localhost:3000/servicios",
+      "finalUrl": "http://localhost:3000/servicios",
+      "status": 200,
+      "durationMs": 767,
+      "seo": {
+        "title": "Servicios | TC Insurance Agency Services, LLC",
+        "description": "Catálogo técnico de coberturas: salud, vida, gastos finales, dental, Medicare, visión y pólizas de indemnización.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 278.20000000298023,
+          "domContentLoaded": 186,
+          "loadEventEnd": 278.20000000298023,
+          "responseEnd": 169.10000000149012,
+          "transferSize": 17238
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 196
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 196
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 28,
+        "totalContentLength": 80670
+      },
+      "consoleMessages": [
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        },
+        {
+          "type": "log",
+          "text": "[HMR] connected",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        },
+        {
+          "type": "warning",
+          "text": "Image with src \"/tatiana-castaneda-placeholder.jpg\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        }
+      ],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3000/servicios",
+        "violations": [
+          {
+            "id": "heading-order",
+            "impact": "moderate",
+            "description": "Ensure the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/heading-order?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  "article:nth-child(1) > h3"
+                ],
+                "html": "<h3 class=\"service-card__title\">Health Insurance</h3>",
+                "failureSummary": "Fix any of the following:\n  Heading order invalid"
+              }
+            ]
+          },
+          {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-redundant-alt?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".h-\\[2\\.7rem\\]"
+                ],
+                "html": "<img alt=\"TC Insurance Agency ...\" width=\"205\" height=\"139\" decoding=\"async\" data-nimg=\"1\" class=\"h-[2.7rem] w-auto ob...\" style=\"color:transparent\" sizes=\"(min-width: 768px) 1...\" srcset=\"/_next/image?url=%2F...\" src=\"/_next/image?url=%2F...\">",
+                "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260208-103016/servicios.png"
+      }
+    },
+    {
+      "route": "/sobre-mi",
+      "url": "http://localhost:3000/sobre-mi",
+      "finalUrl": "http://localhost:3000/sobre-mi",
+      "status": 200,
+      "durationMs": 742,
+      "seo": {
+        "title": "Sobre Mí | TC Insurance Agency Services, LLC",
+        "description": "Conoce a Tatiana Castañeda, founder y licensed insurance agent en Lewisville, Texas.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 252.39999999850988,
+          "domContentLoaded": 162,
+          "loadEventEnd": 252.39999999850988,
+          "responseEnd": 146.80000000447035,
+          "transferSize": 15221
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 172
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 172
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 28,
+        "totalContentLength": 105195
+      },
+      "consoleMessages": [
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        },
+        {
+          "type": "log",
+          "text": "[HMR] connected",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        },
+        {
+          "type": "warning",
+          "text": "Image with src \"/tatiana-castaneda-placeholder.jpg\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        }
+      ],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3000/sobre-mi",
+        "violations": [
+          {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-redundant-alt?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".h-\\[2\\.7rem\\]"
+                ],
+                "html": "<img alt=\"TC Insurance Agency ...\" width=\"205\" height=\"139\" decoding=\"async\" data-nimg=\"1\" class=\"h-[2.7rem] w-auto ob...\" style=\"color:transparent\" sizes=\"(min-width: 768px) 1...\" srcset=\"/_next/image?url=%2F...\" src=\"/_next/image?url=%2F...\">",
+                "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260208-103016/sobre-mi.png"
+      }
+    },
+    {
+      "route": "/blog",
+      "url": "http://localhost:3000/blog",
+      "finalUrl": "http://localhost:3000/blog",
+      "status": 200,
+      "durationMs": 769,
+      "seo": {
+        "title": "Blog | TC Insurance",
+        "description": "Educación en seguros de salud, vida y gastos finales para familias en Texas.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 282,
+          "domContentLoaded": 166,
+          "loadEventEnd": 282,
+          "responseEnd": 164.5,
+          "transferSize": 16819
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 176
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 176
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 27,
+        "totalContentLength": 64879
+      },
+      "consoleMessages": [
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        },
+        {
+          "type": "log",
+          "text": "[HMR] connected",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        }
+      ],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3000/blog",
+        "violations": [
+          {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-redundant-alt?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  "img"
+                ],
+                "html": "<img alt=\"TC Insurance Agency ...\" width=\"205\" height=\"139\" decoding=\"async\" data-nimg=\"1\" class=\"h-[2.7rem] w-auto ob...\" style=\"color:transparent\" sizes=\"(min-width: 768px) 1...\" srcset=\"/_next/image?url=%2F...\" src=\"/_next/image?url=%2F...\">",
+                "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+              }
+            ]
+          },
+          {
+            "id": "landmark-complementary-is-top-level",
+            "impact": "moderate",
+            "description": "Ensure the complementary landmark or aside is at top level",
+            "help": "Aside should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-complementary-is-top-level?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".bg-m3-surface-container-low"
+                ],
+                "html": "<aside data-cta-inline-card=\"true\" data-testid=\"cta-inline-blog_index_end\" data-agent-context=\"cta-inline-blog_index_end\" class=\"col-span-12 border border-m3-outline-variant bg-m3-surface-container-low p-6 md:p-8\">",
+                "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260208-103016/blog.png"
+      }
+    },
+    {
+      "route": "/blog/gastos-finales-arquitectura-financiera",
+      "url": "http://localhost:3000/blog/gastos-finales-arquitectura-financiera",
+      "finalUrl": "http://localhost:3000/blog/gastos-finales-arquitectura-financiera",
+      "status": 200,
+      "durationMs": 972,
+      "seo": {
+        "title": "Gastos Finales: La Última Pieza de la Arquitectura Financiera | TC Insurance",
+        "description": "El seguro de gastos finales como instrumento de liquidez inmediata para proteger a la familia en el momento más sensible.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 360.40000000596046,
+          "domContentLoaded": 182.30000000447035,
+          "loadEventEnd": 360.40000000596046,
+          "responseEnd": 178.30000000447035,
+          "transferSize": 21158
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 196
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 196
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 28,
+        "totalContentLength": 208548
+      },
+      "consoleMessages": [
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        },
+        {
+          "type": "log",
+          "text": "[HMR] connected",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        }
+      ],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3000/blog/gastos-finales-arquitectura-financiera",
+        "violations": [
+          {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-redundant-alt?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".h-\\[2\\.7rem\\]"
+                ],
+                "html": "<img alt=\"TC Insurance Agency ...\" width=\"205\" height=\"139\" decoding=\"async\" data-nimg=\"1\" class=\"h-[2.7rem] w-auto ob...\" style=\"color:transparent\" sizes=\"(min-width: 768px) 1...\" srcset=\"/_next/image?url=%2F...\" src=\"/_next/image?url=%2F...\">",
+                "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+              }
+            ]
+          },
+          {
+            "id": "landmark-complementary-is-top-level",
+            "impact": "moderate",
+            "description": "Ensure the complementary landmark or aside is at top level",
+            "help": "Aside should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-complementary-is-top-level?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".bg-m3-surface-container-low"
+                ],
+                "html": "<aside data-cta-inline-card=\"true\" data-testid=\"cta-inline-blog_post_end\" data-agent-context=\"cta-inline-blog_post_end\" class=\"col-span-12 border border-m3-outline-variant bg-m3-surface-container-low p-6 md:p-8\">",
+                "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260208-103016/blog__gastos-finales-arquitectura-financiera.png"
+      }
+    },
+    {
+      "route": "/privacidad",
+      "url": "http://localhost:3000/privacidad",
+      "finalUrl": "http://localhost:3000/privacidad",
+      "status": 200,
+      "durationMs": 712,
+      "seo": {
+        "title": "Política de Privacidad | TC Insurance Agency Services, LLC",
+        "description": "Política de privacidad de TC Insurance, LLC para el tratamiento de datos personales en Texas, Estados Unidos.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 222.10000000149012,
+          "domContentLoaded": 140.5,
+          "loadEventEnd": 222.10000000149012,
+          "responseEnd": 127.5,
+          "transferSize": 14571
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 148
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 148
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 27,
+        "totalContentLength": 64908
+      },
+      "consoleMessages": [
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        },
+        {
+          "type": "log",
+          "text": "[HMR] connected",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        }
+      ],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3000/privacidad",
+        "violations": [
+          {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-redundant-alt?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  "img"
+                ],
+                "html": "<img alt=\"TC Insurance Agency ...\" width=\"205\" height=\"139\" decoding=\"async\" data-nimg=\"1\" class=\"h-[2.7rem] w-auto ob...\" style=\"color:transparent\" sizes=\"(min-width: 768px) 1...\" srcset=\"/_next/image?url=%2F...\" src=\"/_next/image?url=%2F...\">",
+                "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260208-103016/privacidad.png"
+      }
+    },
+    {
+      "route": "/terminos",
+      "url": "http://localhost:3000/terminos",
+      "finalUrl": "http://localhost:3000/terminos",
+      "status": 200,
+      "durationMs": 842,
+      "seo": {
+        "title": "Términos de Uso | TC Insurance Agency Services, LLC",
+        "description": "Términos de uso y alcance informativo de los servicios de asesoría en seguros de TC Insurance, LLC.",
+        "canonical": "https://www.tcinsurance-llc.com",
+        "lang": "es",
+        "viewport": "width=device-width, initial-scale=1",
+        "h1Count": 1
+      },
+      "contentChecks": {
+        "imagesMissingAlt": 0,
+        "linksWithoutName": 0,
+        "buttonsWithoutName": 0,
+        "inputsWithoutLabel": 0
+      },
+      "timing": {
+        "nav": {
+          "duration": 352.69999999552965,
+          "domContentLoaded": 265.3999999985099,
+          "loadEventEnd": 352.69999999552965,
+          "responseEnd": 250.5,
+          "transferSize": 14472
+        },
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 276
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 276
+          }
+        ]
+      },
+      "networkSummary": {
+        "count": 27,
+        "totalContentLength": 64908
+      },
+      "consoleMessages": [
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        },
+        {
+          "type": "log",
+          "text": "[HMR] connected",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js",
+            "lineNumber": 2297,
+            "columnNumber": 27
+          }
+        }
+      ],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "axe": {
+        "url": "http://localhost:3000/terminos",
+        "violations": [
+          {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-redundant-alt?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  "img"
+                ],
+                "html": "<img alt=\"TC Insurance Agency ...\" width=\"205\" height=\"139\" decoding=\"async\" data-nimg=\"1\" class=\"h-[2.7rem] w-auto ob...\" style=\"color:transparent\" sizes=\"(min-width: 768px) 1...\" srcset=\"/_next/image?url=%2F...\" src=\"/_next/image?url=%2F...\">",
+                "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": {
+        "screenshot": "output/playwright/audit-20260208-103016/terminos.png"
+      }
+    }
+  ]
+}
