@@ -34,14 +34,14 @@
   --font-sans: var(--font-archivo), sans-serif;
   --font-mono: var(--font-ibm-plex-mono), monospace;
 
-  --text-display: 700 clamp(3.4rem, 10.8vw, 9rem) / 0.9 var(--font-sans);
+  --text-display: 700 clamp(3.4rem, 10.8vw, 9rem) / 0.92 var(--font-sans);
   --text-display--letter-spacing: -0.055em;
 
-  --text-headline: 700 clamp(1.8rem, 4vw, 3.2rem) / 1.02 var(--font-sans);
+  --text-headline: 700 clamp(1.8rem, 4vw, 3.2rem) / 1.1 var(--font-sans);
   --text-headline--letter-spacing: -0.025em;
 
-  --text-body: 400 clamp(1.03rem, 1.2vw, 1.12rem) / 1.55 var(--font-sans);
-  --text-body--letter-spacing: -0.01em;
+  --text-body: 400 clamp(1.03rem, 1.2vw, 1.12rem) / 1.6 var(--font-sans);
+  --text-body--letter-spacing: 0em;
 
   --text-meta: 500 0.74rem / 1.5 var(--font-mono);
   --text-meta--letter-spacing: 0.12em;
@@ -735,6 +735,9 @@
         color-mix(in srgb, #A4C9FE 95%, #00315C) 100%
       );
     color: #00315C;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     box-shadow:
       0 8px 20px -10px color-mix(in srgb, #A4C9FE 58%, transparent),
       inset 0 1px 0 rgb(255 255 255 / 0.26);

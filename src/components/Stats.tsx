@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import GridContainer from "@/components/GridContainer";
+import GlareCard from "@/components/ui/glare-card";
 import { runBackgroundTask } from "@/lib/schedule";
 
 const STATS = [
@@ -117,18 +118,16 @@ export default function Stats() {
           className="col-span-12 grid grid-cols-1 gap-4 pt-10 pb-10 sm:grid-cols-2 lg:grid-cols-4"
         >
           {STATS.map((stat) => (
-            <article
-              key={stat.label}
-              data-stats-item
-              className="flex min-h-[9.5rem] flex-col justify-between border border-m3-outline-variant bg-m3-surface-container px-5 py-6 md:min-h-[11rem]"
-            >
-              <p className="text-headline font-bold leading-none tracking-tight text-swiss-black">
-                {stat.value}
-              </p>
-              <p className="pt-5 text-body leading-relaxed text-m3-on-surface-variant">
-                {stat.label}
-              </p>
-            </article>
+            <GlareCard key={stat.label} data-stats-item>
+              <article className="flex min-h-[9.5rem] flex-col justify-between border border-m3-outline-variant bg-m3-surface-container px-5 py-6 md:min-h-[11rem]">
+                <p className="text-headline font-bold leading-[1.05] tracking-tight text-swiss-black">
+                  {stat.value}
+                </p>
+                <p className="pt-5 text-body leading-relaxed text-m3-on-surface-variant">
+                  {stat.label}
+                </p>
+              </article>
+            </GlareCard>
           ))}
         </div>
 
@@ -136,7 +135,7 @@ export default function Stats() {
           data-stats-note
           className="col-span-12 md:col-start-1 md:col-span-8 text-body text-m3-on-surface-variant pb-20"
         >
-          La prioridad es reducir incertidumbre y darte una recomendación accionable desde la primera conversación.
+          La prioridad es reducir incertidumbre y darte un siguiente paso claro desde la primera conversación.
         </p>
       </GridContainer>
     </div>

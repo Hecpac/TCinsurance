@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import GridContainer from "@/components/GridContainer";
+import GlareCard from "@/components/ui/glare-card";
 import { processSteps } from "@/data/process";
 import { runBackgroundTask } from "@/lib/schedule";
-import { addCardHoverLift } from "@/lib/gsapCardLift";
 import { HOME_SECTION_PATHS } from "@/config/site";
 
 export default function Process() {
@@ -32,9 +32,6 @@ export default function Process() {
 
         gsap.registerPlugin(ScrollTrigger);
         const triggers: ScrollTrigger[] = [];
-        const detachHoverLift = addCardHoverLift(gsap, "[data-process-step]", {
-          scope: sectionRef.current,
-        });
         const ctx = gsap.context(() => {
           const headerAnim = gsap.from("[data-process-header]", {
             scrollTrigger: { trigger: "[data-process-header]", start: "top 88%", once: true },
@@ -76,7 +73,6 @@ export default function Process() {
 
         cleanup = () => {
           triggers.forEach((trigger) => trigger.kill());
-          detachHoverLift();
           ctx.revert();
         };
       })();
@@ -108,15 +104,13 @@ export default function Process() {
 
         <div data-process-list className="col-span-12 md:col-span-7 grid grid-cols-12 gap-4 pt-10 pb-8">
           {processSteps.map((step) => (
-            <article
-              key={step.number}
-              data-process-step
-              className="col-span-12 border border-m3-outline-variant-strong bg-m3-surface-container p-6 md:p-7 hover:border-m3-primary/50 transition-colors"
-            >
-              <p className="text-meta text-m3-primary">{step.number}</p>
-              <h3 className="text-headline font-semibold tracking-tight text-swiss-black mt-4">{step.title}</h3>
-              <p className="text-body text-m3-secondary-ink mt-4">{step.description}</p>
-            </article>
+            <GlareCard key={step.number} data-process-step containerClassName="col-span-12">
+              <article className="border border-m3-outline-variant-strong bg-m3-surface-container p-6 md:p-7 hover:border-m3-primary/50 transition-colors">
+                <p className="text-meta text-m3-primary">{step.number}</p>
+                <h3 className="text-headline font-bold tracking-tight text-swiss-black mt-4">{step.title}</h3>
+                <p className="text-body text-m3-secondary-ink mt-4">{step.description}</p>
+              </article>
+            </GlareCard>
           ))}
         </div>
 

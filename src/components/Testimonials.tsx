@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type ComponentType } from "react";
 import "swiper/css";
 import GridContainer from "@/components/GridContainer";
+import GlareCard from "@/components/ui/glare-card";
 import TestimonialCard from "@/components/TestimonialCard";
 import { testimonials } from "@/data/testimonials";
 import { runBackgroundTask } from "@/lib/schedule";
@@ -148,10 +149,9 @@ export default function Testimonials() {
           className="col-span-12 grid grid-cols-1 gap-4 pt-10 md:grid-cols-2"
         >
           {featuredTestimonials.map((testimonial) => (
-            <TestimonialCard
-              key={`featured-${testimonial.name}-${testimonial.service}`}
-              testimonial={testimonial}
-            />
+            <GlareCard key={`featured-${testimonial.name}-${testimonial.service}`} className="h-full">
+              <TestimonialCard testimonial={testimonial} />
+            </GlareCard>
           ))}
         </div>
 
@@ -180,7 +180,9 @@ export default function Testimonials() {
               >
                 {carouselItems.map((testimonial) => (
                   <swiperLoaded.SwiperSlide key={`${testimonial.name}-${testimonial.service}`}>
-                    <TestimonialCard testimonial={testimonial} />
+                    <GlareCard className="h-full">
+                      <TestimonialCard testimonial={testimonial} />
+                    </GlareCard>
                   </swiperLoaded.SwiperSlide>
                 ))}
               </swiperLoaded.Swiper>
@@ -188,10 +190,9 @@ export default function Testimonials() {
           ) : (
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
               {carouselItems.slice(0, 3).map((testimonial) => (
-                <TestimonialCard
-                  key={`fallback-${testimonial.name}-${testimonial.service}`}
-                  testimonial={testimonial}
-                />
+                <GlareCard key={`fallback-${testimonial.name}-${testimonial.service}`} className="h-full">
+                  <TestimonialCard testimonial={testimonial} />
+                </GlareCard>
               ))}
             </div>
           )}

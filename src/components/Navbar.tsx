@@ -152,7 +152,7 @@ export default function Navbar() {
                 <Link
                   key={`desktop-${link.href}`}
                   href={link.href}
-                  className="tap-target px-2 py-1 text-[0.68rem] tracking-[0.11em] uppercase text-swiss-black/88 hover:text-swiss-red-ink hover:underline hover:underline-offset-4 focus-visible:text-swiss-red-ink focus-visible:underline focus-visible:underline-offset-4 xl:text-meta"
+                  className="tap-target px-2 py-1 text-meta text-swiss-black/88 hover:text-swiss-red-ink hover:underline hover:underline-offset-4 focus-visible:text-swiss-red-ink focus-visible:underline focus-visible:underline-offset-4"
                 >
                   {link.label}
                 </Link>

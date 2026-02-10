@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: `Política de Privacidad | ${siteConfig.brand.name}`,
   description:
     "Política de privacidad de TC Insurance, LLC para el tratamiento de datos personales en Texas, Estados Unidos.",
+  alternates: {
+    canonical: `${siteConfig.seo.siteUrl}/privacidad`,
+  },
 };
 
 export default function PrivacyPage() {

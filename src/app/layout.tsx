@@ -40,6 +40,10 @@ export const metadata: Metadata = {
   description: siteConfig.seo.defaultDescription,
   alternates: {
     canonical: "/",
+    languages: {
+      "es-US": "/",
+      "x-default": "/",
+    },
   },
   openGraph: {
     type: "website",

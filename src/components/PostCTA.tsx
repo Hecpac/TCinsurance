@@ -10,7 +10,7 @@ export default function PostCTA({ trackingId = "blog_post" }: PostCTAProps) {
     <CTAInline
       title="¿Quieres saber cómo aplica a tu caso?"
       subtitle="Te guiamos en 15 minutos para priorizar la cobertura correcta según tu etapa de vida y presupuesto."
-      primaryButton={{ label: "Agenda asesoría gratuita", href: HOME_SECTION_PATHS.contact }}
+      primaryButton={{ label: "Consulta tu caso gratis", href: HOME_SECTION_PATHS.contact }}
       secondaryButton={{ label: "Ver servicios", href: "/#servicios" }}
       trackingId={trackingId}
     />

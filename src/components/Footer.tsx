@@ -238,7 +238,7 @@ export default function Footer() {
         <div className="col-span-12 mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-[var(--color-border-soft)] pt-6">
           <p className="text-meta text-swiss-black/55">© 2026 {siteConfig.brand.name}</p>
           <Link href="/blog" className="tap-target text-meta text-swiss-black/55 hover:text-swiss-red-ink">
-            Journal &rarr;
+            Blog &rarr;
           </Link>
         </div>
       </GridContainer>

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: `Sobre Mí | ${siteConfig.brand.name}`,
   description:
     "Conoce a Yuri Tatiana Castañeda Carmona, agente integral de seguros de salud y vida en Dallas, Texas.",
+  alternates: {
+    canonical: `${siteConfig.seo.siteUrl}/sobre-mi`,
+  },
 };
 
 export default function AboutPage() {

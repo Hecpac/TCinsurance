@@ -102,52 +102,40 @@ export default function HeroSection() {
         id="inicio"
         data-testid="hero-section"
         data-agent-context="value-proposition"
-        className="pt-12 md:pt-14"
+        className="pt-6 md:pt-8"
       >
         <p
           data-hero-kicker
-          className="col-span-12 md:col-span-3 text-meta section-kicker pt-8 md:pt-[3.5rem]"
+          className="col-span-12 text-meta section-kicker pt-4 md:pt-6"
         >
           Est. 2024 - Texas, USA
         </p>
 
         <hr
           data-hero-rule
-          className="col-span-12 border-t section-rule mt-8 md:mt-10"
+          className="col-span-12 border-t section-rule mt-3 md:mt-5"
         />
 
-        <div className="col-span-12 md:col-span-8 mt-8 md:mt-10 z-10">
-          <h1 className="text-display font-bold text-swiss-black">
+        <div className="col-span-12 md:col-span-7 mt-5 md:mt-8 z-10">
+          <h1 className="text-[clamp(3rem,8vw,5.5rem)] font-bold leading-[0.95] tracking-[-0.035em] text-swiss-black">
             <span className="block overflow-hidden pt-[0.06em]">
               <span data-hero-title-line className="block">
-                Seguros de salud, vida y gastos finales{" "}
+                Tu familia merece claridad,{" "}
               </span>
             </span>
             <span className="block overflow-hidden pt-[0.06em]">
               <span data-hero-title-line className="block text-swiss-red">
-                para familias en Texas.
+                no otro formulario.
               </span>
             </span>
           </h1>
-          <p
-            data-hero-subtitle
-            className="mt-6 md:mt-8 text-body leading-relaxed text-swiss-black/80 max-w-[65ch]"
-          >
-            Te comparamos planes y te entregamos una recomendación clara (sin perder cobertura clave).
-          </p>
-          <p
-            data-hero-copy
-            className="mt-4 text-body text-m3-on-surface-variant"
-          >
-            Para familias, trabajadores independientes y dueños de negocio en Texas.
-          </p>
         </div>
 
         <figure
           data-hero-image
-          className="order-5 col-span-12 md:order-none md:col-start-8 md:col-span-5 md:row-start-1 md:row-end-6 md:-z-10 mt-4 md:mt-0"
+          className="order-5 col-span-12 md:order-none md:col-start-8 md:col-span-5 md:row-start-3 md:row-end-8 mt-6 md:mt-0"
         >
-          <div className="hero-depth relative h-[360px] md:h-[600px] w-full border border-m3-outline-variant bg-m3-surface-container-low">
+          <div className="hero-depth relative h-[320px] md:h-[520px] w-full border border-m3-outline-variant bg-m3-surface-container-low">
             <Image
               src="/hero-portrait.jpg"
               alt="Retrato profesional de Tatiana Castañeda en blanco y negro"
@@ -166,15 +154,31 @@ export default function HeroSection() {
         </figure>
 
         <p
-          data-hero-copy
-          className="order-2 col-span-12 md:order-none md:col-start-2 md:col-span-4 text-body text-m3-on-surface-variant mt-8 md:mt-10"
+          data-hero-subtitle
+          className="col-span-12 md:col-span-6 mt-5 md:mt-6 text-[clamp(1.12rem,1.4vw,1.25rem)] leading-relaxed text-swiss-black/80 max-w-[55ch]"
         >
-          Diseñamos una estrategia de cobertura para proteger tu ingreso, tu familia y tu legado con asesoría bilingüe 1:1.
+          Seguros de salud, vida y gastos finales en Texas. Comparamos
+          opciones y te entregamos una recomendación clara para tu caso.
+        </p>
+        <p
+          data-hero-copy
+          className="col-span-12 md:col-span-5 mt-3 text-body text-m3-on-surface-variant"
+        >
+          Para familias, trabajadores independientes y dueños de negocio
+          que necesitan cobertura sin perder tiempo ni dinero.
+        </p>
+
+        <p
+          data-hero-copy
+          className="order-2 col-span-12 md:order-none md:col-span-5 text-body text-m3-on-surface-variant mt-5 md:mt-6"
+        >
+          Asesoría bilingüe 1:1 para proteger tu ingreso, tu familia y tu
+          legado con una estrategia que realmente entiendas.
         </p>
 
         <div
           data-hero-cta
-          className="order-3 col-span-12 md:order-none md:col-start-2 md:col-span-6 mt-6 pb-3"
+          className="order-3 col-span-12 md:order-none md:col-span-7 mt-6 pb-3"
         >
           <div className="flex flex-wrap items-center gap-3">
             <HoverBorderGradient
@@ -186,13 +190,17 @@ export default function HeroSection() {
               <Link
                 href={HOME_SECTION_PATHS.contact}
                 onClick={() =>
-                  trackEvent("cta_click_inline_hero", {
-                    slot: "primary",
-                    label: "Agenda asesoría gratuita",
-                    tracking_id: "hero",
-                  }, {
-                    dedupeKey: "hero:primary",
-                  })
+                  trackEvent(
+                    "cta_click_inline_hero",
+                    {
+                      slot: "primary",
+                      label: "Agenda asesoría gratuita",
+                      tracking_id: "hero",
+                    },
+                    {
+                      dedupeKey: "hero:primary",
+                    }
+                  )
                 }
                 className="primary-cta tap-target inline-flex items-center border px-5 py-3 text-meta"
               >
@@ -202,13 +210,17 @@ export default function HeroSection() {
             <Link
               href={HOME_SECTION_PATHS.services}
               onClick={() =>
-                trackEvent("cta_click_inline_hero", {
-                  slot: "secondary",
-                  label: "Ver servicios",
-                  tracking_id: "hero",
-                }, {
-                  dedupeKey: "hero:secondary",
-                })
+                trackEvent(
+                  "cta_click_inline_hero",
+                  {
+                    slot: "secondary",
+                    label: "Ver servicios",
+                    tracking_id: "hero",
+                  },
+                  {
+                    dedupeKey: "hero:secondary",
+                  }
+                )
               }
               className="tap-target inline-flex items-center border border-m3-outline-variant px-5 py-3 text-meta text-swiss-black hover:border-m3-outline-variant-strong hover:text-swiss-red-ink"
             >
@@ -219,13 +231,13 @@ export default function HeroSection() {
             aria-label="Indicadores de confianza"
             className="mt-3 flex flex-wrap gap-2"
           >
-            <li className="border border-m3-outline-variant bg-m3-surface-container-low px-3 py-1.5 text-[0.68rem] font-medium tracking-[0.02em] text-m3-secondary-ink">
+            <li className="border border-m3-outline-variant bg-m3-surface-container-low px-3 py-1.5 text-[0.73rem] font-medium tracking-[0.03em] text-m3-secondary-ink">
               Agencia con licencia en Texas
             </li>
-            <li className="border border-m3-outline-variant bg-m3-surface-container-low px-3 py-1.5 text-[0.68rem] font-medium tracking-[0.02em] text-m3-secondary-ink">
+            <li className="border border-m3-outline-variant bg-m3-surface-container-low px-3 py-1.5 text-[0.73rem] font-medium tracking-[0.03em] text-m3-secondary-ink">
               Respuesta inicial &lt; 24h
             </li>
-            <li className="border border-m3-outline-variant bg-m3-surface-container-low px-3 py-1.5 text-[0.68rem] font-medium tracking-[0.02em] text-m3-secondary-ink">
+            <li className="border border-m3-outline-variant bg-m3-surface-container-low px-3 py-1.5 text-[0.73rem] font-medium tracking-[0.03em] text-m3-secondary-ink">
               Atención bilingüe ES / EN
             </li>
           </ul>
@@ -233,7 +245,7 @@ export default function HeroSection() {
 
         <p
           data-hero-meta
-          className="order-4 col-span-12 md:order-none md:col-start-2 md:col-span-6 text-meta text-m3-on-surface-variant pb-[4.5rem] md:pb-[5.5rem]"
+          className="order-4 col-span-12 md:order-none md:col-span-7 text-meta text-m3-on-surface-variant pb-12 md:pb-16"
         >
           15 minutos • Sin compromiso • Español/English
         </p>

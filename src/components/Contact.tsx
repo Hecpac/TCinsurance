@@ -226,7 +226,7 @@ export default function Contact() {
       );
 
       setStatus("success");
-      setMessage("Gracias. Recibimos tu solicitud y te contactaremos muy pronto.");
+      setMessage("Gracias. Recibimos tu solicitud y te contactaremos en menos de 24 horas.");
       setFormData(DEFAULT_FORM);
       setShowMessage(false);
     } catch {
@@ -260,7 +260,7 @@ export default function Contact() {
             <h2
               id="contacto"
               data-contact-title
-              className="text-display leading-[0.9] tracking-[-0.055em] text-swiss-black"
+              className="text-display tracking-[-0.055em] text-swiss-black"
             >
               Asesoría{" "}
               <br />

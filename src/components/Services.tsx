@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import GridContainer from "@/components/GridContainer";
+import GlareCard from "@/components/ui/glare-card";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import ServiceCard from "@/components/ServiceCard";
 import { runBackgroundTask } from "@/lib/schedule";
@@ -221,7 +222,9 @@ export default function Services() {
                 key={service.slug}
                 className="service-card-stack-item"
               >
-                <ServiceCard service={service} />
+                <GlareCard data-service-card maxTilt={6}>
+                  <ServiceCard service={service} />
+                </GlareCard>
               </div>
             ))}
           </div>

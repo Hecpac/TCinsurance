@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: `Servicios | ${siteConfig.brand.name}`,
   description:
     "Catálogo técnico de coberturas: salud, vida, gastos finales, dental, Medicare, visión y pólizas de indemnización.",
+  alternates: {
+    canonical: `${siteConfig.seo.siteUrl}/servicios`,
+  },
 };
 
 export default function ServicesPage() {
@@ -49,7 +52,7 @@ export default function ServicesPage() {
             href={HOME_SECTION_PATHS.contact}
             className="tap-target text-meta text-swiss-black hover:text-swiss-red-ink"
           >
-            Solicitar asesoría gratuita &rarr;
+            Encuentra tu cobertura ideal &rarr;
           </Link>
         </div>
       </GridContainer>

@@ -26,8 +26,8 @@ export default function Home() {
         <div className="grid grid-cols-12 gap-6">
           <CTAInline
             title="¿Quieres comparar opciones sin perder tiempo?"
-            subtitle="Te damos una recomendación accionable para tu caso."
-            primaryButton={{ label: "Agenda asesoría gratuita", href: HOME_SECTION_PATHS.contact }}
+            subtitle="Te entregamos un plan claro para tu caso en una sola conversación."
+            primaryButton={{ label: "Compara tus opciones", href: HOME_SECTION_PATHS.contact }}
             secondaryButton={{ label: "Ver proceso", href: "/#como-funciona" }}
             trackingId="after_services"
           />
@@ -45,8 +45,8 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-6">
             <CTAInline
               title="Ya tienes la ruta, ahora toca ejecutarla."
-              subtitle="Agenda una llamada breve y te entregamos una recomendación accionable para tu cobertura."
-              primaryButton={{ label: "Agenda asesoría gratuita", href: HOME_SECTION_PATHS.contact }}
+              subtitle="En 15 minutos definimos tu siguiente paso concreto de cobertura."
+              primaryButton={{ label: "Inicia tu estrategia", href: HOME_SECTION_PATHS.contact }}
               secondaryButton={{ label: "Ver servicios", href: "/#servicios" }}
               trackingId="after_process"
             />

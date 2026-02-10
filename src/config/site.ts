@@ -85,7 +85,7 @@ export const siteConfig = {
   seo: {
     siteUrl: SITE_URL,
     defaultTitle:
-      "TC Insurance Agency Services, LLC | Seguros de Vida, Salud y Gastos Finales en Texas",
+      "Seguros de Salud, Vida y Gastos Finales en Texas | TC Insurance",
     defaultDescription:
       "Asesoría bilingüe en seguros de salud, vida y gastos finales para familias y dueños de negocio en Texas. Comparamos planes y guiamos paso a paso con claridad.",
     defaultOgImage: "/og-tc-insurance.jpg",

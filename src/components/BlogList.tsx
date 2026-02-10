@@ -4,11 +4,11 @@ import { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GridContainer from "@/components/GridContainer";
+import GlareCard from "@/components/ui/glare-card";
 import CTAInline from "@/components/CTAInline";
 import { HOME_SECTION_PATHS } from "@/config/site";
 import { formatBlogDateShort, getLatestPosts } from "@/data/blogPosts";
 import { runBackgroundTask } from "@/lib/schedule";
-import { addCardHoverLift } from "@/lib/gsapCardLift";
 
 const latestPosts = getLatestPosts(4);
 const heroPost = latestPosts[0];
@@ -37,11 +37,6 @@ export default function BlogList() {
 
         gsap.registerPlugin(ScrollTrigger);
         const triggers: ScrollTrigger[] = [];
-        const detachHoverLift = addCardHoverLift(gsap, "[data-blog-card]", {
-          offsetY: 7,
-          scale: 1.01,
-          scope: sectionRef.current,
-        });
         const ctx = gsap.context(() => {
           const headerAnim = gsap.from("[data-blog-header]", {
             y: 24,
@@ -103,7 +98,6 @@ export default function BlogList() {
 
         cleanup = () => {
           triggers.forEach((trigger) => trigger.kill());
-          detachHoverLift();
           ctx.revert();
         };
       })();
@@ -140,110 +134,107 @@ export default function BlogList() {
         <div data-blog-grid className="col-span-12 grid grid-cols-12 gap-4 pt-10">
           {/* Featured / Hero post */}
           {heroPost && (
-            <article
-              data-blog-hero
-              className="col-span-12 grid grid-cols-1 border border-m3-outline-variant bg-m3-surface-container-low md:grid-cols-2"
-            >
-              {heroPost.featuredImage ? (
-                <div className="relative aspect-[16/10] md:aspect-auto overflow-hidden">
-                  <Image
-                    src={heroPost.featuredImage}
-                    alt={heroPost.featuredImageAlt ?? heroPost.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              ) : (
-                <div className="bg-m3-surface-container aspect-[16/10] md:aspect-auto" />
-              )}
+            <GlareCard data-blog-hero containerClassName="col-span-12" maxTilt={5}>
+              <article className="grid grid-cols-1 border border-m3-outline-variant bg-m3-surface-container-low md:grid-cols-2">
+                {heroPost.featuredImage ? (
+                  <div className="relative aspect-[16/10] md:aspect-auto overflow-hidden">
+                    <Image
+                      src={heroPost.featuredImage}
+                      alt={heroPost.featuredImageAlt ?? heroPost.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                ) : (
+                  <div className="bg-m3-surface-container aspect-[16/10] md:aspect-auto" />
+                )}
 
-              <div className="flex flex-col justify-between p-6 md:p-8">
-                <div>
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-meta text-m3-on-surface-variant">
-                    <span className="blog-category-chip">{heroPost.category}</span>
-                    <span>{formatBlogDateShort(heroPost.publishedAt)}</span>
-                    <span>{heroPost.readTime}</span>
+                <div className="flex flex-col justify-between p-6 md:p-8">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-meta text-m3-on-surface-variant">
+                      <span className="blog-category-chip">{heroPost.category}</span>
+                      <span>{formatBlogDateShort(heroPost.publishedAt)}</span>
+                      <span>{heroPost.readTime}</span>
+                    </div>
+
+                    <h3 className="mt-5 text-headline leading-[1.15] tracking-tight text-swiss-black font-bold">
+                      {heroPost.title}
+                    </h3>
+
+                    <p className="mt-4 max-w-[52ch] text-body text-m3-on-surface-variant">
+                      {heroPost.excerpt}
+                    </p>
                   </div>
 
-                  <h3 className="mt-5 text-headline leading-tight tracking-tight text-swiss-black font-bold">
-                    {heroPost.title}
-                  </h3>
-
-                  <p className="mt-4 max-w-[52ch] text-body text-m3-on-surface-variant">
-                    {heroPost.excerpt}
-                  </p>
+                  <Link
+                    href={`/blog/${heroPost.slug}`}
+                    className="tap-target mt-6 inline-flex items-center gap-2 text-meta text-swiss-red hover:text-swiss-red-ink"
+                  >
+                    Leer artículo <span aria-hidden="true">&rarr;</span>
+                  </Link>
                 </div>
-
-                <Link
-                  href={`/blog/${heroPost.slug}`}
-                  className="tap-target mt-6 inline-flex items-center gap-2 text-meta text-swiss-red hover:text-swiss-red-ink"
-                >
-                  Leer artículo <span aria-hidden="true">&rarr;</span>
-                </Link>
-              </div>
-            </article>
+              </article>
+            </GlareCard>
           )}
 
           {/* Remaining posts */}
           {remainingPosts.map((post) => (
-            <article
-              key={post.slug}
-              data-blog-card
-              className="col-span-12 flex h-full flex-col border border-m3-outline-variant bg-m3-surface-container-low md:col-span-4"
-            >
-              {post.featuredImage ? (
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={post.featuredImage}
-                    alt={post.featuredImageAlt ?? post.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-              ) : (
-                <div className="border-b border-m3-outline-variant bg-m3-surface-container px-6 pt-6 pb-5">
-                  <span className="text-meta text-swiss-red">{post.category}</span>
-                </div>
-              )}
+            <GlareCard key={post.slug} data-blog-card containerClassName="col-span-12 md:col-span-4" maxTilt={8} className="h-full">
+              <article className="flex h-full flex-col border border-m3-outline-variant bg-m3-surface-container-low">
+                {post.featuredImage ? (
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={post.featuredImage}
+                      alt={post.featuredImageAlt ?? post.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="border-b border-m3-outline-variant bg-m3-surface-container px-6 pt-6 pb-5">
+                    <span className="text-meta text-swiss-red">{post.category}</span>
+                  </div>
+                )}
 
-              <div className="flex flex-grow flex-col p-6 md:p-7">
-                <div className="flex-grow">
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-meta text-m3-on-surface-variant">
-                    {post.featuredImage && (
-                      <span className="blog-category-chip">{post.category}</span>
-                    )}
-                    <span>{formatBlogDateShort(post.publishedAt)}</span>
-                    <span>{post.readTime}</span>
+                <div className="flex flex-grow flex-col p-6 md:p-7">
+                  <div className="flex-grow">
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 text-meta text-m3-on-surface-variant">
+                      {post.featuredImage && (
+                        <span className="blog-category-chip">{post.category}</span>
+                      )}
+                      <span>{formatBlogDateShort(post.publishedAt)}</span>
+                      <span>{post.readTime}</span>
+                    </div>
+
+                    <h3 className="mt-4 text-[clamp(1.18rem,2.2vw,1.5rem)] font-bold leading-[1.18] tracking-tight text-swiss-black">
+                      {post.title}
+                    </h3>
+
+                    <p className="mt-3 text-body text-m3-on-surface-variant line-clamp-3">
+                      {post.excerpt}
+                    </p>
                   </div>
 
-                  <h3 className="mt-4 text-[clamp(1.15rem,2vw,1.45rem)] font-bold leading-tight tracking-tight text-swiss-black">
-                    {post.title}
-                  </h3>
-
-                  <p className="mt-3 text-body text-m3-on-surface-variant line-clamp-3">
-                    {post.excerpt}
-                  </p>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="tap-target mt-6 inline-flex items-center gap-2 text-meta text-swiss-black hover:text-swiss-red-ink"
+                  >
+                    Leer artículo <span aria-hidden="true">&rarr;</span>
+                  </Link>
                 </div>
-
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="tap-target mt-6 inline-flex items-center gap-2 text-meta text-swiss-black hover:text-swiss-red-ink"
-                >
-                  Leer artículo <span aria-hidden="true">&rarr;</span>
-                </Link>
-              </div>
-            </article>
+              </article>
+            </GlareCard>
           ))}
         </div>
 
         <div className="col-span-12 pt-10 pb-24">
           <CTAInline
-            title="¿Quieres saber cómo aplica este contenido a tu caso? Agenda una asesoría breve."
-            subtitle="Te ayudamos a traducir cada artículo en decisiones concretas para tu cobertura."
-            primaryButton={{ label: "Agenda asesoría gratuita", href: HOME_SECTION_PATHS.contact }}
+            title="Aplica estos conceptos a tu caso."
+            subtitle="Te ayudamos a convertir cada artículo en decisiones concretas para tu cobertura."
+            primaryButton={{ label: "Aplica esto a tu caso", href: HOME_SECTION_PATHS.contact }}
             secondaryButton={{ label: "Ver archivo completo", href: "/blog" }}
             trackingId="after_blog_grid"
           />

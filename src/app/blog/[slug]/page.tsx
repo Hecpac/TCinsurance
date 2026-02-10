@@ -389,7 +389,7 @@ export default async function BlogPostPage({
             href={HOME_SECTION_PATHS.contact}
             className="tap-target text-meta text-swiss-black hover:text-swiss-red-ink"
           >
-            Solicitar asesoría privada &rarr;
+            Solicitar asesoría personalizada &rarr;
           </Link>
         </div>
       </GridContainer>

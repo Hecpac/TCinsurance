@@ -113,7 +113,7 @@ export default function CTAInline({
         data-cta-inline-card
         className="border border-m3-outline-variant bg-m3-surface-container-low p-6 md:p-8"
       >
-        <p className="text-headline font-semibold tracking-tight text-swiss-black">{title}</p>
+        <p className="text-headline font-bold tracking-tight text-swiss-black">{title}</p>
         <p className="mt-3 max-w-[68ch] text-body text-m3-on-surface-variant">{subtitle}</p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">

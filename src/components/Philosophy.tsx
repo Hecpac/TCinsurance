@@ -99,10 +99,10 @@ export default function Philosophy() {
         <div className="col-span-12 md:col-span-8 overflow-hidden pt-12">
           <blockquote
             data-philosophy-quote
-            className="text-display font-bold leading-[0.98] tracking-tight text-swiss-black"
+            className="text-display font-bold leading-[0.95] tracking-[-0.055em] text-swiss-black"
           >
-            &ldquo;No solo vendo pólizas; construyo tranquilidad para las familias
-            de nuestra comunidad.&rdquo;
+            &ldquo;Vi familias pagando por planes que no entendían. Fundé TC Insurance
+            para que eso no vuelva a pasar.&rdquo;
           </blockquote>
         </div>
 

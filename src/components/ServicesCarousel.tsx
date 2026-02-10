@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { runBackgroundTask } from "@/lib/schedule";
+import GlareCard from "@/components/ui/glare-card";
 import ServiceCard from "@/components/ServiceCard";
 import type { InsuranceService } from "@/data/services";
 
@@ -174,7 +175,9 @@ export default function ServicesCarousel({
           }}
         >
           {services.map((service) => (
-            <ServiceCard key={service.slug} service={service} />
+            <GlareCard key={service.slug} data-service-card maxTilt={9} className="h-full">
+              <ServiceCard service={service} />
+            </GlareCard>
           ))}
         </div>
       </div>

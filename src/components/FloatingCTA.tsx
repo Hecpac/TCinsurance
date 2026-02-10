@@ -45,7 +45,7 @@ function FloatingCTAInner() {
         onClick={() =>
           trackEvent("cta_click_inline_floating_mobile", {
             slot: "primary",
-            label: "Agenda asesoría gratuita",
+            label: "Agenda tu asesoría",
             tracking_id: "floating_mobile",
           }, {
             dedupeKey: "floating_mobile:primary",
@@ -59,7 +59,7 @@ function FloatingCTAInner() {
           transitionTimingFunction: "var(--spring-ease)",
         }}
       >
-        Agenda asesoría gratuita
+        Agenda tu asesoría
       </Link>
     </aside>
   );

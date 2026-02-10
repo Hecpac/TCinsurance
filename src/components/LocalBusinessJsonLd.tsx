@@ -22,8 +22,13 @@ export default function LocalBusinessJsonLd() {
         "@id": organizationId,
         name: siteConfig.business.name,
         url: siteConfig.seo.siteUrl,
+        description: siteConfig.seo.defaultDescription,
         telephone: siteConfig.business.telephone,
         areaServed: siteConfig.business.areaServed,
+        image: `${siteConfig.seo.siteUrl}${siteConfig.seo.defaultOgImage}`,
+        logo: `${siteConfig.seo.siteUrl}${siteConfig.brand.logoPath}`,
+        priceRange: "$$",
+        openingHours: "Mo-Fr 09:00-18:00",
         address: {
           "@type": "PostalAddress",
           ...siteConfig.business.address,

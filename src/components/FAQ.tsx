@@ -135,7 +135,7 @@ export default function FAQ() {
                     onClick={() => handleToggle(index, item.question)}
                     className="tap-target flex w-full items-start justify-between gap-6 text-left"
                   >
-                    <span className="text-headline font-semibold tracking-tight text-swiss-black">
+                    <span className="text-headline font-bold tracking-tight text-swiss-black">
                       {item.question}
                     </span>
                     <span className="spring-transform text-meta text-m3-secondary">
@@ -174,7 +174,7 @@ export default function FAQ() {
                   onClick={() =>
                     trackEvent("cta_click_inline_after_faq", {
                       slot: "primary",
-                      label: "Agenda asesoría gratuita",
+                      label: "Habla con un asesor",
                       tracking_id: "after_faq",
                     }, {
                       dedupeKey: "after_faq:primary",
@@ -182,7 +182,7 @@ export default function FAQ() {
                   }
                   className="primary-cta tap-target inline-flex items-center border px-5 py-3 text-meta"
                 >
-                  Agenda asesoría gratuita
+                  Habla con un asesor
                 </Link>
               </HoverBorderGradient>
             </div>
