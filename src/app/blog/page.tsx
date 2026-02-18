@@ -42,12 +42,22 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.seo.siteUrl },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${siteConfig.seo.siteUrl}/blog` },
+  ],
+};
+
 export default function BlogPage() {
   const posts = getVisiblePosts();
   const categories = getCategories();
 
   return (
     <main className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <GridContainer
         as="section"
         data-testid="blog-index"

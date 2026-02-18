@@ -11,11 +11,52 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.seo.siteUrl}/sobre-mi`,
   },
+  openGraph: {
+    type: "website",
+    url: "/sobre-mi",
+    title: `Sobre Mí | ${siteConfig.brand.name}`,
+    description:
+      "Conoce a Yuri Tatiana Castañeda Carmona, agente integral de seguros de salud y vida en Dallas, Texas.",
+    siteName: siteConfig.brand.name,
+    locale: "es_US",
+    images: [
+      {
+        url: siteConfig.seo.defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "TC Insurance - Sobre Yuri Tatiana Castañeda",
+      },
+    ],
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.seo.siteUrl },
+    { "@type": "ListItem", position: 2, name: "Sobre Mí", item: `${siteConfig.seo.siteUrl}/sobre-mi` },
+  ],
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Yuri Tatiana Castañeda Carmona",
+  jobTitle: "Licensed Insurance Agent",
+  worksFor: {
+    "@type": "Organization",
+    name: "TC Insurance Agency Services, LLC",
+    url: siteConfig.seo.siteUrl,
+  },
+  areaServed: "Texas, USA",
 };
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       <GridContainer
         as="section"
         data-testid="about-page-intro"
@@ -24,7 +65,7 @@ export default function AboutPage() {
       >
         <div className="col-span-12 md:col-span-2">
           <Link href="/" className="tap-target text-meta text-swiss-gray hover:text-swiss-red-ink">
-            Volver a inicio &rarr;
+            &larr; Volver a inicio
           </Link>
         </div>
 

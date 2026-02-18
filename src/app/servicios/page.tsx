@@ -3,6 +3,7 @@ import Link from "next/link";
 import GridContainer from "@/components/GridContainer";
 import Services from "@/components/Services";
 import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
+import { servicesCatalog } from "@/data/services";
 
 export const metadata: Metadata = {
   title: `Servicios | ${siteConfig.brand.name}`,
@@ -11,11 +12,58 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.seo.siteUrl}/servicios`,
   },
+  openGraph: {
+    type: "website",
+    url: "/servicios",
+    title: "Seguros de Salud, Vida y Gastos Finales en Texas | TC Insurance",
+    description:
+      "Catálogo técnico de coberturas: salud, vida, gastos finales, dental, Medicare, visión y pólizas de indemnización.",
+    siteName: siteConfig.brand.name,
+    locale: "es_US",
+    images: [
+      {
+        url: siteConfig.seo.defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "TC Insurance - Servicios de seguros en Texas",
+      },
+    ],
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.seo.siteUrl },
+    { "@type": "ListItem", position: 2, name: "Servicios", item: `${siteConfig.seo.siteUrl}/servicios` },
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: servicesCatalog.map((s, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "Service",
+      name: `${s.titleEs} — ${s.titleEn}`,
+      description: s.description,
+      provider: {
+        "@type": "Organization",
+        name: "TC Insurance Agency Services, LLC",
+        url: siteConfig.seo.siteUrl,
+      },
+    },
+  })),
 };
 
 export default function ServicesPage() {
   return (
     <main className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <GridContainer
         as="section"
         data-testid="services-page-intro"
@@ -30,9 +78,9 @@ export default function ServicesPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <h1 className="text-display tracking-[-0.055em] text-swiss-black">
-            Servicios
+            Seguros de Salud, Vida
             <br />
-            especializados.
+            y Gastos Finales en Texas.
           </h1>
         </div>
 

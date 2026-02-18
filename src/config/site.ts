@@ -103,12 +103,16 @@ export const siteConfig = {
     areaServed: "Texas, USA",
     telephone: CONTACT_PHONE_DISPLAY,
     geo: {
-      latitude: process.env.NEXT_PUBLIC_GEO_LAT ?? "",
-      longitude: process.env.NEXT_PUBLIC_GEO_LNG ?? "",
+      latitude: process.env.NEXT_PUBLIC_GEO_LAT ?? "32.9342",
+      longitude: process.env.NEXT_PUBLIC_GEO_LNG ?? "-96.8200",
     },
     maps: {
       embedUrl: MAPS_EMBED_URL,
     },
-    sameAs: [] as string[],
+    sameAs: [
+      (optionalUrl(process.env.NEXT_PUBLIC_INSTAGRAM_URL) ?? "https://www.instagram.com/tcinsurance1"),
+      (optionalUrl(process.env.NEXT_PUBLIC_FACEBOOK_URL) ?? "https://www.facebook.com/TatianaCastanedaSeguros"),
+      optionalUrl(process.env.NEXT_PUBLIC_LINKEDIN_URL),
+    ].filter(Boolean) as string[],
   },
 } as const;

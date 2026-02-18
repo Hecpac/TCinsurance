@@ -201,40 +201,35 @@ export default function Services() {
 
         <p
           data-services-intro
-          className="col-span-12 max-w-[70ch] pt-4 pb-8 text-body text-m3-on-surface-variant"
+          className="col-span-12 max-w-[var(--measure-body)] pt-4 pb-8 text-body text-m3-on-surface-variant"
         >
           Elige el tipo de cobertura que quieres comparar. Te guiamos para tomar una decisión clara.
         </p>
 
         <div data-services-rule className="col-span-12 border-t section-rule" />
 
-        {layoutMode === null ? (
-          <div className="col-span-12 pt-10 pb-20" aria-hidden />
-        ) : null}
+        <div
+          data-services-grid
+          className={`services-sticky-grid col-span-12 pt-10 pb-20 ${layoutMode === null ? "hidden md:block" : layoutMode === "desktop" ? "" : "hidden"}`}
+        >
+          {servicesCatalog.map((service) => (
+            <div
+              key={service.slug}
+              className="service-card-stack-item"
+            >
+              <GlareCard data-service-card maxTilt={6}>
+                <ServiceCard service={service} />
+              </GlareCard>
+            </div>
+          ))}
+        </div>
 
-        {layoutMode === "desktop" ? (
-          <div
-            data-services-grid
-            className="services-sticky-grid col-span-12 pt-10 pb-20"
-          >
-            {servicesCatalog.map((service) => (
-              <div
-                key={service.slug}
-                className="service-card-stack-item"
-              >
-                <GlareCard data-service-card maxTilt={6}>
-                  <ServiceCard service={service} />
-                </GlareCard>
-              </div>
-            ))}
-          </div>
-        ) : null}
-
-        {layoutMode === "mobile" ? (
-          <div data-services-carousel className="col-span-12 pt-8 pb-20">
-            <ServicesCarousel services={servicesCatalog} />
-          </div>
-        ) : null}
+        <div
+          data-services-carousel
+          className={`col-span-12 pt-8 pb-20 ${layoutMode === null ? "block md:hidden" : layoutMode === "mobile" ? "" : "hidden"}`}
+        >
+          <ServicesCarousel services={servicesCatalog} />
+        </div>
       </GridContainer>
     </div>
   );

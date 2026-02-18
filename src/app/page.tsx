@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import Services from "@/components/Services";
+import EmpresasDeSeguros from "@/components/EmpresasDeSeguros";
 import Process from "@/components/Process";
 import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
@@ -22,6 +23,7 @@ export default function Home() {
       <FaqJsonLd />
       <HeroSection />
       <Services />
+      <EmpresasDeSeguros />
       <section className="mx-auto w-full max-w-[1440px] px-6 py-8 md:px-20 md:py-10">
         <div className="grid grid-cols-12 gap-6">
           <CTAInline

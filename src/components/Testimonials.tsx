@@ -199,7 +199,8 @@ export default function Testimonials() {
 
           <div className="mt-8 flex items-center justify-center gap-4">
             <button
-              className="swiper-button-prev-custom-testimonials tap-target flex h-11 w-11 items-center justify-center border border-m3-outline-variant bg-m3-surface-container text-swiss-black hover:border-m3-outline-variant-strong hover:text-swiss-red-ink"
+              disabled={!swiperLoaded}
+              className="swiper-button-prev-custom-testimonials tap-target flex h-11 w-11 items-center justify-center border border-m3-outline-variant bg-m3-surface-container text-swiss-black hover:border-m3-outline-variant-strong hover:text-swiss-red-ink disabled:opacity-40 disabled:cursor-not-allowed"
               aria-label="Testimonio anterior"
             >
               <svg
@@ -218,7 +219,8 @@ export default function Testimonials() {
               </svg>
             </button>
             <button
-              className="swiper-button-next-custom-testimonials tap-target flex h-11 w-11 items-center justify-center border border-m3-outline-variant bg-m3-surface-container text-swiss-black hover:border-m3-outline-variant-strong hover:text-swiss-red-ink"
+              disabled={!swiperLoaded}
+              className="swiper-button-next-custom-testimonials tap-target flex h-11 w-11 items-center justify-center border border-m3-outline-variant bg-m3-surface-container text-swiss-black hover:border-m3-outline-variant-strong hover:text-swiss-red-ink disabled:opacity-40 disabled:cursor-not-allowed"
               aria-label="Siguiente testimonio"
             >
               <svg

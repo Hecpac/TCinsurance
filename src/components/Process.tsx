@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import GridContainer from "@/components/GridContainer";
 import GlareCard from "@/components/ui/glare-card";
@@ -51,24 +50,15 @@ export default function Process() {
           });
           if (lineAnim.scrollTrigger) triggers.push(lineAnim.scrollTrigger);
 
-          const stepsAnim = gsap.from("[data-process-step]", {
-            scrollTrigger: { trigger: "[data-process-list]", start: "top 86%", once: true },
+          const cardsAnim = gsap.from("[data-process-card]", {
+            scrollTrigger: { trigger: "[data-process-grid]", start: "top 86%", once: true },
             y: 26,
             opacity: 0,
             duration: 0.72,
             stagger: 0.12,
             ease: "expo.out",
           });
-          if (stepsAnim.scrollTrigger) triggers.push(stepsAnim.scrollTrigger);
-
-          const imageAnim = gsap.from("[data-process-image]", {
-            scrollTrigger: { trigger: "[data-process-image]", start: "top 92%", once: true },
-            y: 24,
-            opacity: 0,
-            duration: 0.8,
-            ease: "expo.out",
-          });
-          if (imageAnim.scrollTrigger) triggers.push(imageAnim.scrollTrigger);
+          if (cardsAnim.scrollTrigger) triggers.push(cardsAnim.scrollTrigger);
         }, sectionRef);
 
         cleanup = () => {
@@ -102,29 +92,20 @@ export default function Process() {
 
         <hr data-process-line className="col-span-12 border-t section-rule" />
 
-        <div data-process-list className="col-span-12 md:col-span-7 grid grid-cols-12 gap-4 pt-10 pb-8">
+        <div data-process-grid className="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 pt-10 pb-8">
           {processSteps.map((step) => (
-            <GlareCard key={step.number} data-process-step containerClassName="col-span-12">
-              <article className="border border-m3-outline-variant-strong bg-m3-surface-container p-6 md:p-7 hover:border-m3-primary/50 transition-colors">
-                <p className="text-meta text-m3-primary">{step.number}</p>
-                <h3 className="text-headline font-bold tracking-tight text-swiss-black mt-4">{step.title}</h3>
-                <p className="text-body text-m3-secondary-ink mt-4">{step.description}</p>
-              </article>
+            <GlareCard
+              key={step.number}
+              data-process-card
+              className="flex flex-col items-start justify-end py-6 px-5 md:py-8 md:px-6"
+              containerClassName="w-full"
+            >
+              <p className="font-bold text-m3-primary text-meta mb-2">{step.number}</p>
+              <p className="font-bold text-swiss-black text-lg">{step.title}</p>
+              <p className="font-normal text-base text-muted mt-3 md:mt-4">{step.description}</p>
             </GlareCard>
           ))}
         </div>
-
-        <figure data-process-image className="col-span-12 md:col-start-9 md:col-span-4 pt-10 pb-8 md:pb-16">
-          <div className="relative aspect-[3/4] w-full border border-m3-outline-variant bg-m3-surface-container-low">
-            <Image
-              src="/hero-portrait.jpg"
-              alt="Consultoría personalizada en seguros para familias en Texas"
-              fill
-              sizes="(min-width: 768px) 24vw, 100vw"
-              className="object-cover grayscale contrast-125"
-            />
-          </div>
-        </figure>
 
         <div className="col-span-12 md:col-start-8 md:col-span-5 pb-20">
           <Link

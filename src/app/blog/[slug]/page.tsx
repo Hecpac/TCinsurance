@@ -48,7 +48,7 @@ function renderContentBlock(block: string, index: number) {
 
   if (content.startsWith("#### ")) {
     return (
-      <h3 key={`h3-${index}`} className="pt-2 text-2xl font-semibold tracking-tight text-swiss-black">
+      <h3 key={`h3-${index}`} className="pt-2 text-headline font-semibold tracking-tight text-swiss-black">
         {renderInlineMarkdown(content.slice(5))}
       </h3>
     );
@@ -58,7 +58,7 @@ function renderContentBlock(block: string, index: number) {
     return (
       <h2
         key={`h2-${index}`}
-        className="text-3xl md:text-4xl font-semibold tracking-tight text-swiss-black"
+        className="text-headline font-semibold tracking-tight text-swiss-black"
       >
         {renderInlineMarkdown(content.slice(4))}
       </h2>

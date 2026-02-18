@@ -24,7 +24,7 @@ import { ScrollSnapProvider } from "@/contexts/ScrollSnapContext";
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-  display: "optional",
+  display: "swap",
 });
 
 const ibmPlexMono = IBM_Plex_Mono({

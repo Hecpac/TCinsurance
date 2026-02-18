@@ -135,7 +135,7 @@ export default function FAQ() {
                     onClick={() => handleToggle(index, item.question)}
                     className="tap-target flex w-full items-start justify-between gap-6 text-left"
                   >
-                    <span className="text-headline font-bold tracking-tight text-swiss-black">
+                    <span className="text-title text-swiss-black">
                       {item.question}
                     </span>
                     <span className="spring-transform text-meta text-m3-secondary">
@@ -150,7 +150,7 @@ export default function FAQ() {
                   hidden={!isOpen}
                   className="pt-4"
                 >
-                  <p className="max-w-[85ch] text-body text-m3-on-surface-variant">
+                  <p className="max-w-[var(--measure-wide)] text-body text-m3-on-surface-variant">
                     {item.answer}
                   </p>
                 </div>
@@ -159,7 +159,7 @@ export default function FAQ() {
           })}
 
           <article data-faq-item className="border-b border-m3-outline-variant py-6">
-            <p className="mt-3 max-w-[70ch] text-body text-m3-on-surface-variant">
+            <p className="mt-3 max-w-[var(--measure-body)] text-body text-m3-on-surface-variant">
               Si aún no estás seguro por dónde empezar, una llamada de 15 minutos es suficiente para darte claridad.
             </p>
             <div className="mt-5">

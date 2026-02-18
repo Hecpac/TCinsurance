@@ -40,6 +40,12 @@
   --text-headline: 700 clamp(1.8rem, 4vw, 3.2rem) / 1.1 var(--font-sans);
   --text-headline--letter-spacing: -0.025em;
 
+  --text-title: 700 clamp(1.35rem, 2.4vw, 1.75rem) / 1.2 var(--font-sans);
+  --text-title--letter-spacing: -0.02em;
+
+  --text-subheadline: 600 clamp(1.1rem, 1.5vw, 1.3rem) / 1.35 var(--font-sans);
+  --text-subheadline--letter-spacing: -0.01em;
+
   --text-body: 400 clamp(1.03rem, 1.2vw, 1.12rem) / 1.6 var(--font-sans);
   --text-body--letter-spacing: 0em;
 
@@ -121,6 +127,9 @@
   --shadow-lg: 0 14px 26px -8px rgb(0 0 0 / 0.4);
   --shadow-xl: 0 24px 42px -12px rgb(0 0 0 / 0.5);
 
+  --measure-body: 65ch;
+  --measure-wide: 85ch;
+
   --spring-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
   --transition-fast: 320ms var(--spring-ease);
   --transition-base: 460ms var(--spring-ease);
@@ -133,6 +142,15 @@
   --z-modal: 1050;
   --z-popover: 1060;
   --z-tooltip: 1070;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.75rem));
+  }
 }
 
 @layer base {
@@ -220,8 +238,10 @@
     }
   }
 
-  .text-center,
-  .text-justify {
+  .prose .text-center,
+  .prose .text-justify,
+  [data-swiss-align] .text-center,
+  [data-swiss-align] .text-justify {
     text-align: left !important;
   }
 
@@ -366,10 +386,8 @@
 
   .service-card__title {
     color: var(--color-text-primary);
-    font-size: clamp(1.4rem, 2.6vw, 1.75rem);
-    line-height: var(--leading-tight);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font: var(--text-title);
+    letter-spacing: var(--text-title--letter-spacing);
   }
 
   .service-card__title-es {

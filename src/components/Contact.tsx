@@ -276,7 +276,7 @@ export default function Contact() {
             <form className="mt-8 grid grid-cols-12 gap-4" onSubmit={handleSubmit} noValidate>
               <div className="col-span-12 md:col-span-6">
                 <label htmlFor="name" className="text-meta text-swiss-gray">
-                  Nombre
+                  Nombre <span className="text-swiss-red">*</span>
                 </label>
                 <input
                   id="name"

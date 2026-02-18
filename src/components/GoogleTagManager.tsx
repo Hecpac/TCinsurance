@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 interface GoogleTagManagerProps {
   gtmId?: string;
 }
@@ -33,7 +35,7 @@ export function GoogleTagManagerHead({ gtmId }: GoogleTagManagerProps) {
     })(window,document,'script','dataLayer','${gtmId}');
   `;
 
-  return <script dangerouslySetInnerHTML={{ __html: script }} />;
+  return <Script id="gtm-init" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: script }} />;
 }
 
 export function GoogleTagManagerNoScript({ gtmId }: GoogleTagManagerProps) {
@@ -64,8 +66,8 @@ export function GoogleAnalyticsHead({ ga4Id }: GoogleAnalyticsProps) {
 
   return (
     <>
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`} />
-      <script dangerouslySetInnerHTML={{ __html: script }} />
+      <Script id="ga4-lib" strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`} />
+      <Script id="ga4-init" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: script }} />
     </>
   );
 }
@@ -86,7 +88,7 @@ export function MetaPixelHead({ pixelId }: MetaPixelProps) {
     fbq('track', 'PageView');
   `;
 
-  return <script dangerouslySetInnerHTML={{ __html: script }} />;
+  return <Script id="meta-pixel-init" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: script }} />;
 }
 
 export function MetaPixelNoScript({ pixelId }: MetaPixelProps) {

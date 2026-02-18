@@ -117,7 +117,7 @@ export default function HeroSection() {
         />
 
         <div className="col-span-12 md:col-span-7 mt-5 md:mt-8 z-10">
-          <h1 className="text-[clamp(3rem,8vw,5.5rem)] font-bold leading-[0.95] tracking-[-0.035em] text-swiss-black">
+          <h1 className="text-display font-bold leading-[0.95] text-swiss-black">
             <span className="block overflow-hidden pt-[0.06em]">
               <span data-hero-title-line className="block">
                 Tu familia merece claridad,{" "}
@@ -155,7 +155,7 @@ export default function HeroSection() {
 
         <p
           data-hero-subtitle
-          className="col-span-12 md:col-span-6 mt-5 md:mt-6 text-[clamp(1.12rem,1.4vw,1.25rem)] leading-relaxed text-swiss-black/80 max-w-[55ch]"
+          className="col-span-12 md:col-span-6 mt-5 md:mt-6 text-subheadline text-swiss-black/80 max-w-[var(--measure-body)]"
         >
           Seguros de salud, vida y gastos finales en Texas. Comparamos
           opciones y te entregamos una recomendación clara para tu caso.

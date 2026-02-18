@@ -148,15 +148,21 @@ export default function Navbar() {
             </Link>
 
             <div className="hidden items-center gap-5 md:flex lg:gap-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={`desktop-${link.href}`}
-                  href={link.href}
-                  className="tap-target px-2 py-1 text-meta text-swiss-black/88 hover:text-swiss-red-ink hover:underline hover:underline-offset-4 focus-visible:text-swiss-red-ink focus-visible:underline focus-visible:underline-offset-4"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive =
+                  link.href === pathname ||
+                  (link.href.startsWith("/#") && pathname === "/");
+                return (
+                  <Link
+                    key={`desktop-${link.href}`}
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className="tap-target px-2 py-1 text-meta text-swiss-black/88 hover:text-swiss-red-ink hover:underline hover:underline-offset-4 focus-visible:text-swiss-red-ink focus-visible:underline focus-visible:underline-offset-4"
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="hidden min-w-0 shrink-0 items-center justify-end gap-2.5 md:flex lg:gap-3 xl:gap-4">
@@ -221,17 +227,23 @@ export default function Navbar() {
           className="fixed inset-x-0 top-20 z-50 border-b border-[var(--color-border-soft)] bg-swiss-paper/95 px-6 py-5 backdrop-blur-md md:hidden"
         >
           <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={`mobile-${link.href}`}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                data-mobile-nav-link
-                className="tap-target px-1 text-body text-swiss-black hover:text-swiss-red-ink focus-visible:text-swiss-red-ink"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive =
+                link.href === pathname ||
+                (link.href.startsWith("/#") && pathname === "/");
+              return (
+                <Link
+                  key={`mobile-${link.href}`}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-current={isActive ? "page" : undefined}
+                  data-mobile-nav-link
+                  className="tap-target px-1 text-body text-swiss-black hover:text-swiss-red-ink focus-visible:text-swiss-red-ink"
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <p className="pt-1 text-meta text-swiss-gray" data-mobile-nav-link>
               {siteConfig.location.short}
             </p>
