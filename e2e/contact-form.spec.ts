@@ -4,7 +4,7 @@ test.describe("Contact form", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/", { waitUntil: "load" });
     // Scroll to the contact section
-    await page.locator("#contacto").scrollIntoViewIfNeeded();
+    await page.locator("#contacto").first().scrollIntoViewIfNeeded();
   });
 
   test("displays required form fields", async ({ page }) => {
@@ -24,7 +24,7 @@ test.describe("Contact form", () => {
     await submitButton.click();
 
     // Should show an error about the name
-    const errorText = page.locator("[role='status']");
+    const errorText = page.locator("[role='status'].form-error");
     await expect(errorText).toContainText("nombre");
   });
 
@@ -34,7 +34,7 @@ test.describe("Contact form", () => {
     const submitButton = page.getByRole("button", { name: /solicitar/i });
     await submitButton.click();
 
-    const errorText = page.locator("[role='status']");
+    const errorText = page.locator("[role='status'].form-error");
     await expect(errorText).toContainText("contacto");
   });
 
@@ -44,7 +44,7 @@ test.describe("Contact form", () => {
     const submitButton = page.getByRole("button", { name: /solicitar/i });
     await submitButton.click();
 
-    const errorText = page.locator("[role='status']");
+    const errorText = page.locator("[role='status'].form-error");
     await expect(errorText).toContainText("teléfono", { ignoreCase: true });
   });
 
@@ -54,7 +54,7 @@ test.describe("Contact form", () => {
     const submitButton = page.getByRole("button", { name: /solicitar/i });
     await submitButton.click();
 
-    const errorText = page.locator("[role='status']");
+    const errorText = page.locator("[role='status'].form-error");
     await expect(errorText).toContainText("email", { ignoreCase: true });
   });
 

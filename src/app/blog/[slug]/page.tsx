@@ -349,8 +349,8 @@ export default async function BlogPostPage({
 
         {/* Related posts */}
         {relatedPosts.length > 0 && (
-          <aside className="col-span-12 border-t border-swiss-black mt-14 pt-10">
-            <h2 className="text-headline tracking-tight text-swiss-black mb-8">
+          <section aria-labelledby="related-heading" className="col-span-12 border-t border-swiss-black mt-14 pt-10">
+            <h2 id="related-heading" className="text-headline tracking-tight text-swiss-black mb-8">
               Artículos relacionados
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -381,7 +381,7 @@ export default async function BlogPostPage({
                 </Link>
               ))}
             </div>
-          </aside>
+          </section>
         )}
 
         <div className="col-span-12 md:col-start-3 md:col-span-7 pt-8">

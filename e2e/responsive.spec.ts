@@ -34,7 +34,7 @@ for (const bp of BREAKPOINTS) {
 
     test("blog page renders properly", async ({ page }) => {
       await page.goto("/blog", { waitUntil: "load" });
-      const h1 = page.locator("h1");
+      const h1 = page.locator("h1").first();
       await expect(h1).toBeVisible();
 
       const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
@@ -44,7 +44,7 @@ for (const bp of BREAKPOINTS) {
 
     test("servicios page renders properly", async ({ page }) => {
       await page.goto("/servicios", { waitUntil: "load" });
-      const h1 = page.locator("h1");
+      const h1 = page.locator("h1").first();
       await expect(h1).toBeVisible();
 
       const bodyWidth = await page.evaluate(() => document.body.scrollWidth);

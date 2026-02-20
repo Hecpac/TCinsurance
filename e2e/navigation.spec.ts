@@ -26,8 +26,9 @@ test.describe("Navigation", () => {
       const href = await serviciosLink.getAttribute("href");
 
       // If it's a hash link, it stays on the same page
-      if (href?.startsWith("/#")) {
+      if (href?.includes("#")) {
         await serviciosLink.click();
+        await page.waitForURL("**/#*");
         expect(page.url()).toContain("#");
       } else {
         await serviciosLink.click();
@@ -57,7 +58,8 @@ test.describe("Navigation", () => {
       await menuButton.click();
 
       // After clicking, navigation links should be visible
-      await expect(page.locator("nav").getByText("Servicios")).toBeVisible();
+      const mobileLink = page.locator("#mobile-nav-panel").getByText("Servicios").first();
+      await expect(mobileLink).toBeVisible();
 
       // Close with Escape
       await page.keyboard.press("Escape");
