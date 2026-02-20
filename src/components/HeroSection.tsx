@@ -23,8 +23,13 @@ export default function HeroSection() {
       if (!isMounted) return;
 
       void (async () => {
-        const { default: gsap } = await import("gsap");
+        const [{ default: gsap }, { ScrollTrigger }] = await Promise.all([
+          import("gsap"),
+          import("gsap/ScrollTrigger"),
+        ]);
         if (!isMounted || !sectionRef.current) return;
+
+        gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
           const tl = gsap.timeline({
@@ -83,6 +88,41 @@ export default function HeroSection() {
               },
               0.34
             );
+
+          const scrollTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+
+          // Move the entire grid container down at half the scroll speed
+          // This creates the classic parallax depth effect where the next section overlaps it
+          scrollTl.to(
+            "[data-testid='hero-section']",
+            {
+              y: 250,
+              opacity: 0.15,
+              ease: "none",
+            },
+            0
+          );
+
+          // Inner parallax for the image (moves even slower)
+          scrollTl.fromTo(
+            "[data-parallax-container] img",
+            {
+              yPercent: -10,
+              scale: 1.1,
+            },
+            {
+              yPercent: 10,
+              ease: "none",
+            },
+            0
+          );
         }, sectionRef);
 
         cleanup = () => ctx.revert();
@@ -136,15 +176,17 @@ export default function HeroSection() {
           className="order-5 col-span-12 md:order-none md:col-start-8 md:col-span-5 md:row-start-3 md:row-end-8 mt-6 md:mt-0"
         >
           <div className="hero-depth relative h-[320px] md:h-[520px] w-full border border-m3-outline-variant bg-m3-surface-container-low">
-            <Image
-              src="/hero-portrait.jpg"
-              alt="Retrato profesional de Tatiana Castañeda en blanco y negro"
-              fill
-              priority
-              quality={72}
-              sizes="(min-width: 1200px) 33vw, (min-width: 768px) 38vw, 82vw"
-              className="object-cover grayscale contrast-125 saturate-0"
-            />
+            <div className="absolute inset-0 overflow-hidden" data-parallax-container>
+              <Image
+                src="/hero-portrait.jpg"
+                alt="Retrato profesional de Tatiana Castañeda en blanco y negro"
+                fill
+                priority
+                quality={72}
+                sizes="(min-width: 1200px) 33vw, (min-width: 768px) 38vw, 82vw"
+                className="object-cover grayscale contrast-125 saturate-0"
+              />
+            </div>
 
             <div
               aria-hidden

@@ -1,12 +1,16 @@
 import { siteConfig } from "@/config/site";
 
 export default function LocalBusinessJsonLd() {
-  const sameAs = [
-    ...siteConfig.business.sameAs,
-    siteConfig.social.instagramUrl,
-    siteConfig.social.facebookUrl,
-    siteConfig.social.linkedinUrl,
-  ].filter((url): url is string => Boolean(url));
+  const sameAs = Array.from(
+    new Set(
+      [
+        ...siteConfig.business.sameAs,
+        siteConfig.social.instagramUrl,
+        siteConfig.social.facebookUrl,
+        siteConfig.social.linkedinUrl,
+      ].filter((url): url is string => Boolean(url))
+    )
+  );
 
   const organizationId = `${siteConfig.seo.siteUrl}/#organization`;
   const websiteId = `${siteConfig.seo.siteUrl}/#website`;

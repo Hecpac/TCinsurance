@@ -178,7 +178,7 @@ export default function Services() {
   }, [layoutMode]);
 
   return (
-    <div ref={sectionRef}>
+    <div ref={sectionRef} className="relative z-10 bg-swiss-paper">
       <GridContainer
         as="section"
         id="servicios"

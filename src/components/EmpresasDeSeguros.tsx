@@ -46,9 +46,10 @@ function MarqueeRow({
       <div
         className="flex w-max items-center gap-4"
         style={{
-          animation: reducedMotion
-            ? "none"
-            : `marquee ${speed}s linear infinite`,
+          animationName: reducedMotion ? "none" : "marquee",
+          animationDuration: `${speed}s`,
+          animationTimingFunction: "linear",
+          animationIterationCount: "infinite",
           animationDirection: direction === "right" ? "reverse" : "normal",
           animationPlayState: paused ? "paused" : "running",
         }}
