@@ -94,19 +94,6 @@ export default function Footer() {
         data-agent-context="footer-navigation"
         className="h-full py-14 md:py-16"
       >
-        <div className="col-span-12">
-          <Link href="/" aria-label={siteConfig.brand.name} className="tap-target inline-flex items-center">
-            <Image
-              src={siteConfig.brand.logoPath}
-              alt="TC Insurance"
-              width={siteConfig.brand.logoWidth}
-              height={siteConfig.brand.logoHeight}
-              sizes="(min-width: 768px) 270px, 214px"
-              className="h-[5rem] w-auto object-contain object-center md:h-[5.9rem]"
-            />
-          </Link>
-        </div>
-
         <div className="col-span-12 min-w-0">
           <p className="footer-watermark" aria-hidden>
             {siteConfig.brand.footerName}

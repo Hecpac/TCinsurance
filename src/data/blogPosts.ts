@@ -15,6 +15,96 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "trabajando-para-tdi-texas-department-of-insurance-gov",
+    title: "Trabajando para TDI - Texas Department of Insurance (.gov)",
+    excerpt: "Últimas noticias: Trabajando para TDI - Texas Department of Insurance (.gov). Haz clic para leer más sobre este desarrollo importante para el mercado de seguros en Texas.",
+    category: "NOTICIAS",
+    publishedAt: "2025-11-20",
+    readTime: "2 MIN",
+    author: "Texas Department of Insurance (.gov)",
+    status: "active",
+    featuredImage: "/blog/News Paper.jpeg",
+    content: [
+      "### Reporte automatizado por nuestro Agente Research",
+      "Esta es una noticia en desarrollo capturada por nuestro sistema de monitoreo en tiempo real sobre el mercado de seguros en Texas.",
+      "**Fuente:** Texas Department of Insurance (.gov)",
+      "**Fecha de publicación:** jueves, 20 de noviembre de 2025",
+      "> [**Lee la noticia completa en su fuente original haciendo clic aquí**](https://news.google.com/rss/articles/CBMib0FVX3lxTE5Ka045QmV2VEhCaGdMWjZMaVg4eWNscWlfX1o3WTNvQWpWU1dOd1hrSW9SekQ5TnhfaTFfNW15ZVh5RG9ibWYyNVN0U080T0s4aXRfUjBYak82TmE4dG5XRWY0c0lhMXhsVWU3VUJZUQ?oc=5)"
+    ],
+  },
+  {
+    slug: "texas-tiene-la-tasa-m-s-alta-de-personas-sin-seguro-m-dico-d",
+    title: "Texas tiene la tasa más alta de personas sin seguro médico del país, revela informe - Dallas News",
+    excerpt: "Últimas noticias: Texas tiene la tasa más alta de personas sin seguro médico del país, revela informe - Dallas News. Haz clic para leer más sobre este desarrollo importante para el mercado de seguros en Texas.",
+    category: "NOTICIAS",
+    publishedAt: "2025-07-16",
+    readTime: "2 MIN",
+    author: "Dallas News",
+    status: "active",
+    featuredImage: "/blog/News Paper.jpeg",
+    content: [
+      "### Reporte automatizado por nuestro Agente Research",
+      "Esta es una noticia en desarrollo capturada por nuestro sistema de monitoreo en tiempo real sobre el mercado de seguros en Texas.",
+      "**Fuente:** Dallas News",
+      "**Fecha de publicación:** miércoles, 16 de julio de 2025",
+      "> [**Lee la noticia completa en su fuente original haciendo clic aquí**](https://news.google.com/rss/articles/CBMipgFBVV95cUxNSjNzSkpuZEFzTXhqZE5zTU54dkRQMktGSkg2QVNKS0RyV1F2QjRobWFGUkRWN3A0YzRkVE5CRlNJWTlsd0YtaE1veEhidHU4QUxtZmZBd1B2bWpYWW9Ea3VLT0oyeXBnTEQ4OU9sR295ZGV6QnRSZ1FwQTgxUDJHaUItRXJibUpxQU0tcGNrNElKUnlFWldrRXpTTi1pbjRMdTNheUlB0gG6AUFVX3lxTFBLamNERzJOSkVfSkh4MnQ0SF9saWlLdVFCSnI2UjFOcXpWNGhyX05OYWRoSGdHel96clhtS2hnUjVPZUhPREtfWVNpZ3RVM1kyRkNVb3lNT2FQaWFqMExVTzRQWi1qWTJzd0hUdXRQRVNCaUwzRzd5WEhCUDJ2SVRfa3hHUm5SSWFYQXhzUmRhVGJiZGRiSVh0SURpbkJUZlBVS1ZpMnVYZlVSYlhXWU92d1FnOVVKaGFJUQ?oc=5)"
+    ],
+  },
+  {
+    slug: "por-qu-podr-a-recibir-una-factura-del-m-dico-despu-s-de-su-c",
+    title: "Por qué podría recibir una factura del médico después de su chequeo anual gratis - Texas Department of Insurance (.gov)",
+    excerpt: "Últimas noticias: Por qué podría recibir una factura del médico después de su chequeo anual gratis - Texas Department of Insurance (.gov). Haz clic para leer más sobre este desarrollo importante para el mercado de seguros en Texas.",
+    category: "NOTICIAS",
+    publishedAt: "2025-10-02",
+    readTime: "2 MIN",
+    author: "Texas Department of Insurance (.gov)",
+    status: "active",
+    featuredImage: "/blog/News Paper.jpeg",
+    content: [
+      "### Reporte automatizado por nuestro Agente Research",
+      "Esta es una noticia en desarrollo capturada por nuestro sistema de monitoreo en tiempo real sobre el mercado de seguros en Texas.",
+      "**Fuente:** Texas Department of Insurance (.gov)",
+      "**Fecha de publicación:** jueves, 2 de octubre de 2025",
+      "> [**Lee la noticia completa en su fuente original haciendo clic aquí**](https://news.google.com/rss/articles/CBMipAFBVV95cUxNZmRUYm1LMklUc3JMb3NKcjFEUTl3cW4xUGpSYkJ3R0lOQU1hMEVYaTFNa1NaVndSN2pyQ1dYU0pjSzl6eXlPOXAwb2hmRDNXTUlkTVhXcEo0VWFPRlc4LWpPRk1kU05uTng0dkVVRjlncmhEX2wwc3Q2NzZTM0JOVWFMa3RHTUwtVkd0TUtSc0ZBOXNpcmo5aDVjUUg3RGNvN3ByeA?oc=5)"
+    ],
+  },
+  {
+    slug: "the-cochrun-group-m-s-de-dos-d-cadas-protegiendo-y-sirviendo",
+    title: "The Cochrun Group: más de dos décadas protegiendo y sirviendo - Hola News",
+    excerpt: "Últimas noticias: The Cochrun Group: más de dos décadas protegiendo y sirviendo - Hola News. Haz clic para leer más sobre este desarrollo importante para el mercado de seguros en Texas.",
+    category: "NOTICIAS",
+    publishedAt: "2026-02-06",
+    readTime: "2 MIN",
+    author: "Hola News",
+    status: "active",
+    featuredImage: "/blog/News Paper.jpeg",
+    content: [
+      "### Reporte automatizado por nuestro Agente Research",
+      "Esta es una noticia en desarrollo capturada por nuestro sistema de monitoreo en tiempo real sobre el mercado de seguros en Texas.",
+      "**Fuente:** Hola News",
+      "**Fecha de publicación:** viernes, 6 de febrero de 2026",
+      "> [**Lee la noticia completa en su fuente original haciendo clic aquí**](https://news.google.com/rss/articles/CBMiigFBVV95cUxOWXNjS0xvaTdWVEttTWRJMHpYRVdTRWhkNk5SeE9lbENPYzN5Yl9US1dpWXBoZkJvN3BhTUJva3IybzN4LUM0SngzYU0tTnMxRzR4Ri02NEdNMEdWeVJjTlpJQ2V3RTNIZm9CZXBQZ2VLNGhUcy0tWExna1F4ZnpHUldvVkRNQmwtTFE?oc=5)"
+    ],
+  },
+  {
+    slug: "el-aumento-vertiginoso-de-las-primas-del-obamacare-obliga-a-",
+    title: "El aumento vertiginoso de las primas del Obamacare obliga a los afiliados a tomar decisiones difíciles - CNN en Español",
+    excerpt: "Últimas noticias: El aumento vertiginoso de las primas del Obamacare obliga a los afiliados a tomar decisiones difíciles - CNN en Español. Haz clic para leer más sobre este desarrollo importante para el mercado de seguros en Texas.",
+    category: "NOTICIAS",
+    publishedAt: "2025-11-09",
+    readTime: "2 MIN",
+    author: "CNN en Español",
+    status: "active",
+    featuredImage: "/blog/News Paper.jpeg",
+    content: [
+      "### Reporte automatizado por nuestro Agente Research",
+      "Esta es una noticia en desarrollo capturada por nuestro sistema de monitoreo en tiempo real sobre el mercado de seguros en Texas.",
+      "**Fuente:** CNN en Español",
+      "**Fecha de publicación:** domingo, 9 de noviembre de 2025",
+      "> [**Lee la noticia completa en su fuente original haciendo clic aquí**](https://news.google.com/rss/articles/CBMijAFBVV95cUxOc29jQjMxMGNBZWZTRE51c25lNUhTdGZJTWVRZ1ZleDdqeFkxMjlvNXMxclRMazk0cGpDTlU4S1pQNzVsdExvbDlzMEo0RTI0SnZ6Mkh3eUFCRlExbWZvSW5WbG85bFpDLVprNlhSeEFtVy1ydTRCc0pIalRaYTB1UWtJYU1KdmFnaXd2MQ?oc=5)"
+    ],
+  },
+  {
     slug: "gastos-finales-arquitectura-financiera",
     title: "Gastos Finales: La Última Pieza de la Arquitectura Financiera",
     excerpt:
@@ -25,7 +115,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tatiana Castañeda",
     featured: true,
     status: "active",
-    featuredImage: "/blog-final-expense-featured.jpg",
+    featuredImage: "/blog/Vintage ad 1965 Travellers life insurance.jpeg",
     featuredImageAlt:
       "Seguro de gastos finales en Texas: planificación financiera para familias",
     content: [
@@ -52,6 +142,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 MIN",
     author: "Tatiana Castañeda",
     status: "active",
+    featuredImage: "/blog/More boring money advice from a brilliant founding father_.jpeg",
     content: [
       "### No elijas un plan de salud por la prima. Elige por lo que vas a pagar de verdad.",
       "Elegir un seguro de salud en Texas no debería sentirse como una apuesta. Pero cada año, miles de familias en Dallas, Houston y el resto del estado seleccionan cobertura basándose en un solo número: la prima mensual. Ese enfoque casi siempre termina costando más.",
@@ -92,6 +183,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 MIN",
     author: "Tatiana Castañeda",
     status: "active",
+    featuredImage: "/blog/Vintage ad 1965 Travellers life insurance.jpeg",
     content: [
       "### ¿Qué pasaría con tu familia si mañana no estás?",
       "Es una pregunta que nadie quiere hacer, pero que toda familia responsable necesita responder. El seguro de vida en Texas no es un producto que compras para ti, es una promesa que le haces a las personas que dependen de tu ingreso.",

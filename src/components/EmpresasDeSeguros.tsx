@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import GridContainer from "@/components/GridContainer";
 
@@ -23,15 +23,6 @@ function MarqueeRow({
   speed?: number;
 }) {
   const [paused, setPaused] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
 
   return (
     <div
@@ -44,9 +35,9 @@ function MarqueeRow({
       }}
     >
       <div
-        className="flex w-max items-center gap-4"
+        className="marquee-track flex w-max items-center gap-4"
         style={{
-          animationName: reducedMotion ? "none" : "marquee",
+          animationName: "marquee",
           animationDuration: `${speed}s`,
           animationTimingFunction: "linear",
           animationIterationCount: "infinite",

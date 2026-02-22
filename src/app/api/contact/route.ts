@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { escapeHtml, toSafeHtmlMultiline } from "@/lib/escapeHtml";
 
 interface ContactPayload {
   name: string;
@@ -133,11 +134,11 @@ async function sendLeadEmail(payload: Omit<ContactPayload, "website">) {
 
   const html = `
     <h2>Nuevo lead desde TC Insurance</h2>
-    <p><strong>Nombre:</strong> ${payload.name}</p>
-    <p><strong>Teléfono:</strong> ${payload.phone}</p>
-    <p><strong>Email:</strong> ${payload.email}</p>
-    <p><strong>Tipo de seguro:</strong> ${payload.insuranceType}</p>
-    <p><strong>Mensaje:</strong><br/>${payload.message.replace(/\n/g, "<br/>")}</p>
+    <p><strong>Nombre:</strong> ${escapeHtml(payload.name)}</p>
+    <p><strong>Teléfono:</strong> ${escapeHtml(payload.phone)}</p>
+    <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
+    <p><strong>Tipo de seguro:</strong> ${escapeHtml(payload.insuranceType)}</p>
+    <p><strong>Mensaje:</strong><br/>${toSafeHtmlMultiline(payload.message)}</p>
   `;
 
   const text = [

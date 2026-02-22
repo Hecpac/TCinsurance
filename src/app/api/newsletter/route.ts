@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { escapeHtml } from "@/lib/escapeHtml";
 
 interface NewsletterPayload {
   email: string;
@@ -110,8 +111,8 @@ async function sendNewsletterEmail(email: string) {
       ].join("\n"),
       html: `
         <h2>Nueva suscripción al newsletter</h2>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Fecha:</strong> ${submittedAt}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Fecha:</strong> ${escapeHtml(submittedAt)}</p>
       `,
     }),
   });

@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import ScrollProgress from "@/components/ScrollProgress";
 import HashScroller from "@/components/HashScroller";
 import FloatingCTA from "@/components/FloatingCTA";
+import Floating3DLogo from "@/components/Floating3DLogo";
 import ScrollToTop from "@/components/ScrollToTop";
 import LocalBusinessJsonLd from "@/components/LocalBusinessJsonLd";
 import SkipLink from "@/components/SkipLink";
@@ -129,9 +130,7 @@ export default function RootLayout({
           <Suspense fallback={null}>
             <HashScroller />
           </Suspense>
-          <Suspense fallback={mainContent}>
-            <SmoothScroll>{mainContent}</SmoothScroll>
-          </Suspense>
+          <SmoothScroll>{mainContent}</SmoothScroll>
           <Suspense
             fallback={
               <div
@@ -141,6 +140,9 @@ export default function RootLayout({
             }
           >
             <FloatingCTA />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Floating3DLogo />
           </Suspense>
           <Suspense fallback={null}>
             <CustomCursor />

@@ -153,6 +153,22 @@
   }
 }
 
+@keyframes float-spin {
+  0% {
+    transform: translateY(0px) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotateY(180deg);
+  }
+  100% {
+    transform: translateY(0px) rotateY(360deg);
+  }
+}
+
+.animate-float-spin {
+  animation: float-spin 8s linear infinite;
+}
+
 @layer base {
   * {
     border-radius: 0 !important;
@@ -248,6 +264,11 @@
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+
+    .marquee-track {
+      animation: none !important;
+      transform: none !important;
     }
 
     *,

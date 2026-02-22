@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "agent:news": "node scripts/research-agent.mjs",
     "test:e2e": "npx playwright test",
     "test:e2e:headed": "npx playwright test --headed"
   },

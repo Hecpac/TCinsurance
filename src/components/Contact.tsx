@@ -28,6 +28,7 @@ interface LeadFormData {
   email: string;
   insuranceType: InsuranceType;
   message: string;
+  website: string;
 }
 
 interface LeadResponse {
@@ -42,6 +43,7 @@ const DEFAULT_FORM: LeadFormData = {
   email: "",
   insuranceType: "Salud",
   message: "",
+  website: "",
 };
 
 const FIELD_HINTS: Record<LeadField, string> = {
@@ -274,6 +276,19 @@ export default function Contact() {
             </p>
 
             <form className="mt-8 grid grid-cols-12 gap-4" onSubmit={handleSubmit} noValidate>
+              <div className="hidden" aria-hidden>
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={(event) => handleFieldChange("website", event.target.value)}
+                />
+              </div>
+
               <div className="col-span-12 md:col-span-6">
                 <label htmlFor="name" className="text-meta text-swiss-gray">
                   Nombre <span className="text-swiss-red">*</span>

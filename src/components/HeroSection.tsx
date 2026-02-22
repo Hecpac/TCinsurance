@@ -136,7 +136,19 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div ref={sectionRef}>
+    <div ref={sectionRef} className="relative flex min-h-[85vh] flex-col justify-center pt-24 pb-12 md:min-h-[90vh]">
+      <div className="absolute inset-0 z-[-1] overflow-hidden bg-swiss-paper">
+        <div className="absolute inset-0 opacity-15" data-parallax-container>
+          <Image
+            src="/dallas-texas-bg.jpeg"
+            alt="Dallas Texas Background"
+            fill
+            priority
+            quality={60}
+            className="object-cover grayscale contrast-125 saturate-0"
+          />
+        </div>
+      </div>
       <GridContainer
         as="header"
         id="inicio"
@@ -178,13 +190,13 @@ export default function HeroSection() {
           <div className="hero-depth relative h-[320px] md:h-[520px] w-full border border-m3-outline-variant bg-m3-surface-container-low">
             <div className="absolute inset-0 overflow-hidden" data-parallax-container>
               <Image
-                src="/hero-portrait.jpg"
-                alt="Retrato profesional de Tatiana Castañeda en blanco y negro"
+                src="/Hero.jpeg"
+                alt="Retrato profesional de Tatiana Castañeda"
                 fill
                 priority
                 quality={72}
                 sizes="(min-width: 1200px) 33vw, (min-width: 768px) 38vw, 82vw"
-                className="object-cover grayscale contrast-125 saturate-0"
+                className="object-cover object-top grayscale contrast-125 saturate-0"
               />
             </div>
 

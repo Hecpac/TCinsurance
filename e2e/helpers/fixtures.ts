@@ -13,17 +13,17 @@ type Fixtures = {
  * monitors network failures on every test.
  */
 export const test = base.extend<Fixtures>({
-  consoleErrors: async ({ page }, use) => {
+  consoleErrors: async ({ page }, runFixture) => {
     const getErrors = captureConsoleErrors(page);
-    await use(getErrors);
+    await runFixture(getErrors);
   },
-  badResponses: async ({ page }, use) => {
+  badResponses: async ({ page }, runFixture) => {
     const { getBadResponses } = monitorNetwork(page);
-    await use(getBadResponses);
+    await runFixture(getBadResponses);
   },
-  failedRequests: async ({ page }, use) => {
+  failedRequests: async ({ page }, runFixture) => {
     const { getFailedRequests } = monitorNetwork(page);
-    await use(getFailedRequests);
+    await runFixture(getFailedRequests);
   },
 });
 

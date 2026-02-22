@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { escapeHtml, toSafeHtmlMultiline } from "@/lib/escapeHtml";
 
 interface LeadPayload {
   name: string;
@@ -8,6 +9,7 @@ interface LeadPayload {
   message?: string;
   source?: string;
   pageUrl?: string;
+  website?: string;
 }
 
 type LeadField = "name" | "phone" | "email" | "insuranceType" | "message" | "contact";
@@ -137,6 +139,7 @@ function validatePayload(payload: LeadPayload) {
 
   const source = payload.source?.trim() || "/";
   const pageUrl = payload.pageUrl?.trim() || "";
+  const website = payload.website?.trim() || "";
   return {
     ok: true as const,
     value: {
@@ -147,13 +150,12 @@ function validatePayload(payload: LeadPayload) {
       message,
       source,
       pageUrl,
+      website,
     },
   };
 }
 
-type SendLeadEmailResult =
-  | { ok: true; delivered: boolean; skippedReason?: string }
-  | { ok: false; error: string };
+type SendLeadEmailResult = { ok: true } | { ok: false; error: string };
 
 async function sendLeadEmail(lead: Omit<LeadRecord, "id" | "ip">): Promise<SendLeadEmailResult> {
   const apiKey = process.env.RESEND_API_KEY;
@@ -161,19 +163,23 @@ async function sendLeadEmail(lead: Omit<LeadRecord, "id" | "ip">): Promise<SendL
   const fromEmail = process.env.LEAD_FROM_EMAIL ?? process.env.CONTACT_FROM_EMAIL;
 
   if (!apiKey || !toEmail || !fromEmail) {
-    return { ok: true, delivered: false, skippedReason: "email_provider_not_configured" };
+    return {
+      ok: false,
+      error:
+        "Configuración incompleta. Define RESEND_API_KEY y un destino/origen para leads.",
+    };
   }
 
   const html = `
     <h2>Nuevo lead de asesoría</h2>
-    <p><strong>Fecha:</strong> ${lead.submittedAt}</p>
-    <p><strong>Fuente:</strong> ${lead.source}</p>
-    <p><strong>Página:</strong> ${lead.pageUrl || "-"}</p>
-    <p><strong>Nombre:</strong> ${lead.name}</p>
-    <p><strong>Teléfono:</strong> ${lead.phone || "-"}</p>
-    <p><strong>Email:</strong> ${lead.email || "-"}</p>
-    <p><strong>Tipo de seguro:</strong> ${lead.insuranceType}</p>
-    <p><strong>Mensaje:</strong><br/>${(lead.message || "-").replace(/\n/g, "<br/>")}</p>
+    <p><strong>Fecha:</strong> ${escapeHtml(lead.submittedAt)}</p>
+    <p><strong>Fuente:</strong> ${escapeHtml(lead.source)}</p>
+    <p><strong>Página:</strong> ${escapeHtml(lead.pageUrl || "-")}</p>
+    <p><strong>Nombre:</strong> ${escapeHtml(lead.name)}</p>
+    <p><strong>Teléfono:</strong> ${escapeHtml(lead.phone || "-")}</p>
+    <p><strong>Email:</strong> ${escapeHtml(lead.email || "-")}</p>
+    <p><strong>Tipo de seguro:</strong> ${escapeHtml(lead.insuranceType)}</p>
+    <p><strong>Mensaje:</strong><br/>${toSafeHtmlMultiline(lead.message || "-")}</p>
   `;
 
   const text = [
@@ -210,7 +216,7 @@ async function sendLeadEmail(lead: Omit<LeadRecord, "id" | "ip">): Promise<SendL
     return { ok: false, error: resendError };
   }
 
-  return { ok: true, delivered: true };
+  return { ok: true };
 }
 
 export async function POST(request: NextRequest) {
@@ -225,6 +231,10 @@ export async function POST(request: NextRequest) {
   const validated = validatePayload(body);
   if (!validated.ok) {
     return responseError(400, validated.error, validated.field);
+  }
+
+  if (validated.value.website) {
+    return NextResponse.json({ ok: true });
   }
 
   const ip = parseClientIp(request);
@@ -248,7 +258,13 @@ export async function POST(request: NextRequest) {
     id: `lead_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`,
     submittedAt: new Date().toISOString(),
     ip,
-    ...validated.value,
+    name: validated.value.name,
+    phone: validated.value.phone,
+    email: validated.value.email,
+    insuranceType: validated.value.insuranceType,
+    message: validated.value.message,
+    source: validated.value.source,
+    pageUrl: validated.value.pageUrl,
   };
 
   leadStore.unshift(lead);
@@ -276,17 +292,10 @@ export async function POST(request: NextRequest) {
     return responseError(500, emailResult.error);
   }
 
-  if (!emailResult.delivered) {
-    console.warn("[lead_submit_email_skipped]", {
-      id: lead.id,
-      reason: emailResult.skippedReason ?? "not_available",
-    });
-  }
-
   return NextResponse.json({
     ok: true,
     leadId: lead.id,
     submittedAt: lead.submittedAt,
-    emailDelivered: emailResult.delivered,
+    emailDelivered: true,
   });
 }
