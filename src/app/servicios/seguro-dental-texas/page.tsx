@@ -131,21 +131,39 @@ export default function ServiceLandingPage() {
         <div className="col-span-12 border-t border-swiss-black/15 mt-10" />
 
         <section className="col-span-12 md:col-start-3 md:col-span-7 pt-10 space-y-7 text-body text-swiss-black/90">
-          <h2 className="text-headline text-swiss-black">Cómo trabajamos este servicio</h2>
+          <h2 className="text-headline text-swiss-black">¿Qué es y por qué lo necesitas?</h2>
+          <p>
+            Ignorar la salud bucal en Texas es un riesgo que puede salirte muy caro. Desde empastes simples que superan los  hasta coronas o tratamientos de conducto (root canals) que pueden rebasar los ,500, no tener cobertura dental expone tus finanzas a golpes inesperados.
+          </p>
+          <p>
+            En TC Insurance, te ayudamos a encontrar un seguro dental que se ajuste a tus necesidades preventivas y correctivas. Te explicamos en español cómo funcionan los períodos de espera, las redes de dentistas y los topes anuales para que no te lleves sorpresas en el consultorio.
+          </p>
+
+          <h2 className="text-headline text-swiss-black mt-10">Costos y Redes Dentales (DHMO vs DPPO)</h2>
+          <p>
+            El costo de un seguro dental individual en Texas suele ser accesible (entre  y  al mes), pero lo importante es entender cómo funciona la red:
+          </p>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {processSteps.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>DHMO (Dental Health Maintenance Organization):</strong> Primas bajas (a menudo  - ). Requieren que elijas un dentista primario asignado. No tienen deducibles ni topes anuales, pagas un copago fijo predecible. No cubren nada fuera de la red.</li>
+            <li><strong>DPPO (Dental Preferred Provider Organization):</strong> Son los más comunes. Tienen primas mayores ( - +). Te dan libertad de ir a cualquier dentista del país. Operan con deducibles () y un límite máximo anual de cobertura (ej. ,500).</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Resultado esperado</h2>
+          <h2 className="text-headline text-swiss-black mt-10">La Estructura 100-80-50</h2>
+          <p>La inmensa mayoría de los planes PPO siguen esta regla de cobertura (después del deducible):</p>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {expectedResults.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>100% (Preventivo):</strong> Limpiezas (usualmente 2 anuales), exámenes rutinarios y radiografías cubiertas al 100% (Tú pagas /bin/zsh).</li>
+            <li><strong>80% (Básicos):</strong> Empastes de caries y extracciones simples. El seguro paga el 80% y tú el 20% del costo negociado.</li>
+            <li><strong>50% (Mayores):</strong> Tratamientos de conducto, coronas, implantes y prótesis. Tú pagas la mitad (50%). A menudo requieren pasar un "período de espera" de 6 a 12 meses.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Preguntas frecuentes</h2>
+          <h2 className="text-headline text-swiss-black mt-10">Nuestro proceso de asesoría</h2>
+          <ul className="space-y-2 pl-6 list-decimal marker:text-swiss-red font-semibold">
+            <li><span className="font-normal"><strong>Urgencia del tratamiento:</strong> Si tienes dolor y necesitas trabajo mayor ahora, te buscamos planes con períodos de espera reducidos o inexistentes.</span></li>
+            <li><span className="font-normal"><strong>Preferencia de Dentista:</strong> Revisamos si tu dentista actual participa en la red DHMO o si necesitas un plan DPPO para seguir atendiéndote allí.</span></li>
+            <li><span className="font-normal"><strong>Proyección Financiera:</strong> Filtramos pólizas que tengan límites máximos anuales acordes a la cantidad de trabajo dental que sabes que necesitas este año.</span></li>
+          </ul>
+
+          <h2 className="text-headline text-swiss-black mt-10">Preguntas frecuentes</h2>
           <div className="space-y-4">
             {faqItems.map((item) => (
               <article key={item.question} className="border border-swiss-black/15 p-5">

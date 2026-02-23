@@ -131,21 +131,40 @@ export default function ServiceLandingPage() {
         <div className="col-span-12 border-t border-swiss-black/15 mt-10" />
 
         <section className="col-span-12 md:col-start-3 md:col-span-7 pt-10 space-y-7 text-body text-swiss-black/90">
-          <h2 className="text-headline text-swiss-black">Cómo trabajamos este servicio</h2>
+          <h2 className="text-headline text-swiss-black">¿Qué es y por qué es vital en Texas?</h2>
+          <p>
+            El seguro de vida en Texas es la herramienta financiera más segura y efectiva para garantizar la estabilidad de tu familia cuando tú ya no estés. Si tienes dependientes, una hipoteca en Dallas o préstamos comerciales, un fallecimiento prematuro puede desencadenar una crisis económica paralizante para tus seres queridos.
+          </p>
+          <p>
+            En TC Insurance, nuestra asesoría en español te guía a través de las opciones de cobertura temporal y permanente, explicando claramente cómo usar pólizas de vida no solo por su beneficio por muerte, sino también como instrumentos de liquidez en vida, gracias a los beneficios en vida (Living Benefits) por enfermedades críticas o terminales.
+          </p>
+
+          <h2 className="text-headline text-swiss-black mt-10">Costos y Montos de Cobertura</h2>
+          <p>
+            El costo mensual de tu seguro de vida depende de la edad de emisión, historial médico, ocupación y tipo de póliza elegida.
+          </p>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {processSteps.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>Pólizas Temporales (Term Life):</strong> Son las más económicas. Para una persona sana de 35 años, una póliza de ,000 por 20 años puede costar entre  y  al mes. Proporcionan la máxima cobertura por el menor costo durante los años de mayor riesgo financiero.</li>
+            <li><strong>Pólizas Permanentes (Whole Life / IUL):</strong> Tienen primas sustancialmente más altas (-+ al mes), pero garantizan pago por fallecimiento sin importar cuándo ocurra. Además, acumulan un "valor en efectivo" (cash value) que crece con ventajas fiscales.</li>
+            <li><strong>Monto Recomendado:</strong> La regla general es multiplicar tu ingreso anual por 10 a 15 veces, sumando deudas mayores e hipotecas, para calcular el beneficio por muerte necesario.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Resultado esperado</h2>
+          <h2 className="text-headline text-swiss-black mt-10">Tipos de Pólizas (Temporal vs Permanente)</h2>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {expectedResults.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>Temporal (Term):</strong> Cobertura por un plazo fijo (10, 20, 30 años). Ideal para proteger ingresos mientras crecen los hijos. Si sobrevives el plazo, la cobertura termina.</li>
+            <li><strong>Vida Entera (Whole Life):</strong> Cobertura de por vida con primas fijas, pago garantizado y acumulación conservadora de valor en efectivo.</li>
+            <li><strong>Universal Indexado (IUL):</strong> Cobertura permanente flexible. Su valor en efectivo crece basado en índices bursátiles (como S&P 500) pero con un piso del 0% para proteger contra caídas del mercado.</li>
+            <li><strong>Beneficios en Vida (Living Benefits):</strong> Cláusulas modernas que permiten adelantar dinero en vida si sufres de cáncer, infartos o derrames cerebrales, dándote liquidez urgente.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Preguntas frecuentes</h2>
+          <h2 className="text-headline text-swiss-black mt-10">Cómo evaluamos tu necesidad real</h2>
+          <ul className="space-y-2 pl-6 list-decimal marker:text-swiss-red font-semibold">
+            <li><span className="font-normal"><strong>Análisis de Necesidades (FNA):</strong> Calculamos el capital exacto que requiere tu familia para liquidar hipoteca, deudas y mantener su estilo de vida.</span></li>
+            <li><span className="font-normal"><strong>Horizonte de Tiempo:</strong> Definimos si requieres protección estrictamente temporal o una estrategia de acumulación patrimonial permanente.</span></li>
+            <li><span className="font-normal"><strong>Filtrado Médico:</strong> Cotejamos tu salud con las guías de evaluación médica de múltiples aseguradoras para asegurar que obtengas la mejor calificación y precio posible.</span></li>
+          </ul>
+
+          <h2 className="text-headline text-swiss-black mt-10">Preguntas frecuentes</h2>
           <div className="space-y-4">
             {faqItems.map((item) => (
               <article key={item.question} className="border border-swiss-black/15 p-5">

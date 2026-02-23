@@ -131,21 +131,39 @@ export default function ServiceLandingPage() {
         <div className="col-span-12 border-t border-swiss-black/15 mt-10" />
 
         <section className="col-span-12 md:col-start-3 md:col-span-7 pt-10 space-y-7 text-body text-swiss-black/90">
-          <h2 className="text-headline text-swiss-black">Cómo trabajamos este servicio</h2>
+          <h2 className="text-headline text-swiss-black">¿Qué es y cómo funciona el Seguro de Indemnización?</h2>
+          <p>
+            Incluso con un buen seguro de salud, una estadía en el hospital puede dejarte con miles de dólares en facturas por culpa de tu deducible (Out-of-Pocket). Aquí entra el seguro de indemnización. A diferencia del médico tradicional que le paga a la clínica, una póliza de indemnización <strong>te deposita efectivo directamente a ti</strong>.
+          </p>
+          <p>
+            Te depositamos dinero (libre de impuestos) por cada día de hospitalización, por accidentes en la sala de emergencias, o si sufres una enfermedad grave. En TC Insurance, usamos este seguro como un "escudo financiero" para que puedas pagar tu hipoteca, comida, y deudas mientras te recuperas sin ingresos.
+          </p>
+
+          <h2 className="text-headline text-swiss-black mt-10">Tipos de Cobertura y Cuánto Pagan</h2>
+          <p>
+            Las pólizas (con primas muy accesibles,  a /mes) se pueden personalizar añadiendo "cláusulas" (riders) a la medida:
+          </p>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {processSteps.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>Hospitalización (Hospital Indemnity):</strong> Paga un monto fijo (ej. ,000) el día de ingreso, más un monto diario (ej. ) por los días que pases internado en cama o UCI.</li>
+            <li><strong>Accidentes:</strong> Paga un beneficio fijo por eventos como huesos rotos, quemaduras, atención en urgencias, cirugías o hasta viajes en ambulancia generados por un accidente.</li>
+            <li><strong>Enfermedades Críticas:</strong> Paga un monto global pre-acordado (Lump Sum de ,000 o ,000) si eres diagnosticado por primera vez con cáncer, infarto o derrame cerebral.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Resultado esperado</h2>
+          <h2 className="text-headline text-swiss-black mt-10">¿A quién le conviene este seguro?</h2>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {expectedResults.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>Portadores de planes médicos de alto deducible (HDHP) o "Bronze" de Obamacare,</strong> donde enfrentas de entrada un riesgo de bolsillo enorme.</li>
+            <li><strong>Contratistas, Freelancers o dueños de negocios:</strong> personas que no cuentan con "días de enfermedad pagados" (PTO) y cuyos ingresos mueren en cuanto pisan un hospital.</li>
+            <li><strong>Familias muy activas con hijos menores:</strong> donde las visitas constantes a urgencias o urgent care por fracturas y deportes son una realidad.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Preguntas frecuentes</h2>
+          <h2 className="text-headline text-swiss-black mt-10">¿Cómo te asesoramos?</h2>
+          <ul className="space-y-2 pl-6 list-decimal marker:text-swiss-red font-semibold">
+            <li><span className="font-normal"><strong>Análisis de tu deducible médico:</strong> Estructuramos el pago de la indemnización para que coincida casi exactamente con el monto del deducible (Gap) de tu plan principal.</span></li>
+            <li><span className="font-normal"><strong>Gestión de presupuesto:</strong> Añadimos riders de accidentes o enfermedades críticas solo si no rompen la meta mensual de la familia.</span></li>
+            <li><span className="font-normal"><strong>Filtrado de aseguradoras:</strong> Seleccionamos compañías sin examen médico y con reputación de pagar reclamos rápidamente por depósito directo.</span></li>
+          </ul>
+
+          <h2 className="text-headline text-swiss-black mt-10">Preguntas frecuentes</h2>
           <div className="space-y-4">
             {faqItems.map((item) => (
               <article key={item.question} className="border border-swiss-black/15 p-5">

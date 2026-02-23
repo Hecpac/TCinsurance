@@ -131,21 +131,39 @@ export default function ServiceLandingPage() {
         <div className="col-span-12 border-t border-swiss-black/15 mt-10" />
 
         <section className="col-span-12 md:col-start-3 md:col-span-7 pt-10 space-y-7 text-body text-swiss-black/90">
-          <h2 className="text-headline text-swiss-black">Cómo trabajamos este servicio</h2>
+          <h2 className="text-headline text-swiss-black">¿Qué es y por qué lo necesitas?</h2>
+          <p>
+            El seguro de visión es una cobertura económica pero altamente valorada en Texas. Un examen visual completo sin seguro, más un par de anteojos graduados (montura y lentes), puede costar entre  y  de bolsillo.
+          </p>
+          <p>
+            En TC Insurance, te ayudamos a incorporar un plan de visión (a menudo por menos del costo de una suscripción de Netflix) que te garantiza atención preventiva anual y descuentos masivos en las ópticas y minoristas más grandes del país.
+          </p>
+
+          <h2 className="text-headline text-swiss-black mt-10">Costos y Beneficios Típicos</h2>
+          <p>
+            Los seguros de visión funcionan como planes de descuento y créditos pre-pactados (desde /mes):
+          </p>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {processSteps.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>Examen Anual:</strong> Cubren un examen visual comprensivo anual por un copago mínimo (usualmente  - ), clave para detectar problemas o enfermedades tempranas.</li>
+            <li><strong>Asignación (Allowance):</strong> Las aseguradoras otorgan un crédito anual ( a ) para gastar en monturas o lentes de contacto. Todo exceso recibe un descuento extra (usualmente 20%).</li>
+            <li><strong>Lentes Recetados:</strong> Los lentes oftálmicos básicos tienen un copago bajo (). Mejoras como antirreflejante o policarbonato tienen copagos tabulados y predecibles.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Resultado esperado</h2>
+          <h2 className="text-headline text-swiss-black mt-10">Redes de Proveedores (VSP vs EyeMed)</h2>
+          <p>Al igual que en salud, la red importa muchísimo en visión. Las dos gigantes nacionales son:</p>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {expectedResults.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>VSP (Vision Service Plan):</strong> Reconocida por su extensa red de doctores privados e independientes. Excelente si prefieres atención personalizada en clínicas locales.</li>
+            <li><strong>EyeMed:</strong> Fuerte presencia corporativa. Ideal si te gusta comprar en LensCrafters, Pearle Vision, Target Optical o Ray-Ban.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Preguntas frecuentes</h2>
+          <h2 className="text-headline text-swiss-black mt-10">Cómo elegimos tu plan</h2>
+          <ul className="space-y-2 pl-6 list-decimal marker:text-swiss-red font-semibold">
+            <li><span className="font-normal"><strong>Ubicación de compra:</strong> Evaluamos si prefieres ir al oftalmólogo independiente de tu colonia o a una gran cadena en el mall.</span></li>
+            <li><span className="font-normal"><strong>Tipo de uso:</strong> Ajustamos la recomendación si prefieres usar lentes de contacto (frecuentemente más caros anualmente) vs monturas tradicionales.</span></li>
+            <li><span className="font-normal"><strong>Inclusión Familiar:</strong> Si varios miembros del hogar usan lentes, consolidamos todo en una sola póliza familiar (-/mes) que ahorra significativamente en primas.</span></li>
+          </ul>
+
+          <h2 className="text-headline text-swiss-black mt-10">Preguntas frecuentes</h2>
           <div className="space-y-4">
             {faqItems.map((item) => (
               <article key={item.question} className="border border-swiss-black/15 p-5">

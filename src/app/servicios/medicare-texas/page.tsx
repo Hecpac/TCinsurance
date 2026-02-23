@@ -131,21 +131,36 @@ export default function ServiceLandingPage() {
         <div className="col-span-12 border-t border-swiss-black/15 mt-10" />
 
         <section className="col-span-12 md:col-start-3 md:col-span-7 pt-10 space-y-7 text-body text-swiss-black/90">
-          <h2 className="text-headline text-swiss-black">Cómo trabajamos este servicio</h2>
+          <h2 className="text-headline text-swiss-black">¿Qué es Medicare y por qué necesitas asesoría?</h2>
+          <p>
+            Medicare es el programa federal de seguro de salud para personas de 65 años o más (y ciertas personas más jóvenes con discapacidades). Sin embargo, inscribirse no significa que "todo es gratis". El sistema de Medicare original tiene vacíos de cobertura que pueden llevarte a pagar miles de dólares en deducibles y copagos si no lo complementas adecuadamente.
+          </p>
+          <p>
+            En TC Insurance, nos especializamos en ayudar a la comunidad hispana en Texas a descifrar la sopa de letras de Medicare (Partes A, B, C y D) para que elijas el plan que mejor se adapte a tus necesidades de salud y a tu bolsillo.
+          </p>
+
+          <h2 className="text-headline text-swiss-black mt-10">Costos y Partes de Medicare Original</h2>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {processSteps.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>Parte A (Hospital):</strong> Generalmente no tiene prima mensual si tú o tu cónyuge trabajaron y pagaron impuestos de Medicare por al menos 10 años (40 trimestres). Cubre estadías en el hospital y cuidado en centros de enfermería.</li>
+            <li><strong>Parte B (Médico):</strong> Cubre visitas al doctor, atención ambulatoria y equipo médico. La prima estándar en 2026 ronda los  mensuales. No tiene límite de gastos de bolsillo (Out-of-Pocket Maximum).</li>
+            <li><strong>El Peligro del 20%:</strong> Medicare Original solo cubre el 80% de los costos aprobados de la Parte B. Tú eres responsable del 20% restante, sin límite anual, lo que hace indispensable un plan adicional.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Resultado esperado</h2>
+          <h2 className="text-headline text-swiss-black mt-10">Caminos para tu cobertura: Advantage vs. Suplemento (Medigap)</h2>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {expectedResults.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>Medicare Advantage (Parte C):</strong> Planes privados (HMO o PPO) que agrupan las Partes A, B y D (medicamentos). Incluyen beneficios extra como dental y visión. Muchos tienen prima de /bin/zsh, pero usas su red de médicos locales y pagas copagos.</li>
+            <li><strong>Medigap (Seguro Suplementario):</strong> Planes que pagan el 20% que Medicare Original no cubre. Tienen una prima mensual más alta (-+), pero te dan libertad de ir a cualquier médico en EE. UU. que acepte Medicare, sin referidos, y tus gastos de bolsillo son casi nulos.</li>
+            <li><strong>Parte D (Medicamentos):</strong> Si eliges Medigap, debes comprar un plan de la Parte D por separado para cubrir medicinas. En un Advantage, usualmente ya viene incluido.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Preguntas frecuentes</h2>
+          <h2 className="text-headline text-swiss-black mt-10">Cómo elegir el plan correcto en Texas</h2>
+          <ul className="space-y-2 pl-6 list-decimal marker:text-swiss-red font-semibold">
+            <li><span className="font-normal"><strong>Validación de tus médicos:</strong> Revisamos si tus doctores actuales aceptan un plan Advantage específico o si necesitas la libertad total de un Medigap.</span></li>
+            <li><span className="font-normal"><strong>Revisión de tu lista de medicamentos (Rx):</strong> Las medicinas caras son la mayor fuente de gastos sorpresa. Comparamos tu lista exacta contra el formulario de cada plan para minimizar tus costos en farmacia.</span></li>
+            <li><span className="font-normal"><strong>Análisis de tolerancia al riesgo:</strong> Evaluamos si prefieres pagar una prima fija más alta pero casi nada al ir al doctor (Medigap), o pagar /bin/zsh de prima mensual pero con copagos por uso (Advantage).</span></li>
+          </ul>
+
+          <h2 className="text-headline text-swiss-black mt-10">Preguntas frecuentes</h2>
           <div className="space-y-4">
             {faqItems.map((item) => (
               <article key={item.question} className="border border-swiss-black/15 p-5">
