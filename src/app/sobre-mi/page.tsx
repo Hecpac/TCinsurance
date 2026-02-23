@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import GridContainer from "@/components/GridContainer";
 import Philosophy from "@/components/Philosophy";
+import AboutContent from "./components/AboutContent";
 import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -95,16 +96,7 @@ export default function AboutPage() {
 
       <Philosophy />
 
-      <GridContainer as="section" className="pb-24">
-        <div className="col-span-12 md:col-start-8 md:col-span-5 pt-8">
-          <Link
-            href={HOME_SECTION_PATHS.contact}
-            className="tap-target text-meta text-swiss-black hover:text-swiss-red-ink"
-          >
-            Agendar conversación &rarr;
-          </Link>
-        </div>
-      </GridContainer>
+      <AboutContent />
     </div>
   );
 }
