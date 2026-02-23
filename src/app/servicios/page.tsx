@@ -6,7 +6,7 @@ import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 import { servicesCatalog } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: `Servicios | ${siteConfig.brand.name}`,
+  title: "Seguros de Salud, Vida y Gastos Finales en Texas | TC Insurance",
   description:
     "Catálogo técnico de coberturas: salud, vida, gastos finales, dental, Medicare, visión y pólizas de indemnización.",
   alternates: {

@@ -33,7 +33,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "texas-tiene-la-tasa-m-s-alta-de-personas-sin-seguro-m-dico-d",
+    slug: "texas-tiene-la-tasa-mas-alta-de-personas-sin-seguro-medico",
     title: "Texas tiene la tasa más alta de personas sin seguro médico del país, revela informe - Dallas News",
     excerpt: "Últimas noticias: Texas tiene la tasa más alta de personas sin seguro médico del país, revela informe - Dallas News. Haz clic para leer más sobre este desarrollo importante para el mercado de seguros en Texas.",
     category: "NOTICIAS",
@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "por-qu-podr-a-recibir-una-factura-del-m-dico-despu-s-de-su-c",
+    slug: "por-que-podria-recibir-una-factura-del-medico-despues-de-su-chequeo-anual",
     title: "Por qué podría recibir una factura del médico después de su chequeo anual gratis - Texas Department of Insurance (.gov)",
     excerpt: "Últimas noticias: Por qué podría recibir una factura del médico después de su chequeo anual gratis - Texas Department of Insurance (.gov). Haz clic para leer más sobre este desarrollo importante para el mercado de seguros en Texas.",
     category: "NOTICIAS",
@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "the-cochrun-group-m-s-de-dos-d-cadas-protegiendo-y-sirviendo",
+    slug: "the-cochrun-group-mas-de-dos-decadas-protegiendo-y-sirviendo",
     title: "The Cochrun Group: más de dos décadas protegiendo y sirviendo - Hola News",
     excerpt: "Últimas noticias: The Cochrun Group: más de dos décadas protegiendo y sirviendo - Hola News. Haz clic para leer más sobre este desarrollo importante para el mercado de seguros en Texas.",
     category: "NOTICIAS",
@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "el-aumento-vertiginoso-de-las-primas-del-obamacare-obliga-a-",
+    slug: "el-aumento-vertiginoso-de-las-primas-del-obamacare-obliga-a-tomar-decisiones-dificiles",
     title: "El aumento vertiginoso de las primas del Obamacare obliga a los afiliados a tomar decisiones difíciles - CNN en Español",
     excerpt: "Últimas noticias: El aumento vertiginoso de las primas del Obamacare obliga a los afiliados a tomar decisiones difíciles - CNN en Español. Haz clic para leer más sobre este desarrollo importante para el mercado de seguros en Texas.",
     category: "NOTICIAS",
