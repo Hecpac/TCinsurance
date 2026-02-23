@@ -131,21 +131,40 @@ export default function ServiceLandingPage() {
         <div className="col-span-12 border-t border-swiss-black/15 mt-10" />
 
         <section className="col-span-12 md:col-start-3 md:col-span-7 pt-10 space-y-7 text-body text-swiss-black/90">
-          <h2 className="text-headline text-swiss-black">Cómo trabajamos este servicio</h2>
+          <h2 className="text-headline text-swiss-black">¿Qué es el Seguro de Salud en Texas?</h2>
+          <p>
+            El seguro de salud en Texas no es solo una tarjeta para emergencias; es un contrato de protección financiera contra los altos costos de la atención médica estadounidense. En Texas, donde los gastos de bolsillo por una hospitalización sin seguro pueden superar los $30,000, contar con cobertura adecuada es vital para proteger tu patrimonio y el bienestar de tu familia.
+          </p>
+          <p>
+            TC Insurance ofrece asesoría gratuita en español para que navegues el Mercado de Seguros Médicos (Obamacare/ACA) y encuentres un plan que cubra tus medicamentos, especialistas y centros preferidos sin desestabilizar tu presupuesto mensual. Según el Texas Department of Insurance (TDI), elegir la red correcta (HMO vs. PPO) desde el inicio evita miles de dólares en facturas sorpresas.
+          </p>
+
+          <h2 className="text-headline text-swiss-black mt-10">¿Cuánto cuesta un seguro médico en Texas?</h2>
+          <p>
+            El costo mensual (prima) de un seguro de salud en Texas varía radicalmente según tu edad, código postal, ingresos y tamaño del núcleo familiar.
+          </p>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {processSteps.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>Sin subsidios:</strong> Un plan Silver individual promedia entre $450 y $600 al mes.</li>
+            <li><strong>Con subsidios (Créditos Fiscales de la ACA):</strong> Más del 80% de los tejanos califican para ayuda federal, lo que puede reducir la prima mensual a $10 - $50, e incluso a $0 en algunos escenarios.</li>
+            <li><strong>Gastos de bolsillo:</strong> Además de la prima, evaluamos el deducible (lo que pagas antes de que el seguro actúe al 100%) y el Out-of-Pocket Maximum (tu límite de riesgo financiero anual), que suele oscilar entre $3,000 y $9,450.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Resultado esperado</h2>
+          <h2 className="text-headline text-swiss-black mt-10">Redes Médicas: HMO vs. PPO vs. EPO</h2>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            {expectedResults.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li><strong>HMO (Health Maintenance Organization):</strong> Requieren referidos de tu médico primario para ver especialistas. Son los más económicos en Texas, pero no cubren fuera de la red.</li>
+            <li><strong>PPO (Preferred Provider Organization):</strong> Libertad de ver especialistas sin referido e incluso cubren una parte fuera de la red. Sus primas mensuales son más altas.</li>
+            <li><strong>EPO (Exclusive Provider Organization):</strong> Un punto medio. No requieren referidos para especialistas, pero la cobertura fuera de la red es nula, salvo emergencias.</li>
           </ul>
 
-          <h2 className="text-headline text-swiss-black">Preguntas frecuentes</h2>
+          <h2 className="text-headline text-swiss-black mt-10">Cómo trabajamos tu caso</h2>
+          <ul className="space-y-2 pl-6 list-decimal marker:text-swiss-red font-semibold">
+            <li><span className="font-normal"><strong>Validación de médicos actuales:</strong> Revisamos si tu pediatra o especialista acepta la red del nuevo seguro.</span></li>
+            <li><span className="font-normal"><strong>Revisión de medicamentos (Rx):</strong> Verificamos en qué "Tier" cae tu medicina en aseguradoras como Ambetter o BCBS.</span></li>
+            <li><span className="font-normal"><strong>Proyección de uso médico:</strong> Balanceamos el costo de la prima con el deducible según tus necesidades anuales.</span></li>
+            <li><span className="font-normal"><strong>Definir plan alineado a presupuesto:</strong> Aseguramos que la póliza elegida proteja tus finanzas sin asfixiarte mes a mes.</span></li>
+          </ul>
+
+          <h2 className="text-headline text-swiss-black mt-10">Preguntas frecuentes</h2>
           <div className="space-y-4">
             {faqItems.map((item) => (
               <article key={item.question} className="border border-swiss-black/15 p-5">
