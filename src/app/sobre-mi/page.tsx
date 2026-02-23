@@ -5,18 +5,18 @@ import Philosophy from "@/components/Philosophy";
 import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: `Sobre Mí | ${siteConfig.brand.name}`,
+  title: "Tatiana Castañeda — Agente de Seguros en Español, Dallas TX | TC Insurance",
   description:
-    "Conoce a Yuri Tatiana Castañeda Carmona, agente integral de seguros de salud y vida en Dallas, Texas.",
+    "Conoce a Tatiana Castañeda, agente integral de seguros de salud y vida en Dallas, Texas. Asesoría en español para proteger a tu familia.",
   alternates: {
     canonical: `${siteConfig.seo.siteUrl}/sobre-mi`,
   },
   openGraph: {
     type: "website",
     url: "/sobre-mi",
-    title: `Sobre Mí | ${siteConfig.brand.name}`,
+    title: "Tatiana Castañeda — Agente de Seguros en Español, Dallas TX | TC Insurance",
     description:
-      "Conoce a Yuri Tatiana Castañeda Carmona, agente integral de seguros de salud y vida en Dallas, Texas.",
+      "Conoce a Tatiana Castañeda, agente integral de seguros de salud y vida en Dallas, Texas. Asesoría en español para proteger a tu familia.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: siteConfig.seo.defaultOgImage,
         width: 1200,
         height: 630,
-        alt: "TC Insurance - Sobre Yuri Tatiana Castañeda",
+        alt: "TC Insurance - Sobre Tatiana Castañeda",
       },
     ],
   },
@@ -42,14 +42,19 @@ const breadcrumbJsonLd = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Yuri Tatiana Castañeda Carmona",
+  name: "Tatiana Castañeda",
   jobTitle: "Licensed Insurance Agent",
   worksFor: {
-    "@type": "Organization",
+    "@type": "InsuranceAgency",
     name: "TC Insurance Agency Services, LLC",
     url: siteConfig.seo.siteUrl,
   },
-  areaServed: "Texas, USA",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dallas",
+    addressRegion: "TX",
+  },
+  knowsLanguage: ["Spanish", "English"],
 };
 
 export default function AboutPage() {
@@ -71,9 +76,12 @@ export default function AboutPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <h1 className="text-display tracking-[-0.055em] text-swiss-black">
-            Sobre
+            Tatiana
             <br />
-            Yuri.
+            Castañeda.
+            <span className="block text-headline mt-4 text-swiss-gray font-normal tracking-normal">
+              Agente de Seguros de Salud y Vida en Dallas, Texas
+            </span>
           </h1>
         </div>
 

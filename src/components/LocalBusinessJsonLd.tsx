@@ -27,8 +27,21 @@ export default function LocalBusinessJsonLd() {
         name: siteConfig.business.name,
         url: siteConfig.seo.siteUrl,
         description: siteConfig.seo.defaultDescription,
-        telephone: siteConfig.business.telephone,
-        areaServed: siteConfig.business.areaServed,
+        telephone: siteConfig.contact.phoneHref,
+        email: siteConfig.contact.email,
+        areaServed: [
+          { "@type": "City", name: "Dallas" },
+          { "@type": "City", name: "Fort Worth" },
+          { "@type": "City", name: "Lewisville" },
+          { "@type": "City", name: "Irving" },
+          { "@type": "City", name: "Denton" }
+        ],
+        founder: {
+          "@type": "Person",
+          name: "Tatiana Castañeda"
+        },
+        foundingDate: "2020",
+        availableLanguage: ["Spanish", "English"],
         image: `${siteConfig.seo.siteUrl}${siteConfig.seo.defaultOgImage}`,
         logo: `${siteConfig.seo.siteUrl}${siteConfig.brand.logoPath}`,
         priceRange: "$$",
@@ -41,8 +54,8 @@ export default function LocalBusinessJsonLd() {
           ? {
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: siteConfig.business.geo.latitude,
-                longitude: siteConfig.business.geo.longitude,
+                latitude: Number(siteConfig.business.geo.latitude),
+                longitude: Number(siteConfig.business.geo.longitude),
               },
             }
           : {}),

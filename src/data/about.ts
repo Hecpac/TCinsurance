@@ -13,7 +13,7 @@ export interface AboutProfile {
 }
 
 export const aboutProfile: AboutProfile = {
-  founder: "Yuri Tatiana Castañeda Carmona",
+  founder: "Tatiana Castañeda",
   role: "Agente Integral de Seguros de Salud y Vida",
   intro:
     "Sé lo importante que es proteger lo que más amas. Por eso, en TCInsurance Agency Services LLC, más que vender seguros, mi misión es brindarte tranquilidad, claridad y confianza desde el primer momento.",
@@ -32,6 +32,6 @@ export const aboutProfile: AboutProfile = {
   ctaHref: "/#contacto",
   portrait: {
     src: "/Tatiana.png",
-    alt: "Yuri Tatiana Castañeda Carmona en sesión de asesoría",
+    alt: "Tatiana Castañeda en sesión de asesoría",
   },
 };

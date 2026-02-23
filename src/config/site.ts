@@ -69,7 +69,7 @@ export const siteConfig = {
       posterImage: "/hero-portrait.jpg",
     },
   },
-  founder: "Yuri Tatiana Castañeda Carmona",
+  founder: "Tatiana Castañeda",
   location: {
     short: "DALLAS, TX",
     full: "14951 Dallas Pkwy Suite 240, Dallas, TX 75254",
