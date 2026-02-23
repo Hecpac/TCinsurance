@@ -143,8 +143,8 @@ export default function HeroSection() {
             src="/dallas-texas-bg.jpeg"
             alt="Dallas Texas Background"
             fill
-            priority
-            quality={60}
+            quality={48}
+            sizes="100vw"
             className="object-cover object-[center_35%] grayscale contrast-125 saturate-0"
           />
         </div>
@@ -194,7 +194,7 @@ export default function HeroSection() {
                 alt="Retrato profesional de Tatiana Castañeda"
                 fill
                 priority
-                quality={72}
+                quality={68}
                 sizes="(min-width: 1200px) 33vw, (min-width: 768px) 38vw, 82vw"
                 className="object-cover object-top grayscale contrast-125 saturate-0"
               />

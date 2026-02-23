@@ -666,8 +666,10 @@
   }
 
   .services-carousel__dot {
-    width: 24px;
-    height: 24px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -675,12 +677,14 @@
     border: none;
     cursor: pointer;
     padding: 0;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgb(0 0 0 / 0.08);
   }
 
   .services-carousel__dot::before {
     content: "";
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: var(--color-m3-outline-variant);
     transition:
       background-color var(--transition-fast),
@@ -697,7 +701,7 @@
   }
 
   .services-carousel__dot--active::before {
-    width: 24px;
+    width: 28px;
     background: var(--color-m3-primary);
   }
 
