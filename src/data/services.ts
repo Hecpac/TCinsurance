@@ -7,6 +7,7 @@ export interface InsuranceService {
   idealFor: string;
   result: string;
   bullets: string[];
+  detailPath?: string;
 }
 
 export const servicesCatalog: InsuranceService[] = [
@@ -20,6 +21,7 @@ export const servicesCatalog: InsuranceService[] = [
     idealFor: "Familias y trabajadores independientes",
     result: "Red médica adecuada + costos predecibles",
     bullets: ["Cobertura individual y familiar", "Redes PPO / HMO en Texas"],
+    detailPath: "/servicios/seguro-salud-texas",
   },
   {
     number: "02",
@@ -31,6 +33,7 @@ export const servicesCatalog: InsuranceService[] = [
     idealFor: "Familias con dependientes y hogares con deudas",
     result: "Liquidez para proteger ingresos y compromisos",
     bullets: ["Opciones temporales y permanentes", "Protección para ingresos y deudas"],
+    detailPath: "/servicios/seguro-vida-dallas",
   },
   {
     number: "03",
@@ -42,6 +45,7 @@ export const servicesCatalog: InsuranceService[] = [
     idealFor: "Adultos mayores y planificación familiar",
     result: "Efectivo rápido para gastos y trámites urgentes",
     bullets: ["Beneficio rápido en efectivo", "Ideal para planificación patrimonial"],
+    detailPath: "/servicios/seguro-gastos-finales-texas",
   },
   {
     number: "04",
@@ -53,6 +57,7 @@ export const servicesCatalog: InsuranceService[] = [
     idealFor: "Familias y prevención anual",
     result: "Costos más controlados en limpiezas y tratamientos",
     bullets: ["Limpiezas y revisiones periódicas", "Cobertura para adultos y niños"],
+    detailPath: "/servicios/seguro-dental-texas",
   },
   {
     number: "05",
@@ -64,6 +69,7 @@ export const servicesCatalog: InsuranceService[] = [
     idealFor: "Adultos y niños que usan lentes",
     result: "Examen anual + beneficios en lentes y armazones",
     bullets: ["Examen visual anual", "Beneficios para lentes y armazones"],
+    detailPath: "/servicios/seguro-vision-texas",
   },
   {
     number: "06",
@@ -75,6 +81,7 @@ export const servicesCatalog: InsuranceService[] = [
     idealFor: "Personas 65+ y jubilados",
     result: "Plan alineado a médicos, recetas y presupuesto",
     bullets: ["Evaluación de médicos y medicamentos", "Optimización de costo total mensual"],
+    detailPath: "/servicios/medicare-texas",
   },
   {
     number: "07",
@@ -86,5 +93,6 @@ export const servicesCatalog: InsuranceService[] = [
     idealFor: "Quienes quieren un respaldo en efectivo",
     result: "Liquidez para deducibles y gastos imprevistos",
     bullets: ["Complemento de cobertura principal", "Liquidez para deducibles y gastos imprevistos"],
+    detailPath: "/servicios/seguro-indemnizacion-texas",
   },
 ];

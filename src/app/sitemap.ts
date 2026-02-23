@@ -8,7 +8,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "/",
     "/servicios",
+    "/servicios/seguro-salud-texas",
+    "/servicios/seguro-vida-dallas",
     "/servicios/seguro-gastos-finales-texas",
+    "/servicios/seguro-dental-texas",
+    "/servicios/seguro-vision-texas",
+    "/servicios/medicare-texas",
+    "/servicios/seguro-indemnizacion-texas",
     "/sobre-mi",
     "/blog",
     "/privacidad",

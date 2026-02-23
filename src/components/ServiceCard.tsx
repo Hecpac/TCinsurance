@@ -6,13 +6,9 @@ interface ServiceCardProps {
   service: InsuranceService;
 }
 
-const serviceDetailHrefBySlug: Partial<Record<InsuranceService["slug"], string>> = {
-  "gastos-finales": "/servicios/seguro-gastos-finales-texas",
-};
-
 export default function ServiceCard({ service }: ServiceCardProps) {
-  const detailHref = serviceDetailHrefBySlug[service.slug] ?? HOME_SECTION_PATHS.contact;
-  const isDetailPage = Boolean(serviceDetailHrefBySlug[service.slug]);
+  const detailHref = service.detailPath ?? HOME_SECTION_PATHS.contact;
+  const isDetailPage = Boolean(service.detailPath);
 
   return (
     <article className="service-card service-card--carousel h-full">
