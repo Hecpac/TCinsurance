@@ -17,6 +17,10 @@ const legacyBlogSlugRedirects = [
     source: "/blog/el-aumento-vertiginoso-de-las-primas-del-obamacare-obliga-a-",
     destination: "/blog/el-aumento-vertiginoso-de-las-primas-del-obamacare-obliga-a-tomar-decisiones-dificiles",
   },
+  {
+    source: "/blog/gastos-finales-arquitectura-financiera",
+    destination: "/blog/seguro-gastos-finales-texas-guia-completa",
+  },
 ] as const;
 
 const nextConfig: NextConfig = {

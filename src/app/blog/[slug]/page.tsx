@@ -228,6 +228,15 @@ export default async function BlogPostPage({
     author: {
       "@type": "Person",
       name: post.author,
+      jobTitle: "Agente de seguros en Texas",
+      url: `${siteConfig.seo.siteUrl}/sobre-mi`,
+    },
+    about: {
+      "@type": "InsuranceProduct",
+      name:
+        post.slug === "seguro-gastos-finales-texas-guia-completa"
+          ? "Seguro de gastos finales en Texas"
+          : post.category,
     },
     publisher: {
       "@type": "Organization",
@@ -235,8 +244,27 @@ export default async function BlogPostPage({
       name: siteConfig.brand.name,
       url: siteConfig.seo.siteUrl,
     },
-    keywords: post.category,
+    keywords:
+      post.slug === "seguro-gastos-finales-texas-guia-completa"
+        ? "seguro de gastos finales texas, seguro funeral texas, final expense insurance dallas español"
+        : post.category,
   };
+
+  const faqJsonLd =
+    post.faq && post.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: post.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
 
   return (
     <div className="min-h-screen">
@@ -254,6 +282,12 @@ export default async function BlogPostPage({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
+        {faqJsonLd ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          />
+        ) : null}
         <div className="col-span-12 md:col-span-2 pt-10">
           <Link href="/blog" className="tap-target text-meta text-swiss-gray hover:text-swiss-red-ink">
             Volver al blog &rarr;
@@ -298,6 +332,25 @@ export default async function BlogPostPage({
         <div className="col-span-12 md:col-start-3 md:col-span-7 pt-10 space-y-8">
           {post.content.map((paragraph, index) => renderContentBlock(paragraph, index))}
         </div>
+
+        {post.faq && post.faq.length > 0 ? (
+          <section
+            aria-labelledby="faq-heading"
+            className="col-span-12 md:col-start-3 md:col-span-7 border-t border-swiss-black/15 mt-10 pt-10"
+          >
+            <h2 id="faq-heading" className="text-headline font-semibold tracking-tight text-swiss-black">
+              Preguntas frecuentes
+            </h2>
+            <div className="mt-6 space-y-5">
+              {post.faq.map((item, index) => (
+                <article key={`${item.question}-${index}`} className="border border-swiss-black/12 p-5">
+                  <h3 className="text-body font-semibold text-swiss-black">{item.question}</h3>
+                  <p className="mt-2 text-body text-swiss-black/85">{item.answer}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         {/* Share buttons at bottom of article */}
         <div className="col-span-12 md:col-start-3 md:col-span-7 border-t border-swiss-black/15 mt-14 pt-8">
