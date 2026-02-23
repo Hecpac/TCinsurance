@@ -8,24 +8,24 @@ import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Tatiana Castañeda — Agente de Seguros en Español, Dallas TX | TC Insurance",
   description:
-    "Conoce a Tatiana Castañeda, agente integral de seguros de salud y vida en Dallas, Texas. Asesoría en español para proteger a tu familia.",
+    "Tatiana Castañeda es agente licenciada de seguros de salud, vida y gastos finales en Dallas, Texas. Asesoría personalizada en español para familias latinas en DFW. Agenda tu consulta gratuita.",
   alternates: {
     canonical: `${siteConfig.seo.siteUrl}/sobre-mi`,
   },
   openGraph: {
     type: "website",
-    url: "/sobre-mi",
-    title: "Tatiana Castañeda — Agente de Seguros en Español, Dallas TX | TC Insurance",
+    url: `${siteConfig.seo.siteUrl}/sobre-mi`,
+    title: "Tatiana Castañeda — Agente de Seguros en Español en Dallas, Texas",
     description:
-      "Conoce a Tatiana Castañeda, agente integral de seguros de salud y vida en Dallas, Texas. Asesoría en español para proteger a tu familia.",
+      "Asesoría personalizada en español para seguros de salud, vida y gastos finales. Agente licenciada en Texas desde 2020.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
     images: [
       {
-        url: siteConfig.seo.defaultOgImage,
+        url: "/Tatiana.png",
         width: 1200,
         height: 630,
-        alt: "TC Insurance - Sobre Tatiana Castañeda",
+        alt: "Tatiana Castañeda, agente de seguros en Dallas TX",
       },
     ],
   },
@@ -47,17 +47,38 @@ const personJsonLd = {
   givenName: "Yuri Tatiana",
   familyName: "Castañeda Carmona",
   jobTitle: "Licensed Insurance Agent",
+  description: "Agente licenciada de seguros de salud, vida y gastos finales en Dallas, Texas. Asesoría personalizada en español para familias latinas en DFW.",
+  url: `${siteConfig.seo.siteUrl}/sobre-mi`,
+  image: `${siteConfig.seo.siteUrl}/Tatiana.png`,
+  telephone: "+12039932369",
+  email: "hello@tcinsurance-llc.com",
+  knowsLanguage: ["Spanish", "English"],
   worksFor: {
     "@type": "InsuranceAgency",
     name: "TC Insurance Agency Services, LLC",
     url: siteConfig.seo.siteUrl,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "14951 Dallas Pkwy Suite 240",
+      addressLocality: "Dallas",
+      addressRegion: "TX",
+      postalCode: "75254",
+      addressCountry: "US"
+    },
+    foundingDate: "2020",
+    areaServed: [
+      { "@type": "City", name: "Dallas" },
+      { "@type": "City", name: "Fort Worth" },
+      { "@type": "City", name: "Lewisville" },
+      { "@type": "City", name: "Irving" },
+      { "@type": "City", name: "Denton" },
+      { "@type": "State", name: "Texas" }
+    ]
   },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Dallas",
-    addressRegion: "TX",
-  },
-  knowsLanguage: ["Spanish", "English"],
+  sameAs: [
+    "https://www.instagram.com/tcinsurance1",
+    "https://www.facebook.com/TatianaCastanedaSeguros"
+  ]
 };
 
 export default function AboutPage() {
@@ -78,19 +99,14 @@ export default function AboutPage() {
         </div>
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
+          <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray mb-4">Sobre Tatiana Castañeda</p>
           <h1 className="text-display tracking-[-0.055em] text-swiss-black">
-            Tatiana
-            <br />
-            Castañeda.
-            <span className="block text-headline mt-4 text-swiss-gray font-normal tracking-normal">
-              Agente de Seguros de Salud y Vida en Dallas, Texas
-            </span>
+            Agente de Seguros de Salud, Vida y Gastos Finales en Dallas, Texas
           </h1>
         </div>
 
         <p className="col-span-12 md:col-start-8 md:col-span-5 text-body text-swiss-gray pt-10 pb-14">
-          Acompañamiento cercano y estrategia técnica para proteger la salud,
-          estabilidad y legado financiero de cada familia.
+          Asesoría personalizada en español para familias latinas en Dallas–Fort Worth. Comparo opciones, explico la letra pequeña y te acompaño en cada decisión de cobertura.
         </p>
 
         <div className="col-span-12 border-t border-swiss-black/20" />

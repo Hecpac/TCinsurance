@@ -14,13 +14,11 @@ export interface AboutProfile {
 
 export const aboutProfile: AboutProfile = {
   founder: "Tatiana Castañeda",
-  role: "Agente Integral de Seguros de Salud y Vida",
+  role: "Agente Licenciada de Seguros de Salud y Vida · Texas",
   intro:
-    "Sé lo importante que es proteger lo que más amas. Por eso, en TCInsurance Agency Services LLC, más que vender seguros, mi misión es brindarte tranquilidad, claridad y confianza desde el primer momento.",
+    "Sé lo importante que es proteger lo que más amas. Por eso fundé TC Insurance Agency Services en 2020, con una misión clara: que cada familia latina en Texas pueda tomar decisiones de cobertura con información real, sin presión y en su idioma.",
   story: [
-    "Trabajo con el corazón y con un enfoque profundamente humano. Soy una agente cercana y comprometida con cada cliente: me gusta escucharte, entender tus necesidades y explicarte cada detalle con paciencia —incluyendo la letra pequeña— porque la confianza se construye con honestidad y transparencia.",
-    "Para mí no eres un número, eres una familia con metas, retos y sueños que merece sentirse segura y respaldada. Te acompaño para que tomes decisiones informadas, comparando opciones con claridad y eligiendo la cobertura que realmente proteja tu presente y tu futuro.",
-    "Si estás buscando una agente que te trate con respeto, claridad y dedicación genuina, aquí estoy para servirte. Quiero ser tu agente de confianza hoy y siempre.",
+    "Antes de convertirme en agente, vi de cerca lo que pasa cuando una familia enfrenta una emergencia médica o la pérdida de un ser querido sin la protección adecuada.",
   ],
   credentials: [
     "Licensed Insurance Agent in Texas",
