@@ -11,7 +11,7 @@ export default function PostCTA({ trackingId = "blog_post" }: PostCTAProps) {
       title="¿Quieres saber cómo aplica a tu caso?"
       subtitle="Te guiamos en 15 minutos para priorizar la cobertura correcta según tu etapa de vida y presupuesto."
       primaryButton={{ label: "Consulta tu caso gratis", href: HOME_SECTION_PATHS.contact }}
-      secondaryButton={{ label: "Ver servicios", href: "/#servicios" }}
+      secondaryButton={{ label: "Ver servicios", href: "/servicios" }}
       trackingId={trackingId}
     />
   );

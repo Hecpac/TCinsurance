@@ -5,7 +5,15 @@ import { siteConfig } from "@/config/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.seo.siteUrl;
   const now = new Date();
-  const staticRoutes = ["/", "/servicios", "/sobre-mi", "/blog", "/privacidad", "/terminos"];
+  const staticRoutes = [
+    "/",
+    "/servicios",
+    "/servicios/seguro-gastos-finales-texas",
+    "/sobre-mi",
+    "/blog",
+    "/privacidad",
+    "/terminos",
+  ];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
     url: new URL(route, base).toString(),

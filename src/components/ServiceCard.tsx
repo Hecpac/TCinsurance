@@ -6,7 +6,14 @@ interface ServiceCardProps {
   service: InsuranceService;
 }
 
+const serviceDetailHrefBySlug: Partial<Record<InsuranceService["slug"], string>> = {
+  "gastos-finales": "/servicios/seguro-gastos-finales-texas",
+};
+
 export default function ServiceCard({ service }: ServiceCardProps) {
+  const detailHref = serviceDetailHrefBySlug[service.slug] ?? HOME_SECTION_PATHS.contact;
+  const isDetailPage = Boolean(serviceDetailHrefBySlug[service.slug]);
+
   return (
     <article className="service-card service-card--carousel h-full">
       <header className="service-card__header">
@@ -49,11 +56,15 @@ export default function ServiceCard({ service }: ServiceCardProps) {
 
       <div className="service-card__cta">
         <Link
-          href={HOME_SECTION_PATHS.contact}
+          href={detailHref}
           className="service-card__link tap-target"
-          aria-label={`Consultar opciones de ${service.titleEs}`}
+          aria-label={
+            isDetailPage
+              ? `Ver detalles de ${service.titleEs}`
+              : `Consultar opciones de ${service.titleEs}`
+          }
         >
-          Consultar opciones
+          {isDetailPage ? "Ver detalles" : "Consultar opciones"}
           <span className="service-card__link-arrow" aria-hidden>
             &rarr;
           </span>
