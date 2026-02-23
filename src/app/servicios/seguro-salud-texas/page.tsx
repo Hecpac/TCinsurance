@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import GridContainer from "@/components/GridContainer";
+import ComparisonTable from "@/components/ComparisonTable";
 import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 
 const PAGE_PATH = "/servicios/seguro-salud-texas";
@@ -149,12 +150,18 @@ export default function ServiceLandingPage() {
             <li><strong>Gastos de bolsillo:</strong> Además de la prima, evaluamos el deducible (lo que pagas antes de que el seguro actúe al 100%) y el Out-of-Pocket Maximum (tu límite de riesgo financiero anual), que suele oscilar entre $3,000 y $9,450.</li>
           </ul>
 
+          
           <h2 className="text-headline text-swiss-black mt-10">Redes Médicas: HMO vs. PPO vs. EPO</h2>
-          <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            <li><strong>HMO (Health Maintenance Organization):</strong> Requieren referidos de tu médico primario para ver especialistas. Son los más económicos en Texas, pero no cubren fuera de la red.</li>
-            <li><strong>PPO (Preferred Provider Organization):</strong> Libertad de ver especialistas sin referido e incluso cubren una parte fuera de la red. Sus primas mensuales son más altas.</li>
-            <li><strong>EPO (Exclusive Provider Organization):</strong> Un punto medio. No requieren referidos para especialistas, pero la cobertura fuera de la red es nula, salvo emergencias.</li>
-          </ul>
+          <ComparisonTable 
+            columns={["HMO", "PPO", "EPO"]}
+            rows={[
+              { label: "Costo de Prima Mensual", values: ["Más bajo", "Más alto", "Intermedio"] },
+              { label: "Requiere Referido para Especialista", values: [true, false, false] },
+              { label: "Cobertura Fuera de la Red", values: ["Solo emergencias", "Sí (parcial)", "Solo emergencias"] },
+              { label: "Requiere Médico Primario (PCP)", values: [true, false, "Opcional"] }
+            ]}
+          />
+
 
           <h2 className="text-headline text-swiss-black mt-10">Cómo trabajamos tu caso</h2>
           <ul className="space-y-2 pl-6 list-decimal marker:text-swiss-red font-semibold">

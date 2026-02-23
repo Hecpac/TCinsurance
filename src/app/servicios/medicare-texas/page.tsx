@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import GridContainer from "@/components/GridContainer";
+import ComparisonTable from "@/components/ComparisonTable";
 import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 
 const PAGE_PATH = "/servicios/medicare-texas";
@@ -146,12 +147,20 @@ export default function ServiceLandingPage() {
             <li><strong>El Peligro del 20%:</strong> Medicare Original solo cubre el 80% de los costos aprobados de la Parte B. Tú eres responsable del 20% restante, sin límite anual, lo que hace indispensable un plan adicional.</li>
           </ul>
 
+          
           <h2 className="text-headline text-swiss-black mt-10">Caminos para tu cobertura: Advantage vs. Suplemento (Medigap)</h2>
-          <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            <li><strong>Medicare Advantage (Parte C):</strong> Planes privados (HMO o PPO) que agrupan las Partes A, B y D (medicamentos). Incluyen beneficios extra como dental y visión. Muchos tienen prima de /bin/zsh, pero usas su red de médicos locales y pagas copagos.</li>
-            <li><strong>Medigap (Seguro Suplementario):</strong> Planes que pagan el 20% que Medicare Original no cubre. Tienen una prima mensual más alta (-+), pero te dan libertad de ir a cualquier médico en EE. UU. que acepte Medicare, sin referidos, y tus gastos de bolsillo son casi nulos.</li>
-            <li><strong>Parte D (Medicamentos):</strong> Si eliges Medigap, debes comprar un plan de la Parte D por separado para cubrir medicinas. En un Advantage, usualmente ya viene incluido.</li>
-          </ul>
+          <ComparisonTable 
+            columns={["Medicare Advantage (Parte C)", "Medicare Suplementario (Medigap)"]}
+            rows={[
+              { label: "Prima Mensual Promedio", values: ["$0 - $50", "$100 - $200+"] },
+              { label: "Costos de Bolsillo al usar", values: ["Copagos por visita", "Casi $0 después de deducible"] },
+              { label: "Red de Médicos", values: ["Limitada (HMO/PPO local)", "Cualquiera que acepte Medicare a nivel nacional"] },
+              { label: "Requiere referidos", values: ["Usualmente Sí", false] },
+              { label: "Cobertura de Medicinas (Parte D)", values: ["Incluida casi siempre", "Debe comprarse por separado"] },
+              { label: "Beneficios Extra (Dental/Visión)", values: [true, false] }
+            ]}
+          />
+
 
           <h2 className="text-headline text-swiss-black mt-10">Cómo elegir el plan correcto en Texas</h2>
           <ul className="space-y-2 pl-6 list-decimal marker:text-swiss-red font-semibold">
