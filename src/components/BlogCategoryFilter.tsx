@@ -98,21 +98,39 @@ export default function BlogCategoryFilter({
         <Link
           key={post.slug}
           href={`/blog/${post.slug}`}
-          className="tap-target col-span-12 grid grid-cols-12 gap-6 border-b border-swiss-black/15 py-8 group hover:bg-elevated/50 transition-colors -mx-6 px-6"
+          className="tap-target col-span-12 grid grid-cols-12 gap-4 border-b border-swiss-black/15 py-6 group hover:bg-elevated/50 transition-colors -mx-6 px-6"
         >
-          <p className="col-span-12 md:col-span-2 text-meta text-swiss-gray">
+          <div className="col-span-12 md:col-span-3">
+            {post.featuredImage ? (
+              <div className="relative aspect-[16/10] w-full overflow-hidden border border-swiss-black/15">
+                <Image
+                  src={post.featuredImage}
+                  alt={post.featuredImageAlt ?? post.title}
+                  fill
+                  sizes="(min-width: 768px) 24vw, 100vw"
+                  className="object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500"
+                />
+              </div>
+            ) : null}
+          </div>
+
+          <p className="col-span-6 md:col-span-2 text-meta text-swiss-gray md:self-start">
             {formatBlogDateShort(post.publishedAt)}
           </p>
-          <h2 className="col-span-12 md:col-span-6 text-2xl md:text-3xl font-semibold leading-tight tracking-tight text-swiss-black group-hover:text-swiss-red-ink transition-colors">
+
+          <h2 className="col-span-12 md:col-span-4 text-xl md:text-2xl font-semibold leading-tight tracking-tight text-swiss-black group-hover:text-swiss-red-ink transition-colors md:self-start">
             {post.title}
           </h2>
-          <div className="col-span-8 md:col-span-2">
+
+          <div className="col-span-6 md:col-span-1 md:self-start">
             <span className="blog-category-chip">{post.category}</span>
           </div>
-          <p className="col-span-4 md:col-span-1 text-right text-meta text-swiss-gray">
+
+          <p className="col-span-6 md:col-span-1 text-right text-meta text-swiss-gray md:self-start">
             {post.readTime}
           </p>
-          <p className="col-span-12 md:col-span-1 text-meta text-swiss-gray/75 md:text-right group-hover:text-swiss-red-ink transition-colors">
+
+          <p className="col-span-6 md:col-span-1 text-right text-meta text-swiss-gray/75 md:self-start group-hover:text-swiss-red-ink transition-colors">
             &rarr;
           </p>
         </Link>
