@@ -132,7 +132,7 @@ export default function Footer() {
                 disabled={newsletterStatus === "loading"}
                 className="primary-cta tap-target border px-6 py-3 text-meta disabled:cursor-not-allowed disabled:opacity-60 sm:border-l-0"
               >
-                {newsletterStatus === "loading" ? "Enviando..." : "Suscribirme"}
+                {newsletterStatus === "loading" ? "Enviando..." : "Recibir Guías"}
               </button>
             </div>
 

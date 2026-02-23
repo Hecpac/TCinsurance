@@ -145,7 +145,7 @@ export default function HeroSection() {
             fill
             priority
             quality={60}
-            className="object-cover grayscale contrast-125 saturate-0"
+            className="object-cover object-[center_35%] grayscale contrast-125 saturate-0"
           />
         </div>
       </div>
@@ -160,7 +160,7 @@ export default function HeroSection() {
           data-hero-kicker
           className="col-span-12 text-meta section-kicker pt-4 md:pt-6"
         >
-          Est. 2024 - Texas, USA
+          Est. 2020 - Texas, USA
         </p>
 
         <hr
@@ -185,7 +185,7 @@ export default function HeroSection() {
 
         <figure
           data-hero-image
-          className="order-5 col-span-12 md:order-none md:col-start-8 md:col-span-5 md:row-start-3 md:row-end-8 mt-6 md:mt-0"
+          className="order-5 col-span-12 md:order-none md:col-start-8 md:col-span-5 md:row-start-3 md:row-end-8 mt-6 md:-mt-12 lg:-mt-16"
         >
           <div className="hero-depth relative h-[320px] md:h-[520px] w-full border border-m3-outline-variant bg-m3-surface-container-low">
             <div className="absolute inset-0 overflow-hidden" data-parallax-container>
@@ -209,32 +209,17 @@ export default function HeroSection() {
 
         <p
           data-hero-subtitle
-          className="col-span-12 md:col-span-6 mt-5 md:mt-6 text-subheadline text-swiss-black/80 max-w-[var(--measure-body)]"
+          className="col-span-12 md:col-span-6 mt-5 md:mt-8 text-subheadline text-swiss-black/80 max-w-[var(--measure-body)]"
         >
           Seguros de salud, vida y gastos finales en Texas. Comparamos
           opciones y te entregamos una recomendación clara para tu caso.
         </p>
-        <p
-          data-hero-copy
-          className="col-span-12 md:col-span-5 mt-3 text-body text-m3-on-surface-variant"
-        >
-          Para familias, trabajadores independientes y dueños de negocio
-          que necesitan cobertura sin perder tiempo ni dinero.
-        </p>
-
-        <p
-          data-hero-copy
-          className="order-2 col-span-12 md:order-none md:col-span-5 text-body text-m3-on-surface-variant mt-5 md:mt-6"
-        >
-          Asesoría bilingüe 1:1 para proteger tu ingreso, tu familia y tu
-          legado con una estrategia que realmente entiendas.
-        </p>
 
         <div
           data-hero-cta
-          className="order-3 col-span-12 md:order-none md:col-span-7 mt-6 pb-3"
+          className="order-3 col-span-12 md:order-none md:col-span-7 mt-8 pb-12 md:pb-16"
         >
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-4">
             <HoverBorderGradient
               as="div"
               duration={1.1}
@@ -256,7 +241,7 @@ export default function HeroSection() {
                     }
                   )
                 }
-                className="primary-cta tap-target inline-flex items-center border px-5 py-3 text-meta"
+                className="primary-cta tap-target inline-flex items-center border px-6 py-4 text-meta"
               >
                 Agenda asesoría gratuita
               </Link>
@@ -276,33 +261,12 @@ export default function HeroSection() {
                   }
                 )
               }
-              className="tap-target inline-flex items-center border border-m3-outline-variant px-5 py-3 text-meta text-swiss-black hover:border-m3-outline-variant-strong hover:text-swiss-red-ink"
+              className="tap-target inline-flex items-center border border-m3-outline-variant px-6 py-4 text-meta text-swiss-black hover:border-m3-outline-variant-strong hover:text-swiss-red-ink transition-colors"
             >
               Ver servicios
             </Link>
           </div>
-          <ul
-            aria-label="Indicadores de confianza"
-            className="mt-3 flex flex-wrap gap-2"
-          >
-            <li className="border border-m3-outline-variant bg-m3-surface-container-low px-3 py-1.5 text-[0.73rem] font-medium tracking-[0.03em] text-m3-secondary-ink">
-              Agencia con licencia en Texas
-            </li>
-            <li className="border border-m3-outline-variant bg-m3-surface-container-low px-3 py-1.5 text-[0.73rem] font-medium tracking-[0.03em] text-m3-secondary-ink">
-              Respuesta inicial &lt; 24h
-            </li>
-            <li className="border border-m3-outline-variant bg-m3-surface-container-low px-3 py-1.5 text-[0.73rem] font-medium tracking-[0.03em] text-m3-secondary-ink">
-              Atención bilingüe ES / EN
-            </li>
-          </ul>
         </div>
-
-        <p
-          data-hero-meta
-          className="order-4 col-span-12 md:order-none md:col-span-7 text-meta text-m3-on-surface-variant pb-12 md:pb-16"
-        >
-          15 minutos • Sin compromiso • Español/English
-        </p>
       </GridContainer>
     </div>
   );

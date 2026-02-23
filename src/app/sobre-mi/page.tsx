@@ -54,7 +54,7 @@ const personJsonLd = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       <GridContainer
@@ -97,6 +97,6 @@ export default function AboutPage() {
           </Link>
         </div>
       </GridContainer>
-    </main>
+    </div>
   );
 }

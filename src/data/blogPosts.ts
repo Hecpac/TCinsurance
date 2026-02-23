@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "2 MIN",
     author: "Texas Department of Insurance (.gov)",
     status: "active",
-    featuredImage: "/blog/News Paper.jpeg",
+    featuredImage: "/blog-final-expense-featured.jpg",
     content: [
       "### Reporte automatizado por nuestro Agente Research",
       "Esta es una noticia en desarrollo capturada por nuestro sistema de monitoreo en tiempo real sobre el mercado de seguros en Texas.",
@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "2 MIN",
     author: "Dallas News",
     status: "active",
-    featuredImage: "/blog/News Paper.jpeg",
+    featuredImage: "/blog-final-expense-featured.jpg",
     content: [
       "### Reporte automatizado por nuestro Agente Research",
       "Esta es una noticia en desarrollo capturada por nuestro sistema de monitoreo en tiempo real sobre el mercado de seguros en Texas.",
@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "2 MIN",
     author: "Texas Department of Insurance (.gov)",
     status: "active",
-    featuredImage: "/blog/News Paper.jpeg",
+    featuredImage: "/blog-final-expense-featured.jpg",
     content: [
       "### Reporte automatizado por nuestro Agente Research",
       "Esta es una noticia en desarrollo capturada por nuestro sistema de monitoreo en tiempo real sobre el mercado de seguros en Texas.",
@@ -77,7 +77,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "2 MIN",
     author: "Hola News",
     status: "active",
-    featuredImage: "/blog/News Paper.jpeg",
+    featuredImage: "/blog-final-expense-featured.jpg",
     content: [
       "### Reporte automatizado por nuestro Agente Research",
       "Esta es una noticia en desarrollo capturada por nuestro sistema de monitoreo en tiempo real sobre el mercado de seguros en Texas.",
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "2 MIN",
     author: "CNN en Español",
     status: "active",
-    featuredImage: "/blog/News Paper.jpeg",
+    featuredImage: "/blog-final-expense-featured.jpg",
     content: [
       "### Reporte automatizado por nuestro Agente Research",
       "Esta es una noticia en desarrollo capturada por nuestro sistema de monitoreo en tiempo real sobre el mercado de seguros en Texas.",
@@ -115,7 +115,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tatiana Castañeda",
     featured: true,
     status: "active",
-    featuredImage: "/blog/Vintage ad 1965 Travellers life insurance.jpeg",
+    featuredImage: "/blog-final-expense-featured.jpg",
     featuredImageAlt:
       "Seguro de gastos finales en Texas: planificación financiera para familias",
     content: [
@@ -142,7 +142,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 MIN",
     author: "Tatiana Castañeda",
     status: "active",
-    featuredImage: "/blog/More boring money advice from a brilliant founding father_.jpeg",
+    featuredImage: "/blog-final-expense-featured.jpg",
     content: [
       "### No elijas un plan de salud por la prima. Elige por lo que vas a pagar de verdad.",
       "Elegir un seguro de salud en Texas no debería sentirse como una apuesta. Pero cada año, miles de familias en Dallas, Houston y el resto del estado seleccionan cobertura basándose en un solo número: la prima mensual. Ese enfoque casi siempre termina costando más.",
@@ -183,7 +183,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 MIN",
     author: "Tatiana Castañeda",
     status: "active",
-    featuredImage: "/blog/Vintage ad 1965 Travellers life insurance.jpeg",
+    featuredImage: "/blog-final-expense-featured.jpg",
     content: [
       "### ¿Qué pasaría con tu familia si mañana no estás?",
       "Es una pregunta que nadie quiere hacer, pero que toda familia responsable necesita responder. El seguro de vida en Texas no es un producto que compras para ti, es una promesa que le haces a las personas que dependen de tu ingreso.",

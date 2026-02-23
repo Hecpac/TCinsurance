@@ -79,14 +79,14 @@ export default function RootLayout({
     Boolean(siteConfig.business.geo.latitude) && Boolean(siteConfig.business.geo.longitude);
 
   const mainContent = (
-    <div
+    <main
       id="main-content"
       tabIndex={-1}
       data-agent-context="primary-content"
       className="overflow-x-hidden pt-20"
     >
       {children}
-    </div>
+    </main>
   );
 
   return (
@@ -141,15 +141,17 @@ export default function RootLayout({
           >
             <FloatingCTA />
           </Suspense>
-          <Suspense fallback={null}>
-            <Floating3DLogo />
-          </Suspense>
-          <Suspense fallback={null}>
-            <CustomCursor />
-          </Suspense>
-          <Suspense fallback={null}>
-            <ScrollToTop />
-          </Suspense>
+          <aside aria-label="Utilidades y navegación secundaria">
+            <Suspense fallback={null}>
+              <Floating3DLogo />
+            </Suspense>
+            <Suspense fallback={null}>
+              <CustomCursor />
+            </Suspense>
+            <Suspense fallback={null}>
+              <ScrollToTop />
+            </Suspense>
+          </aside>
         </ScrollSnapProvider>
       </body>
     </html>

@@ -61,7 +61,7 @@ const serviceJsonLd = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <GridContainer
@@ -104,6 +104,6 @@ export default function ServicesPage() {
           </Link>
         </div>
       </GridContainer>
-    </main>
+    </div>
   );
 }

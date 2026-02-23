@@ -101,8 +101,8 @@ export default function Philosophy() {
             data-philosophy-quote
             className="text-display font-bold leading-[0.95] tracking-[-0.055em] text-swiss-black"
           >
-            &ldquo;Vi familias pagando por planes que no entendían. Fundé TC Insurance
-            para que eso no vuelva a pasar.&rdquo;
+            &ldquo;Más que vender seguros, mi misión es darte tranquilidad, claridad y
+            confianza desde el primer momento.&rdquo;
           </blockquote>
         </div>
 
@@ -123,13 +123,13 @@ export default function Philosophy() {
         </div>
 
         <figure className="col-span-12 md:col-span-5 md:row-start-4 md:row-end-6 pb-8 md:pb-20">
-          <div className="relative aspect-[4/5] w-full border border-m3-outline-variant bg-m3-surface-container-low">
+          <div className="relative aspect-[4/5] w-full border border-m3-outline-variant bg-m3-surface-container-low overflow-hidden group">
             <Image
               src={aboutProfile.portrait.src}
               alt={aboutProfile.portrait.alt}
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
-              className="object-cover grayscale contrast-125"
+              className="object-contain object-bottom grayscale contrast-125 drop-shadow-2xl scale-95 origin-bottom transition-all duration-700 ease-out group-hover:scale-[0.98] group-hover:brightness-110 group-hover:contrast-[1.35] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]"
             />
           </div>
         </figure>

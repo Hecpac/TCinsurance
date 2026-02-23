@@ -239,7 +239,7 @@ export default async function BlogPostPage({
   };
 
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <GridContainer
         as="article"
         data-testid="blog-article"
@@ -393,6 +393,6 @@ export default async function BlogPostPage({
           </Link>
         </div>
       </GridContainer>
-    </main>
+    </div>
   );
 }

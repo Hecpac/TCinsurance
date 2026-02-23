@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <GridContainer
         as="section"
         data-testid="privacy-page"
@@ -63,6 +63,6 @@ export default function PrivacyPage() {
           </p>
         </div>
       </GridContainer>
-    </main>
+    </div>
   );
 }

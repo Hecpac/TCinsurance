@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <GridContainer
         as="section"
         data-testid="terms-page"
@@ -61,6 +61,6 @@ export default function TermsPage() {
           </p>
         </div>
       </GridContainer>
-    </main>
+    </div>
   );
 }

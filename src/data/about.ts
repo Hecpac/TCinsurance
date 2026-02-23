@@ -16,11 +16,11 @@ export const aboutProfile: AboutProfile = {
   founder: "Yuri Tatiana Castañeda Carmona",
   role: "Agente Integral de Seguros de Salud y Vida",
   intro:
-    "Crecí viendo cómo las familias de mi comunidad tomaban decisiones de cobertura a ciegas: firmaban documentos que no entendían, pagaban de más por planes que no les servían, o simplemente no se aseguraban porque el proceso les parecía imposible de navegar en otro idioma.",
+    "Sé lo importante que es proteger lo que más amas. Por eso, en TCInsurance Agency Services LLC, más que vender seguros, mi misión es brindarte tranquilidad, claridad y confianza desde el primer momento.",
   story: [
-    "Antes de fundar TC Insurance, trabajé en el lado corporativo de la industria. Ahí aprendí cómo funcionan las pólizas por dentro, pero también vi la distancia enorme entre lo que las aseguradoras ofrecen y lo que las familias realmente necesitan. Un día, una señora me pidió ayuda para entender la carta de denegación de un reclamo. Llevaba meses pagando un plan que nunca le iba a cubrir lo que ella creía. Esa conversación me cambió la perspectiva.",
-    "Fundé TC Insurance en 2024 con una idea clara: que cada familia pueda sentarse con alguien que hable su idioma, entienda su situación y le explique sus opciones sin letra chica ni presión de venta. No represento a una sola aseguradora; comparo opciones para encontrar lo que tiene sentido para cada caso.",
-    "Sé lo que es ser inmigrante, construir desde cero y sentir que el sistema no fue diseñado para ti. Por eso mi trabajo no termina cuando se firma la póliza. Acompaño a mis clientes en renovaciones, cambios de vida y reclamaciones, porque la confianza se construye con tiempo, no con un solo formulario.",
+    "Trabajo con el corazón y con un enfoque profundamente humano. Soy una agente cercana y comprometida con cada cliente: me gusta escucharte, entender tus necesidades y explicarte cada detalle con paciencia —incluyendo la letra pequeña— porque la confianza se construye con honestidad y transparencia.",
+    "Para mí no eres un número, eres una familia con metas, retos y sueños que merece sentirse segura y respaldada. Te acompaño para que tomes decisiones informadas, comparando opciones con claridad y eligiendo la cobertura que realmente proteja tu presente y tu futuro.",
+    "Si estás buscando una agente que te trate con respeto, claridad y dedicación genuina, aquí estoy para servirte. Quiero ser tu agente de confianza hoy y siempre.",
   ],
   credentials: [
     "Licensed Insurance Agent in Texas",
@@ -31,7 +31,7 @@ export const aboutProfile: AboutProfile = {
   ctaLabel: "Agenda una conversación conmigo",
   ctaHref: "/#contacto",
   portrait: {
-    src: "/tatiana-castaneda-placeholder.jpg",
+    src: "/Tatiana.png",
     alt: "Yuri Tatiana Castañeda Carmona en sesión de asesoría",
   },
 };

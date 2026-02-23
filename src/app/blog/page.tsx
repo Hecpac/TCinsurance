@@ -56,7 +56,7 @@ export default function BlogPage() {
   const categories = getCategories();
 
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <GridContainer
         as="section"
@@ -95,6 +95,6 @@ export default function BlogPage() {
           <PostCTA trackingId="blog_index_end" />
         </div>
       </GridContainer>
-    </main>
+    </div>
   );
 }

@@ -15,7 +15,7 @@ import { HOME_SECTION_PATHS } from "@/config/site";
 
 export default function Home() {
   return (
-    <main
+    <div
       className="min-h-screen overflow-x-hidden"
       data-testid="home-main"
       data-agent-context="landing-page"
@@ -65,6 +65,6 @@ export default function Home() {
       <FAQ />
       <Contact />
       <Footer />
-    </main>
+    </div>
   );
 }
