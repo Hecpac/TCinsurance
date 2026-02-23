@@ -6,7 +6,7 @@ import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 import { servicesCatalog } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Seguros de Salud, Vida y Gastos Finales en Texas | TC Insurance",
+  title: "Seguros en Dallas, Fort Worth y Lewisville, Texas | TC Insurance",
   description:
     "Catálogo técnico de coberturas: salud, vida, gastos finales, dental, Medicare, visión y pólizas de indemnización.",
   alternates: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/servicios",
-    title: "Seguros de Salud, Vida y Gastos Finales en Texas | TC Insurance",
+    title: "Seguros en Dallas, Fort Worth y Lewisville, Texas | TC Insurance",
     description:
       "Catálogo técnico de coberturas: salud, vida, gastos finales, dental, Medicare, visión y pólizas de indemnización.",
     siteName: siteConfig.brand.name,
@@ -80,13 +80,12 @@ export default function ServicesPage() {
           <h1 className="text-display tracking-[-0.055em] text-swiss-black">
             Seguros de Salud, Vida
             <br />
-            y Gastos Finales en Texas.
+            y Gastos Finales en Dallas / Fort Worth / Lewisville.
           </h1>
         </div>
 
         <p className="col-span-12 md:col-start-8 md:col-span-5 text-body text-swiss-gray pt-10 pb-14">
-          Diseñamos combinaciones de cobertura según etapa de vida, presupuesto
-          y perfil de riesgo familiar.
+          Diseñamos combinaciones de cobertura para familias en Dallas, Fort Worth y Lewisville según etapa de vida, presupuesto y perfil de riesgo.
         </p>
 
         <div className="col-span-12 border-t border-swiss-black/20" />

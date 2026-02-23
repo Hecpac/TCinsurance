@@ -8,21 +8,21 @@ const PAGE_PATH = "/servicios/seguro-dental-texas";
 const PAGE_URL = `${siteConfig.seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Seguro Dental en Texas | Cobertura Preventiva y Tratamientos con Costo Controlado",
+  title: "Seguro Dental en Dallas, Fort Worth y Lewisville, Texas | Cobertura Preventiva",
   description: "Asesoría para elegir seguro dental en Texas: limpiezas, revisiones y tratamientos con cobertura útil para adultos y niños.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: "Seguro Dental en Texas | Cobertura Preventiva y Tratamientos con Costo Controlado",
+    title: "Seguro Dental en Dallas, Fort Worth y Lewisville, Texas | Cobertura Preventiva",
     description: "Asesoría para elegir seguro dental en Texas: limpiezas, revisiones y tratamientos con cobertura útil para adultos y niños.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
-    images: [{ url: "/blog/editorial-v3/health-plan-texas.jpg", width: 1200, height: 630, alt: "Seguro Dental en Texas | Cobertura Preventiva y Tratamientos con Costo Controlado" }],
+    images: [{ url: "/blog/editorial-v3/health-plan-texas.jpg", width: 1200, height: 630, alt: "Seguro Dental en Dallas, Fort Worth y Lewisville, Texas | Cobertura Preventiva" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seguro Dental en Texas | Cobertura Preventiva y Tratamientos con Costo Controlado",
+    title: "Seguro Dental en Dallas, Fort Worth y Lewisville, Texas | Cobertura Preventiva",
     description: "Asesoría para elegir seguro dental en Texas: limpiezas, revisiones y tratamientos con cobertura útil para adultos y niños.",
     images: ["/blog/editorial-v3/health-plan-texas.jpg"],
   },
@@ -68,15 +68,15 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.seo.siteUrl },
     { "@type": "ListItem", position: 2, name: "Servicios", item: `${siteConfig.seo.siteUrl}/servicios` },
-    { "@type": "ListItem", position: 3, name: "Seguro Dental en Texas | Cobertura Preventiva y Tratamientos con Costo Controlado", item: PAGE_URL },
+    { "@type": "ListItem", position: 3, name: "Seguro Dental en Dallas, Fort Worth y Lewisville, Texas | Cobertura Preventiva", item: PAGE_URL },
   ],
 };
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Seguro Dental en Texas | Cobertura Preventiva y Tratamientos con Costo Controlado",
-  areaServed: "Texas",
+  name: "Seguro Dental en Dallas, Fort Worth y Lewisville, Texas | Cobertura Preventiva",
+  areaServed: "Dallas, Fort Worth y Lewisville, Texas",
   provider: { "@type": "InsuranceAgency", name: siteConfig.brand.name, url: siteConfig.seo.siteUrl },
   url: PAGE_URL,
   inLanguage: "es",
@@ -107,7 +107,7 @@ export default function ServiceLandingPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray">Servicio especializado</p>
-          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro Dental en Texas | Cobertura Preventiva y Tratamientos con Costo Controlado</h1>
+          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro Dental en Dallas, Fort Worth y Lewisville, Texas | Cobertura Preventiva</h1>
           <p className="text-body text-swiss-gray mt-8 max-w-3xl">Comparamos planes dentales para que tu familia tenga prevención y tratamiento con costos más previsibles.</p>
         </div>
 

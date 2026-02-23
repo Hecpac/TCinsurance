@@ -8,7 +8,7 @@ const PAGE_PATH = "/servicios/seguro-gastos-finales-texas";
 const PAGE_URL = `${siteConfig.seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Seguro de Gastos Finales en Texas | Guía y Asesoría en Español",
+  title: "Seguro de Gastos Finales en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
   description:
     "Conoce cómo funciona el seguro de gastos finales en Texas, qué costos cubre y cómo elegir una póliza clara para proteger a tu familia.",
   alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: "Seguro de Gastos Finales en Texas | Guía y Asesoría en Español",
+    title: "Seguro de Gastos Finales en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
     description:
       "Guía práctica para familias en Dallas/Fort Worth: costos, cobertura y checklist para elegir seguro de gastos finales sin errores.",
     siteName: siteConfig.brand.name,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seguro de Gastos Finales en Texas | Guía y Asesoría en Español",
+    title: "Seguro de Gastos Finales en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
     description:
       "Qué cubre, cuánto cuesta y cómo elegir una póliza de gastos finales para proteger a tu familia en Texas.",
     images: ["/blog/editorial-v3/final-expense-legacy.jpg"],
@@ -88,7 +88,7 @@ const serviceJsonLd = {
   "@type": "Service",
   name: "Seguro de gastos finales en Texas",
   serviceType: "Final Expense Insurance",
-  areaServed: "Texas",
+  areaServed: "Dallas, Fort Worth y Lewisville, Texas",
   provider: {
     "@type": "InsuranceAgency",
     name: siteConfig.brand.name,

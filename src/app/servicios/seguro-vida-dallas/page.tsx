@@ -8,21 +8,21 @@ const PAGE_PATH = "/servicios/seguro-vida-dallas";
 const PAGE_URL = `${siteConfig.seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Seguro de Vida en Dallas, Texas | Protección Familiar con Asesoría en Español",
+  title: "Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
   description: "Evalúa opciones de seguro de vida en Dallas con enfoque en liquidez, protección de ingresos y estabilidad familiar ante imprevistos.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: "Seguro de Vida en Dallas, Texas | Protección Familiar con Asesoría en Español",
+    title: "Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
     description: "Evalúa opciones de seguro de vida en Dallas con enfoque en liquidez, protección de ingresos y estabilidad familiar ante imprevistos.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
-    images: [{ url: "/blog/editorial-v3/life-insurance-family.jpg", width: 1200, height: 630, alt: "Seguro de Vida en Dallas, Texas | Protección Familiar con Asesoría en Español" }],
+    images: [{ url: "/blog/editorial-v3/life-insurance-family.jpg", width: 1200, height: 630, alt: "Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seguro de Vida en Dallas, Texas | Protección Familiar con Asesoría en Español",
+    title: "Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
     description: "Evalúa opciones de seguro de vida en Dallas con enfoque en liquidez, protección de ingresos y estabilidad familiar ante imprevistos.",
     images: ["/blog/editorial-v3/life-insurance-family.jpg"],
   },
@@ -68,15 +68,15 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.seo.siteUrl },
     { "@type": "ListItem", position: 2, name: "Servicios", item: `${siteConfig.seo.siteUrl}/servicios` },
-    { "@type": "ListItem", position: 3, name: "Seguro de Vida en Dallas, Texas | Protección Familiar con Asesoría en Español", item: PAGE_URL },
+    { "@type": "ListItem", position: 3, name: "Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español", item: PAGE_URL },
   ],
 };
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Seguro de Vida en Dallas, Texas | Protección Familiar con Asesoría en Español",
-  areaServed: "Texas",
+  name: "Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
+  areaServed: "Dallas, Fort Worth y Lewisville, Texas",
   provider: { "@type": "InsuranceAgency", name: siteConfig.brand.name, url: siteConfig.seo.siteUrl },
   url: PAGE_URL,
   inLanguage: "es",
@@ -107,7 +107,7 @@ export default function ServiceLandingPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray">Servicio especializado</p>
-          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro de Vida en Dallas, Texas | Protección Familiar con Asesoría en Español</h1>
+          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español</h1>
           <p className="text-body text-swiss-gray mt-8 max-w-3xl">Diseñamos cobertura de vida para que tu familia mantenga estabilidad económica y capacidad de decisión en momentos críticos.</p>
         </div>
 

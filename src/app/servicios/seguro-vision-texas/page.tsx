@@ -8,21 +8,21 @@ const PAGE_PATH = "/servicios/seguro-vision-texas";
 const PAGE_URL = `${siteConfig.seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Seguro de Visión en Texas | Exámenes, Lentes y Seguimiento Oftalmológico",
+  title: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes",
   description: "Comparación de planes de visión en Texas para cubrir exámenes, lentes y beneficios anuales con mejor control de costos.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: "Seguro de Visión en Texas | Exámenes, Lentes y Seguimiento Oftalmológico",
+    title: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes",
     description: "Comparación de planes de visión en Texas para cubrir exámenes, lentes y beneficios anuales con mejor control de costos.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
-    images: [{ url: "/blog/editorial-v3/health-plan-texas.jpg", width: 1200, height: 630, alt: "Seguro de Visión en Texas | Exámenes, Lentes y Seguimiento Oftalmológico" }],
+    images: [{ url: "/blog/editorial-v3/health-plan-texas.jpg", width: 1200, height: 630, alt: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seguro de Visión en Texas | Exámenes, Lentes y Seguimiento Oftalmológico",
+    title: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes",
     description: "Comparación de planes de visión en Texas para cubrir exámenes, lentes y beneficios anuales con mejor control de costos.",
     images: ["/blog/editorial-v3/health-plan-texas.jpg"],
   },
@@ -68,15 +68,15 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.seo.siteUrl },
     { "@type": "ListItem", position: 2, name: "Servicios", item: `${siteConfig.seo.siteUrl}/servicios` },
-    { "@type": "ListItem", position: 3, name: "Seguro de Visión en Texas | Exámenes, Lentes y Seguimiento Oftalmológico", item: PAGE_URL },
+    { "@type": "ListItem", position: 3, name: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes", item: PAGE_URL },
   ],
 };
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Seguro de Visión en Texas | Exámenes, Lentes y Seguimiento Oftalmológico",
-  areaServed: "Texas",
+  name: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes",
+  areaServed: "Dallas, Fort Worth y Lewisville, Texas",
   provider: { "@type": "InsuranceAgency", name: siteConfig.brand.name, url: siteConfig.seo.siteUrl },
   url: PAGE_URL,
   inLanguage: "es",
@@ -107,7 +107,7 @@ export default function ServiceLandingPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray">Servicio especializado</p>
-          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro de Visión en Texas | Exámenes, Lentes y Seguimiento Oftalmológico</h1>
+          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes</h1>
           <p className="text-body text-swiss-gray mt-8 max-w-3xl">Te ayudamos a elegir cobertura de visión que realmente reduzca el costo de exámenes y lentes en tu hogar.</p>
         </div>
 
