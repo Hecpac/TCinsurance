@@ -124,7 +124,7 @@ export default function ServiceLandingPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray">Servicio especializado</p>
-          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Planes de Seguro Dental en Texas</h1>
+          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Cobertura Dental Preventiva y Correctiva al Mejor Precio</h1>
           <p className="text-body text-swiss-gray mt-8 max-w-3xl">Comparamos planes dentales para que tu familia tenga prevención y tratamiento con costos más previsibles.</p>
         </div>
 

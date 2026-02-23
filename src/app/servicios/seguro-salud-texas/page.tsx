@@ -125,7 +125,7 @@ export default function ServiceLandingPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray">Servicio especializado</p>
-          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro de Salud y Cobertura Médica en Texas</h1>
+          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Encuentra el Seguro Médico Adecuado para tu Familia en Texas</h1>
           <p className="text-body text-swiss-gray mt-8 max-w-3xl">Te ayudamos a comparar opciones de salud en Texas para que elijas cobertura útil, con red médica funcional y costos sostenibles.</p>
         </div>
 
