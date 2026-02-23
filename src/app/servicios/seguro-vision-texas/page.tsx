@@ -76,8 +76,25 @@ const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes",
-  areaServed: "Dallas, Fort Worth y Lewisville, Texas",
-  provider: { "@type": "InsuranceAgency", name: siteConfig.brand.name, url: siteConfig.seo.siteUrl },
+  areaServed: [
+    { "@type": "City", name: "Dallas" },
+    { "@type": "City", name: "Fort Worth" },
+    { "@type": "City", name: "Lewisville" },
+  ],
+  provider: {
+    "@type": "InsuranceAgency",
+    name: siteConfig.brand.name,
+    url: siteConfig.seo.siteUrl,
+    telephone: siteConfig.contact.phoneHref,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: siteConfig.business.address.streetAddress,
+      addressLocality: siteConfig.business.address.addressLocality,
+      addressRegion: siteConfig.business.address.addressRegion,
+      postalCode: siteConfig.business.address.postalCode,
+    },
+    availableLanguage: ["Spanish", "English"],
+  },
   url: PAGE_URL,
   inLanguage: "es",
   description: "Comparación de planes de visión en Texas para cubrir exámenes, lentes y beneficios anuales con mejor control de costos.",
@@ -107,7 +124,7 @@ export default function ServiceLandingPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray">Servicio especializado</p>
-          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes</h1>
+          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Planes de Seguro de Visión en Texas</h1>
           <p className="text-body text-swiss-gray mt-8 max-w-3xl">Te ayudamos a elegir cobertura de visión que realmente reduzca el costo de exámenes y lentes en tu hogar.</p>
         </div>
 
@@ -136,12 +153,6 @@ export default function ServiceLandingPage() {
                 <p className="mt-2 text-swiss-black/80">{item.answer}</p>
               </article>
             ))}
-          </div>
-
-          <div className="border-t border-swiss-black/15 pt-8 space-y-4">
-            <Link href="/blog" className="tap-target inline-flex items-center gap-2 text-swiss-black hover:text-swiss-red-ink">
-              Leer guía relacionada del blog &rarr;
-            </Link>
           </div>
         </section>
 

@@ -76,8 +76,25 @@ const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Seguro de Salud en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
-  areaServed: "Dallas, Fort Worth y Lewisville, Texas",
-  provider: { "@type": "InsuranceAgency", name: siteConfig.brand.name, url: siteConfig.seo.siteUrl },
+  areaServed: [
+    { "@type": "City", name: "Dallas" },
+    { "@type": "City", name: "Fort Worth" },
+    { "@type": "City", name: "Lewisville" },
+  ],
+  provider: {
+    "@type": "InsuranceAgency",
+    name: siteConfig.brand.name,
+    url: siteConfig.seo.siteUrl,
+    telephone: siteConfig.contact.phoneHref,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: siteConfig.business.address.streetAddress,
+      addressLocality: siteConfig.business.address.addressLocality,
+      addressRegion: siteConfig.business.address.addressRegion,
+      postalCode: siteConfig.business.address.postalCode,
+    },
+    availableLanguage: ["Spanish", "English"],
+  },
   url: PAGE_URL,
   inLanguage: "es",
   description: "Comparación de planes de salud en Texas con enfoque en red médica, deducibles y costo total mensual para familias y trabajadores independientes.",
@@ -107,7 +124,7 @@ export default function ServiceLandingPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray">Servicio especializado</p>
-          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro de Salud en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español</h1>
+          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro de Salud y Cobertura Médica en Texas</h1>
           <p className="text-body text-swiss-gray mt-8 max-w-3xl">Te ayudamos a comparar opciones de salud en Texas para que elijas cobertura útil, con red médica funcional y costos sostenibles.</p>
         </div>
 
