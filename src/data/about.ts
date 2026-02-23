@@ -32,6 +32,6 @@ export const aboutProfile: AboutProfile = {
   ctaHref: "/#contacto",
   portrait: {
     src: "/Tatiana.png",
-    alt: "Tatiana Castañeda en sesión de asesoría",
+    alt: "Tatiana Castañeda, agente licenciada de seguros de salud y vida en Dallas, Texas",
   },
 };

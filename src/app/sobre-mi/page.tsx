@@ -44,6 +44,8 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Tatiana Castañeda",
+  givenName: "Yuri Tatiana",
+  familyName: "Castañeda Carmona",
   jobTitle: "Licensed Insurance Agent",
   worksFor: {
     "@type": "InsuranceAgency",
