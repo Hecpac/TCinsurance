@@ -12,7 +12,24 @@ export const HOME_SECTION_PATHS = {
   contactLegacy: "/#asesoria",
 } as const;
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.tcinsurance-llc.com";
+const RAW_SITE_URL = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+
+function normalizeSiteUrl(value: string | undefined): string {
+  if (!value) {
+    return "https://tcinsurancetx.com";
+  }
+
+  const sanitized = value.replace(/\/$/, "");
+
+  // Failsafe for legacy domain values still present in old envs.
+  if (sanitized.includes("tcinsurance-llc.com")) {
+    return "https://tcinsurancetx.com";
+  }
+
+  return sanitized;
+}
+
+const SITE_URL = normalizeSiteUrl(RAW_SITE_URL);
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-XXXXXXX";
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID ?? "G-XXXXXXXXXX";
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "000000000000000";
