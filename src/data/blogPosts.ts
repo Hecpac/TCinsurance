@@ -19,6 +19,32 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "texas-hb2067-explicaciones-automaticas-seguros-2026",
+    title: "Texas HB 2067 (2026): ahora las aseguradoras deben explicar por escrito cancelaciones y no renovaciones",
+    excerpt: "Desde 2026, en Texas las aseguradoras de auto y hogar deben explicar por escrito decisiones de declinación, cancelación o no renovación. Qué significa para ti y cómo actuar.",
+    category: "NOTICIAS",
+    publishedAt: "2026-02-27",
+    readTime: "4 MIN",
+    author: "TC Insurance Editorial",
+    status: "active",
+    featuredImage: "/blog/editorial-v3/tdi-texas-capitol.jpg",
+    featuredImageAlt: "Capitolio de Texas representando cambios regulatorios en seguros",
+    content: [
+      "### ¿Qué cambió con HB 2067 en Texas?",
+      "Desde 2026, las aseguradoras deben dar explicación escrita cuando declinan, cancelan o no renuevan pólizas de auto y hogar. Antes, en muchos casos, el cliente tenía que pedirla de forma explícita. Este cambio mejora transparencia y permite tomar acción con evidencia.",
+      "### ¿Por qué importa para familias y dueños de casa en Texas?",
+      "Porque una no renovación puede dejarte con menos opciones, primas más altas o periodos sin cobertura. Entender la causa exacta (riesgo, historial, datos, underwriting) te ayuda a corregirla y proteger tu continuidad de seguro.",
+      "### Qué hacer si recibes una no renovación o cancelación",
+      "- Guarda el aviso completo y la fecha efectiva.\n- Revisa el motivo exacto por escrito.\n- Verifica datos clave (dirección, historial de reclamos, uso del vehículo/vivienda).\n- Corrige inconsistencias con evidencia documental.\n- Compara alternativas antes del vencimiento para evitar quedarte sin cobertura.",
+      "### ¿Y si no te entregan explicación clara?",
+      "Puedes presentar queja ante Texas Department of Insurance (TDI) y solicitar revisión. Actuar rápido es clave para no perder ventanas de reemplazo de cobertura.",
+      "### Cierre",
+      "En TC Insurance te ayudamos a interpretar avisos de no renovación/cancelación y a encontrar opciones de reemplazo con claridad, en español y sin fricción.",
+      "### Fuentes",
+      "- Texas Department of Insurance (TDI): https://www.tdi.texas.gov/\n- Contexto de implementación HB 2067: https://www.fox4news.com/news/texas-insurance-law-2026-automatic-explanations.amp"
+    ],
+  },
+  {
     slug: "trabajando-para-tdi-texas-department-of-insurance-gov",
     title: "Trabajando para TDI - Texas Department of Insurance (.gov)",
     excerpt: "Últimas noticias: Trabajando para TDI - Texas Department of Insurance (.gov). Haz clic para leer más sobre este desarrollo importante para el mercado de seguros en Texas.",
