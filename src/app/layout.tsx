@@ -21,6 +21,7 @@ import {
 } from "@/components/GoogleTagManager";
 import { siteConfig } from "@/config/site";
 import { ScrollSnapProvider } from "@/contexts/ScrollSnapContext";
+import { Analytics } from "@vercel/analytics/next";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -164,6 +165,7 @@ export default function RootLayout({
             </Suspense>
           </aside>
         </ScrollSnapProvider>
+        <Analytics />
       </body>
     </html>
   );
