@@ -275,7 +275,7 @@ export default function Contact() {
               Comparte tus datos y te proponemos una ruta de cobertura clara para tu caso.
             </p>
 
-            <form className="mt-8 grid grid-cols-12 gap-4" onSubmit={handleSubmit} noValidate>
+            <form className="mt-8 grid grid-cols-12 gap-4" method="post" onSubmit={handleSubmit} noValidate>
               <div className="hidden" aria-hidden>
                 <label htmlFor="website">Website</label>
                 <input
@@ -295,9 +295,11 @@ export default function Contact() {
                 </label>
                 <input
                   id="name"
+                  name="name"
                   type="text"
                   autoComplete="name"
                   placeholder="Tu nombre completo"
+                  required
                   value={formData.name}
                   onChange={(event) => handleFieldChange("name", event.target.value)}
                   aria-invalid={fieldError === "name"}
@@ -331,6 +333,7 @@ export default function Contact() {
                 </label>
                 <input
                   id="phone"
+                  name="phone"
                   type="tel"
                   inputMode="tel"
                   autoComplete="tel"
@@ -359,6 +362,7 @@ export default function Contact() {
                 </label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   inputMode="email"
                   autoComplete="email"
@@ -395,7 +399,9 @@ export default function Contact() {
                 </label>
                 <select
                   id="insuranceType"
+                  name="insuranceType"
                   value={formData.insuranceType}
+                  required
                   onChange={(event) =>
                     handleFieldChange("insuranceType", event.target.value as InsuranceType)
                   }
@@ -443,6 +449,7 @@ export default function Contact() {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       rows={4}
                       value={formData.message}
                       onChange={(event) => handleFieldChange("message", event.target.value)}
