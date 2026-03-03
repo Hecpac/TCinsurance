@@ -91,6 +91,24 @@ export default function ServicesPage() {
         <div className="col-span-12 border-t border-swiss-black/20" />
       </GridContainer>
 
+      <GridContainer as="section" className="pb-10">
+        <div className="col-span-12 md:col-start-2 md:col-span-10 border border-m3-outline-variant bg-m3-surface-container-low p-6">
+          <p className="text-meta uppercase tracking-[0.12em] text-swiss-gray">Cobertura local</p>
+          <h2 className="pt-3 text-headline text-swiss-black">Guías por ciudad para elegir cobertura</h2>
+          <div className="pt-5 flex flex-wrap gap-3 text-meta">
+            <Link className="tap-target border border-m3-outline-variant px-4 py-2 hover:text-swiss-red-ink" href="/seguros-lewisville-tx">
+              Seguros en Lewisville →
+            </Link>
+            <Link className="tap-target border border-m3-outline-variant px-4 py-2 hover:text-swiss-red-ink" href="/seguros-dallas-tx">
+              Seguros en Dallas →
+            </Link>
+            <Link className="tap-target border border-m3-outline-variant px-4 py-2 hover:text-swiss-red-ink" href="/seguros-fort-worth-tx">
+              Seguros en Fort Worth →
+            </Link>
+          </div>
+        </div>
+      </GridContainer>
+
       <Services />
 
       <GridContainer as="section" className="pb-24">
