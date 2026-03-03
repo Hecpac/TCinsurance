@@ -6,16 +6,16 @@ import AboutContent from "./components/AboutContent";
 import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Tatiana Castañeda — Agente de Seguros en Español, Dallas TX | TC Insurance",
+  title: "Tatiana Castañeda — Agente de Seguros en Español, Lewisville TX | TC Insurance",
   description:
-    "Tatiana Castañeda es agente licenciada de seguros de salud, vida y gastos finales en Dallas, Texas. Asesoría personalizada en español para familias latinas en DFW. Agenda tu consulta gratuita.",
+    "Tatiana Castañeda es agente licenciada de seguros de salud, vida y gastos finales en Lewisville, Texas. Asesoría personalizada en español para familias latinas en DFW. Agenda tu consulta gratuita.",
   alternates: {
     canonical: `${siteConfig.seo.siteUrl}/sobre-mi`,
   },
   openGraph: {
     type: "website",
     url: `${siteConfig.seo.siteUrl}/sobre-mi`,
-    title: "Tatiana Castañeda — Agente de Seguros en Español en Dallas, Texas",
+    title: "Tatiana Castañeda — Agente de Seguros en Español en Lewisville, Texas",
     description:
       "Asesoría personalizada en español para seguros de salud, vida y gastos finales. Agente licenciada en Texas desde 2020.",
     siteName: siteConfig.brand.name,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: "/Tatiana.png",
         width: 1200,
         height: 630,
-        alt: "Tatiana Castañeda, agente de seguros en Dallas TX",
+        alt: "Tatiana Castañeda, agente de seguros en Lewisville TX",
       },
     ],
   },
@@ -47,7 +47,7 @@ const personJsonLd = {
   givenName: "Yuri Tatiana",
   familyName: "Castañeda Carmona",
   jobTitle: "Licensed Insurance Agent",
-  description: "Agente licenciada de seguros de salud, vida y gastos finales en Dallas, Texas. Asesoría personalizada en español para familias latinas en DFW.",
+  description: "Agente licenciada de seguros de salud, vida y gastos finales en Lewisville, Texas. Asesoría personalizada en español para familias latinas en DFW.",
   url: `${siteConfig.seo.siteUrl}/sobre-mi`,
   image: `${siteConfig.seo.siteUrl}/Tatiana.png`,
   telephone: "+12039932369",
@@ -59,10 +59,10 @@ const personJsonLd = {
     url: siteConfig.seo.siteUrl,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "14951 Dallas Pkwy Suite 240",
-      addressLocality: "Dallas",
+      streetAddress: "883 Union Station Parkway Apt 20212",
+      addressLocality: "Lewisville",
       addressRegion: "TX",
-      postalCode: "75254",
+      postalCode: "75057",
       addressCountry: "US"
     },
     foundingDate: "2020",
@@ -101,12 +101,12 @@ export default function AboutPage() {
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray mb-4">Sobre Tatiana Castañeda</p>
           <h1 className="text-display tracking-[-0.055em] text-swiss-black">
-            Agente de Seguros de Salud, Vida y Gastos Finales en Dallas, Texas
+            Agente de Seguros de Salud, Vida y Gastos Finales en Lewisville, Texas
           </h1>
         </div>
 
         <p className="col-span-12 md:col-start-8 md:col-span-5 text-body text-swiss-gray pt-10 pb-14">
-          Asesoría personalizada en español para familias latinas en Dallas–Fort Worth. Comparo opciones, explico la letra pequeña y te acompaño en cada decisión de cobertura.
+          Asesoría personalizada en español para familias latinas en Lewisville, Dallas y Fort Worth. Comparo opciones, explico la letra pequeña y te acompaño en cada decisión de cobertura.
         </p>
 
         <div className="col-span-12 border-t border-swiss-black/20" />

@@ -54,7 +54,7 @@ export default function AboutContent() {
           <h2 className="text-headline text-swiss-black mb-6">A quién atiendo</h2>
           <p className="mb-4">Trabajo principalmente con familias latinas e hispanas que buscan asesoría de seguros en español — pero atiendo a cualquier persona que necesite claridad en su cobertura.</p>
           <ul className="space-y-2 list-disc pl-5 mb-12 marker:text-swiss-red">
-            <li><strong>Ubicación:</strong> Dallas, Texas. Oficina en 14951 Dallas Pkwy, Suite 240, Dallas, TX 75254.</li>
+            <li><strong>Ubicación:</strong> Lewisville, Texas. Oficina en 883 Union Station Parkway, Apt 20212, Lewisville, TX 75057.</li>
             <li><strong>Cobertura presencial:</strong> Dallas, Fort Worth, Lewisville, Irving, Denton, Arlington y todo el metroplex DFW.</li>
             <li><strong>Cobertura remota:</strong> Todo el estado de Texas vía teléfono, WhatsApp y videollamada.</li>
           </ul>

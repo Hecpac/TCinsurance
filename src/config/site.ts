@@ -42,12 +42,12 @@ const WHATSAPP_TEXT = encodeURIComponent(
 );
 const BUSINESS_STREET_ADDRESS =
   process.env.NEXT_PUBLIC_BUSINESS_STREET_ADDRESS ??
-  "14951 Dallas Pkwy Suite 240";
-const BUSINESS_CITY = process.env.NEXT_PUBLIC_BUSINESS_CITY ?? "Dallas";
-const BUSINESS_POSTAL_CODE = process.env.NEXT_PUBLIC_BUSINESS_POSTAL_CODE ?? "75254";
+  "883 Union Station Parkway Apt 20212";
+const BUSINESS_CITY = process.env.NEXT_PUBLIC_BUSINESS_CITY ?? "Lewisville";
+const BUSINESS_POSTAL_CODE = process.env.NEXT_PUBLIC_BUSINESS_POSTAL_CODE ?? "75057";
 const MAPS_EMBED_URL =
   process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL ??
-  "https://www.google.com/maps?q=14951+Dallas+Pkwy+Suite+240,+Dallas,+TX+75254&output=embed";
+  "https://www.google.com/maps?q=883+Union+Station+Parkway+Apt+20212,+Lewisville,+TX+75057&output=embed";
 
 function optionalUrl(value: string | undefined) {
   const normalized = value?.trim();
@@ -71,8 +71,8 @@ export const siteConfig = {
   },
   founder: "Tatiana Castañeda",
   location: {
-    short: "DALLAS, TX",
-    full: "14951 Dallas Pkwy Suite 240, Dallas, TX 75254",
+    short: "LEWISVILLE, TX",
+    full: "883 Union Station Parkway Apt 20212, Lewisville, TX 75057",
   },
   contact: {
     email: "hello@tcinsurance-llc.com",
@@ -120,8 +120,8 @@ export const siteConfig = {
     areaServed: "Texas, USA",
     telephone: CONTACT_PHONE_DISPLAY,
     geo: {
-      latitude: process.env.NEXT_PUBLIC_GEO_LAT ?? "32.9342",
-      longitude: process.env.NEXT_PUBLIC_GEO_LNG ?? "-96.8200",
+      latitude: process.env.NEXT_PUBLIC_GEO_LAT ?? "33.0072796",
+      longitude: process.env.NEXT_PUBLIC_GEO_LNG ?? "-96.9622064",
     },
     maps: {
       embedUrl: MAPS_EMBED_URL,
