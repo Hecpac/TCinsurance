@@ -35,6 +35,7 @@ interface LeadResponse {
   ok: boolean;
   error?: string;
   field?: LeadField;
+  leadId?: string;
 }
 
 const DEFAULT_FORM: LeadFormData = {
@@ -126,6 +127,30 @@ export default function Contact() {
     }
   }
 
+  function readAttributionParams() {
+    if (typeof window === "undefined") return {} as Record<string, string>;
+
+    const params = new URLSearchParams(window.location.search);
+    const keys = [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_term",
+      "utm_content",
+      "gclid",
+      "fbclid",
+      "msclkid",
+    ] as const;
+
+    const attribution: Record<string, string> = {};
+    for (const key of keys) {
+      const value = params.get(key)?.trim();
+      if (value) attribution[key] = value;
+    }
+
+    return attribution;
+  }
+
   function validateClient(data: LeadFormData): LeadResponse {
     const name = data.name.trim();
     if (name.length < 2) {
@@ -203,6 +228,7 @@ export default function Contact() {
           ...formData,
           source: pathname || "/",
           pageUrl: typeof window !== "undefined" ? window.location.href : "",
+          attribution: readAttributionParams(),
         }),
       });
 
@@ -220,6 +246,7 @@ export default function Contact() {
         {
           source: pathname || "/",
           insurance_type: formData.insuranceType,
+          lead_id: data.leadId ?? "unknown",
         },
         {
           dedupeKey: `lead_submit:${pathname || "/"}:${formData.insuranceType}`,
@@ -502,12 +529,24 @@ export default function Contact() {
               <a
                 href={`mailto:${siteConfig.contact.email}`}
                 className="tap-target text-meta text-swiss-black hover:text-swiss-red-ink"
+                onClick={() =>
+                  trackEvent("contact_click_email", {
+                    source: pathname || "/",
+                    channel: "email",
+                  })
+                }
               >
                 {siteConfig.contact.email} &rarr;
               </a>
               <a
                 href={`tel:${siteConfig.contact.phoneHref}`}
                 className="tap-target text-meta text-swiss-black hover:text-swiss-red-ink"
+                onClick={() =>
+                  trackEvent("contact_click_phone", {
+                    source: pathname || "/",
+                    channel: "phone",
+                  })
+                }
               >
                 {siteConfig.contact.phoneDisplay} &rarr;
               </a>
@@ -516,6 +555,12 @@ export default function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 className="tap-target text-meta text-swiss-black hover:text-swiss-red-ink"
+                onClick={() =>
+                  trackEvent("contact_click_whatsapp", {
+                    source: pathname || "/",
+                    channel: "whatsapp",
+                  })
+                }
               >
                 WhatsApp &rarr;
               </a>

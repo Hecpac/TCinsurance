@@ -1,6 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { escapeHtml, toSafeHtmlMultiline } from "@/lib/escapeHtml";
 
+type AttributionKey =
+  | "utm_source"
+  | "utm_medium"
+  | "utm_campaign"
+  | "utm_term"
+  | "utm_content"
+  | "gclid"
+  | "fbclid"
+  | "msclkid";
+
 interface LeadPayload {
   name: string;
   phone?: string;
@@ -10,6 +20,7 @@ interface LeadPayload {
   source?: string;
   pageUrl?: string;
   website?: string;
+  attribution?: Partial<Record<AttributionKey, string>>;
 }
 
 type LeadField = "name" | "phone" | "email" | "insuranceType" | "message" | "contact";
@@ -29,6 +40,7 @@ type LeadRecord = {
   email: string;
   insuranceType: string;
   message: string;
+  attribution: Partial<Record<AttributionKey, string>>;
   ip: string;
 };
 
@@ -89,6 +101,32 @@ function responseError(status: number, error: string, field?: LeadField) {
   return NextResponse.json({ ok: false, error, field }, { status });
 }
 
+function sanitizeAttribution(
+  attribution: LeadPayload["attribution"]
+): Partial<Record<AttributionKey, string>> {
+  if (!attribution) return {};
+
+  const allowedKeys: AttributionKey[] = [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+    "gclid",
+    "fbclid",
+    "msclkid",
+  ];
+
+  const sanitized: Partial<Record<AttributionKey, string>> = {};
+  for (const key of allowedKeys) {
+    const value = attribution[key]?.trim();
+    if (!value) continue;
+    sanitized[key] = value.slice(0, 120);
+  }
+
+  return sanitized;
+}
+
 function validatePayload(payload: LeadPayload) {
   const name = payload.name?.trim() ?? "";
   if (name.length < 2) {
@@ -140,6 +178,7 @@ function validatePayload(payload: LeadPayload) {
   const source = payload.source?.trim() || "/";
   const pageUrl = payload.pageUrl?.trim() || "";
   const website = payload.website?.trim() || "";
+  const attribution = sanitizeAttribution(payload.attribution);
   return {
     ok: true as const,
     value: {
@@ -151,11 +190,30 @@ function validatePayload(payload: LeadPayload) {
       source,
       pageUrl,
       website,
+      attribution,
     },
   };
 }
 
 type SendLeadEmailResult = { ok: true } | { ok: false; error: string };
+
+function formatAttributionRows(attribution: Partial<Record<AttributionKey, string>>) {
+  const entries = Object.entries(attribution);
+  if (!entries.length) {
+    return {
+      html: "<li>-</li>",
+      text: ["-"],
+    };
+  }
+
+  const html = entries
+    .map(([key, value]) => `<li><strong>${escapeHtml(key)}:</strong> ${escapeHtml(value)}</li>`)
+    .join("");
+
+  const text = entries.map(([key, value]) => `${key}: ${value}`);
+
+  return { html, text };
+}
 
 async function sendLeadEmail(lead: Omit<LeadRecord, "id" | "ip">): Promise<SendLeadEmailResult> {
   const apiKey = process.env.RESEND_API_KEY;
@@ -170,6 +228,8 @@ async function sendLeadEmail(lead: Omit<LeadRecord, "id" | "ip">): Promise<SendL
     };
   }
 
+  const attributionRows = formatAttributionRows(lead.attribution);
+
   const html = `
     <h2>Nuevo lead de asesoría</h2>
     <p><strong>Fecha:</strong> ${escapeHtml(lead.submittedAt)}</p>
@@ -179,6 +239,8 @@ async function sendLeadEmail(lead: Omit<LeadRecord, "id" | "ip">): Promise<SendL
     <p><strong>Teléfono:</strong> ${escapeHtml(lead.phone || "-")}</p>
     <p><strong>Email:</strong> ${escapeHtml(lead.email || "-")}</p>
     <p><strong>Tipo de seguro:</strong> ${escapeHtml(lead.insuranceType)}</p>
+    <p><strong>Atribución:</strong></p>
+    <ul>${attributionRows.html}</ul>
     <p><strong>Mensaje:</strong><br/>${toSafeHtmlMultiline(lead.message || "-")}</p>
   `;
 
@@ -191,6 +253,8 @@ async function sendLeadEmail(lead: Omit<LeadRecord, "id" | "ip">): Promise<SendL
     `Teléfono: ${lead.phone || "-"}`,
     `Email: ${lead.email || "-"}`,
     `Tipo de seguro: ${lead.insuranceType}`,
+    "Atribución:",
+    ...attributionRows.text,
     "Mensaje:",
     lead.message || "-",
   ].join("\n");
@@ -263,6 +327,7 @@ export async function POST(request: NextRequest) {
     email: validated.value.email,
     insuranceType: validated.value.insuranceType,
     message: validated.value.message,
+    attribution: validated.value.attribution,
     source: validated.value.source,
     pageUrl: validated.value.pageUrl,
   };
@@ -275,6 +340,7 @@ export async function POST(request: NextRequest) {
     submittedAt: lead.submittedAt,
     source: lead.source,
     insuranceType: lead.insuranceType,
+    attribution: lead.attribution,
   });
 
   const emailResult = await sendLeadEmail({
@@ -286,6 +352,7 @@ export async function POST(request: NextRequest) {
     email: lead.email,
     insuranceType: lead.insuranceType,
     message: lead.message,
+    attribution: lead.attribution,
   });
 
   if (!emailResult.ok) {
