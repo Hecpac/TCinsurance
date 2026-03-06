@@ -345,7 +345,7 @@ export const blogPosts: BlogPost[] = [
       "En Texas no hay multa estatal por no tener seguro, pero una emergencia médica sin cobertura puede generar deudas de $10,000 a $100,000 que impactan tu crédito y estabilidad financiera.",
       "### Agenda tu consulta gratuita",
       "Si vives en Lewisville, Dallas, Fort Worth, Irving, Denton o cualquier ciudad del norte de Texas, TC Insurance puede ayudarte a encontrar el plan correcto.",
-      "📞 (203) 993-2369 | 💬 WhatsApp disponible | 📧 hello@tcinsurance-llc.com",
+      "📞 (203) 993-2369 | 💬 WhatsApp disponible | 📧 tcinsurance85@gmail.com",
     ],
     faq: [
       {
@@ -406,7 +406,7 @@ export const blogPosts: BlogPost[] = [
       "Sí, durante el Período de Inscripción Abierta Anual (15 oct – 7 dic) puedes cambiar tu plan Medicare Advantage o Part D. No necesitas razón médica para cambiar.",
       "### Contáctanos para tu consulta Medicare gratuita",
       "TC Insurance atiende a personas mayores en Lewisville, Dallas, Fort Worth y todo el norte de Texas. Asesoría en español, sin presión, sin costo.",
-      "📞 (203) 993-2369 | 💬 WhatsApp | 📧 hello@tcinsurance-llc.com",
+      "📞 (203) 993-2369 | 💬 WhatsApp | 📧 tcinsurance85@gmail.com",
     ],
     faq: [
       {

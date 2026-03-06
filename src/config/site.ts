@@ -75,7 +75,7 @@ export const siteConfig = {
     full: "14951 Dallas Pkwy Suite 240, Dallas, TX 75254",
   },
   contact: {
-    email: "hello@tcinsurance-llc.com",
+    email: "tcinsurance85@gmail.com",
     phoneHref: CONTACT_PHONE_E164,
     phoneDisplay: CONTACT_PHONE_DISPLAY,
     whatsappHref: `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`,
