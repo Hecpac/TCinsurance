@@ -52,7 +52,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2025-11-20",
     readTime: "2 MIN",
     author: "Texas Department of Insurance (.gov)",
-    status: "active",
+    status: "legacy",
     featuredImage: "/blog/editorial-v3/tdi-texas-capitol.jpg",
     featuredImageAlt: "Capitolio de Texas y regulación de seguros con estilo editorial abstracto",
     content: [
@@ -71,7 +71,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2025-07-16",
     readTime: "2 MIN",
     author: "Dallas News",
-    status: "active",
+    status: "legacy",
     featuredImage: "/blog/editorial-v3/texas-uninsured-urban.jpg",
     featuredImageAlt: "Contexto urbano abstracto sobre cobertura médica en Texas",
     content: [
@@ -90,7 +90,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2025-10-02",
     readTime: "2 MIN",
     author: "Texas Department of Insurance (.gov)",
-    status: "active",
+    status: "legacy",
     featuredImage: "/blog/editorial-v3/medical-checkup-minimal.jpg",
     featuredImageAlt: "Concepto visual minimalista sobre chequeos y facturas médicas",
     content: [
@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-02-06",
     readTime: "2 MIN",
     author: "Hola News",
-    status: "active",
+    status: "legacy",
     featuredImage: "/blog/editorial-v3/cochrun-group-professional.jpg",
     featuredImageAlt: "Abstracción profesional representando al equipo de seguros The Cochrun Group",
     content: [
@@ -128,7 +128,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2025-11-09",
     readTime: "2 MIN",
     author: "CNN en Español",
-    status: "active",
+    status: "legacy",
     featuredImage: "/blog/editorial-v3/obamacare-finance-stress.jpg",
     featuredImageAlt: "Gráfica abstracta de tensión financiera y primas de salud",
     content: [
