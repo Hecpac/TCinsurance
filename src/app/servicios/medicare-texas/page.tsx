@@ -143,7 +143,7 @@ export default function ServiceLandingPage() {
           <h2 className="text-headline text-swiss-black mt-10">Costos y Partes de Medicare Original</h2>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
             <li><strong>Parte A (Hospital):</strong> Generalmente no tiene prima mensual si tú o tu cónyuge trabajaron y pagaron impuestos de Medicare por al menos 10 años (40 trimestres). Cubre estadías en el hospital y cuidado en centros de enfermería.</li>
-            <li><strong>Parte B (Médico):</strong> Cubre visitas al doctor, atención ambulatoria y equipo médico. La prima estándar en 2026 ronda los  mensuales. No tiene límite de gastos de bolsillo (Out-of-Pocket Maximum).</li>
+            <li><strong>Parte B (Médico):</strong> Cubre visitas al doctor, atención ambulatoria y equipo médico. La prima estándar en 2026 es <strong>$202.90/mes</strong> (deducible anual: <strong>$283</strong>). No tiene límite de gastos de bolsillo (Out-of-Pocket Maximum).</li>
             <li><strong>El Peligro del 20%:</strong> Medicare Original solo cubre el 80% de los costos aprobados de la Parte B. Tú eres responsable del 20% restante, sin límite anual, lo que hace indispensable un plan adicional.</li>
           </ul>
 
