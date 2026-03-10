@@ -322,7 +322,7 @@ export const blogPosts: BlogPost[] = [
       "| Período | Fechas | Qué puedes hacer |\n| --- | --- | --- |\n| Período de Inscripción Inicial | 3 meses antes + mes de cumpleaños + 3 meses después | Inscribirte por primera vez |\n| Inscripción Abierta Anual | 15 oct – 7 dic | Cambiar de plan Medicare Advantage o Part D |\n| Período de Inscripción General | 1 ene – 31 mar | Inscribirse si no lo hiciste antes (con penalidad) |",
       "### El error más costoso: inscribirse tarde",
       "Si no te inscribes en Medicare Part B cuando eres elegible, pagarás una penalidad permanente del 10% por cada 12 meses que no tuviste cobertura. Esta penalidad se suma a tu prima por el resto de tu vida.",
-      "Por ejemplo, si tardaste 2 años en inscribirte, tu prima mensual de $202.90 se convierte en aproximadamente $243.50 de por vida.",
+      "Por ejemplo, si tardaste 2 años en inscribirte, tu prima mensual de $202.90 se convierte en $243.48 de por vida (penalidad permanente del 20%).",
       "### Cómo un agente certificado en Medicare puede ayudarte en Texas",
       "Comparar planes Medicare en Texas sin ayuda es como buscar vuelos sin usar un buscador — puedes hacerlo, pero probablemente no vas a encontrar la mejor opción.",
       "Un agente certificado en Medicare como Tatiana Castañeda de TC Insurance en Lewisville, TX:",
