@@ -51,7 +51,7 @@ const personJsonLd = {
   url: `${siteConfig.seo.siteUrl}/sobre-mi`,
   image: `${siteConfig.seo.siteUrl}/Tatiana.png`,
   telephone: "+12039932369",
-  email: "hello@tcinsurance-llc.com",
+  email: "tcinsurance85@gmail.com",
   knowsLanguage: ["Spanish", "English"],
   worksFor: {
     "@type": "InsuranceAgency",

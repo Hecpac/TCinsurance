@@ -143,6 +143,7 @@ export async function generateMetadata({
   return {
     title: `${post.title} | TC Insurance`,
     description: post.excerpt,
+    ...(post.status === "legacy" && { robots: { index: false, follow: false } }),
     alternates: {
       canonical: postUrl,
     },

@@ -75,7 +75,7 @@ export const siteConfig = {
     full: "883 Union Station Parkway Apt 20212, Lewisville, TX 75057",
   },
   contact: {
-    email: "hello@tcinsurance-llc.com",
+    email: "tcinsurance85@gmail.com",
     phoneHref: CONTACT_PHONE_E164,
     phoneDisplay: CONTACT_PHONE_DISPLAY,
     whatsappHref: `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`,
