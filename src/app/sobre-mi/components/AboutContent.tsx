@@ -62,8 +62,6 @@ export default function AboutContent() {
           <h2 className="text-headline text-swiss-black mb-6">Credenciales y licencia</h2>
           <ul className="space-y-2 list-none p-0">
             <li className="flex gap-2 items-start"><span className="text-swiss-red mt-1">✓</span> <span>Licensed Insurance Agent, Texas Department of Insurance</span></li>
-            <li className="flex gap-2 items-start"><span className="text-swiss-red mt-1">✓</span> <span>Licencia TDI #: <strong>[INSERTAR NÚMERO]</strong></span></li>
-            <li className="flex gap-2 items-start"><span className="text-swiss-red mt-1">✓</span> <span>NPN: <strong>[INSERTAR NÚMERO]</strong></span></li>
             <li className="flex gap-2 items-start"><span className="text-swiss-red mt-1">✓</span> <span>Agencia: TC Insurance Agency Services, LLC</span></li>
             <li className="flex gap-2 items-start"><span className="text-swiss-red mt-1">✓</span> <span>Activa desde: 2020</span></li>
             <li className="flex gap-2 items-start"><span className="text-swiss-red mt-1">✓</span> <span>Idiomas: Español (nativo) · Inglés (fluido)</span></li>
