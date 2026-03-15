@@ -32,6 +32,7 @@ function normalizeSiteUrl(value: string | undefined): string {
 const SITE_URL = normalizeSiteUrl(RAW_SITE_URL);
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-XXXXXXX";
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID ?? "G-XXXXXXXXXX";
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? null;
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "000000000000000";
 const CONTACT_PHONE_E164 = process.env.NEXT_PUBLIC_CONTACT_PHONE_E164 ?? "+12039932369";
 const CONTACT_PHONE_DISPLAY =
@@ -98,6 +99,7 @@ export const siteConfig = {
     gtmId: GTM_ID,
     ga4Id: GA4_ID,
     metaPixelId: META_PIXEL_ID,
+    googleAdsId: GOOGLE_ADS_ID,
   },
   seo: {
     siteUrl: SITE_URL,

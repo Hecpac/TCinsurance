@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import { Suspense } from "react";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import ConsentBanner from "@/components/ConsentBanner";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
@@ -13,15 +15,12 @@ import ScrollToTop from "@/components/ScrollToTop";
 import LocalBusinessJsonLd from "@/components/LocalBusinessJsonLd";
 import SkipLink from "@/components/SkipLink";
 import {
-  GoogleAnalyticsHead,
+  GoogleConsentModeHead,
   GoogleTagManagerHead,
-  GoogleTagManagerNoScript,
-  MetaPixelHead,
-  MetaPixelNoScript,
+  GoogleAdsHead,
 } from "@/components/GoogleTagManager";
 import { siteConfig } from "@/config/site";
 import { ScrollSnapProvider } from "@/contexts/ScrollSnapContext";
-import { Analytics } from "@vercel/analytics/next";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -104,9 +103,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${archivo.variable} ${ibmPlexMono.variable}`}>
       <head>
+        <GoogleConsentModeHead />
         <GoogleTagManagerHead gtmId={siteConfig.analytics.gtmId} />
-        <GoogleAnalyticsHead ga4Id={siteConfig.analytics.ga4Id} />
-        <MetaPixelHead pixelId={siteConfig.analytics.metaPixelId} />
+        <GoogleAdsHead googleAdsId={siteConfig.analytics.googleAdsId} />
         <meta name="geo.region" content="US-TX" />
         <meta name="geo.placename" content={siteConfig.location.full} />
         {hasGeo ? (
@@ -125,8 +124,6 @@ export default function RootLayout({
       </head>
       <body className="bg-swiss-paper text-swiss-black antialiased">
         <ScrollSnapProvider>
-          <GoogleTagManagerNoScript gtmId={siteConfig.analytics.gtmId} />
-          <MetaPixelNoScript pixelId={siteConfig.analytics.metaPixelId} />
           <SkipLink />
           <Suspense
             fallback={
@@ -164,6 +161,7 @@ export default function RootLayout({
               <ScrollToTop />
             </Suspense>
           </aside>
+          <ConsentBanner />
         </ScrollSnapProvider>
         <Analytics />
       </body>

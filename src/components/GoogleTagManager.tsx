@@ -1,4 +1,9 @@
 import Script from "next/script";
+import {
+  CONSENT_COOKIE_NAME,
+  CONSENT_REQUIRED_COUNTRIES,
+  GEO_COUNTRY_COOKIE_NAME,
+} from "@/lib/consent";
 
 interface GoogleTagManagerProps {
   gtmId?: string;
@@ -8,20 +13,76 @@ function isEnabled(gtmId?: string) {
   return Boolean(gtmId && gtmId !== "GTM-XXXXXXX");
 }
 
-interface GoogleAnalyticsProps {
-  ga4Id?: string;
-}
+export function GoogleConsentModeHead() {
+  const consentRequiredCountries = JSON.stringify([...CONSENT_REQUIRED_COUNTRIES]);
+  const script = `
+    (function() {
+      var consentCookieName = ${JSON.stringify(CONSENT_COOKIE_NAME)};
+      var geoCookieName = ${JSON.stringify(GEO_COUNTRY_COOKIE_NAME)};
+      var consentRequiredCountries = new Set(${consentRequiredCountries});
 
-interface MetaPixelProps {
-  pixelId?: string;
-}
+      function readCookieValue(cookieName) {
+        var encodedName = encodeURIComponent(cookieName) + '=';
+        var parts = document.cookie.split(';');
 
-function isGa4Enabled(ga4Id?: string) {
-  return Boolean(ga4Id && ga4Id !== "G-XXXXXXXXXX");
-}
+        for (var index = 0; index < parts.length; index += 1) {
+          var part = parts[index].trim();
+          if (!part.startsWith(encodedName)) continue;
 
-function isMetaPixelEnabled(pixelId?: string) {
-  return Boolean(pixelId && pixelId !== "000000000000000");
+          var rawValue = part.slice(encodedName.length);
+          if (!rawValue) return null;
+
+          try {
+            return decodeURIComponent(rawValue);
+          } catch {
+            return rawValue;
+          }
+        }
+
+        return null;
+      }
+
+      function normalizeCountryCode(value) {
+        var normalized = typeof value === 'string' ? value.trim().toUpperCase() : '';
+        return /^[A-Z]{2}$/.test(normalized) ? normalized : null;
+      }
+
+      function parseConsentState(value) {
+        return value === 'accepted' || value === 'rejected' ? value : null;
+      }
+
+      var countryCode = normalizeCountryCode(readCookieValue(geoCookieName));
+      var consentState = parseConsentState(readCookieValue(consentCookieName));
+      var requiresConsent = countryCode ? consentRequiredCountries.has(countryCode) : false;
+      var consentGranted = !requiresConsent || consentState === 'accepted';
+      var waitForUpdate = requiresConsent && consentState === null ? 500 : 0;
+      var consentDefaults = consentGranted
+        ? {
+            ad_storage: 'granted',
+            analytics_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            wait_for_update: waitForUpdate,
+          }
+        : {
+            ad_storage: 'denied',
+            analytics_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: waitForUpdate,
+          };
+
+      window.__tcConsentCountryCode = countryCode;
+      window.__tcConsentState = consentState;
+      window.__tcConsentRequiresConsent = requiresConsent;
+      window.__tcGtagEventsEnabled = consentGranted;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function gtag(){window.dataLayer.push(arguments);};
+      window.gtag('consent', 'default', consentDefaults);
+    })();
+  `;
+
+  return <script id="google-consent-mode" dangerouslySetInnerHTML={{ __html: script }} />;
 }
 
 export function GoogleTagManagerHead({ gtmId }: GoogleTagManagerProps) {
@@ -35,75 +96,41 @@ export function GoogleTagManagerHead({ gtmId }: GoogleTagManagerProps) {
     })(window,document,'script','dataLayer','${gtmId}');
   `;
 
-  return <Script id="gtm-init" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: script }} />;
-}
-
-export function GoogleTagManagerNoScript({ gtmId }: GoogleTagManagerProps) {
-  if (!isEnabled(gtmId)) return null;
-
   return (
-    <noscript>
-      <iframe
-        title="google-tag-manager"
-        src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
-        height="0"
-        width="0"
-        style={{ display: "none", visibility: "hidden" }}
-      />
-    </noscript>
+    <Script id="gtm-init" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: script }} />
   );
 }
 
-export function GoogleAnalyticsHead({ ga4Id }: GoogleAnalyticsProps) {
-  if (!isGa4Enabled(ga4Id)) return null;
+interface GoogleAdsProps {
+  googleAdsId?: string | null;
+}
 
-  const script = `
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function gtag(){window.dataLayer.push(arguments);};
-    window.gtag('js', new Date());
-    window.gtag('config', '${ga4Id}', { send_page_view: true, anonymize_ip: true });
-  `;
+function isGoogleAdsEnabled(id?: string | null) {
+  return Boolean(id && id !== "AW-XXXXXXXXX");
+}
+
+export function GoogleAdsHead({ googleAdsId }: GoogleAdsProps) {
+  if (!isGoogleAdsEnabled(googleAdsId)) return null;
 
   return (
     <>
-      <Script id="ga4-lib" strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`} />
-      <Script id="ga4-init" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: script }} />
-    </>
-  );
-}
-
-export function MetaPixelHead({ pixelId }: MetaPixelProps) {
-  if (!isMetaPixelEnabled(pixelId)) return null;
-
-  const script = `
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '${pixelId}');
-    fbq('track', 'PageView');
-  `;
-
-  return <Script id="meta-pixel-init" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: script }} />;
-}
-
-export function MetaPixelNoScript({ pixelId }: MetaPixelProps) {
-  if (!isMetaPixelEnabled(pixelId)) return null;
-
-  return (
-    <noscript>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        alt=""
-        height="1"
-        width="1"
-        style={{ display: "none" }}
-        src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
+      <Script
+        id="gads-js"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
       />
-    </noscript>
+      <Script
+        id="gads-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function gtag(){window.dataLayer.push(arguments);};
+            gtag('js', new Date());
+            gtag('config', '${googleAdsId}');
+          `,
+        }}
+      />
+    </>
   );
 }
