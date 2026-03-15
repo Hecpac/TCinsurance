@@ -4,6 +4,8 @@ import { useRef, useEffect, useState, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
 import GridContainer from "@/components/GridContainer";
 import { siteConfig } from "@/config/site";
+import { readAnalyticsContext } from "@/lib/analyticsContext";
+import { KEY_EVENTS } from "@/lib/keyEvents";
 import { runBackgroundTask } from "@/lib/schedule";
 import { trackEvent } from "@/lib/tracking";
 
@@ -229,6 +231,7 @@ export default function Contact() {
           source: pathname || "/",
           pageUrl: typeof window !== "undefined" ? window.location.href : "",
           attribution: readAttributionParams(),
+          analytics: readAnalyticsContext(),
         }),
       });
 
@@ -241,18 +244,22 @@ export default function Contact() {
         return;
       }
 
-      trackEvent(
-        "lead_submit",
-        {
-          source: pathname || "/",
-          insurance_type: formData.insuranceType,
-          lead_id: data.leadId ?? "unknown",
-        },
-        {
-          dedupeKey: `lead_submit:${pathname || "/"}:${formData.insuranceType}`,
-          dedupeWindowMs: 2000,
-        }
-      );
+      const eventParams = {
+        source: pathname || "/",
+        insurance_type: formData.insuranceType,
+        lead_id: data.leadId ?? "unknown",
+      };
+      const eventKey = `${pathname || "/"}:${formData.insuranceType}:${data.leadId ?? "unknown"}`;
+
+      trackEvent("lead_submit", eventParams, {
+        dedupeKey: `lead_submit:${eventKey}`,
+        dedupeWindowMs: 2000,
+      });
+
+      trackEvent(KEY_EVENTS.qualifyLead, eventParams, {
+        dedupeKey: `qualify_lead:${eventKey}`,
+        dedupeWindowMs: 2000,
+      });
 
       setStatus("success");
       setMessage("Gracias. Recibimos tu solicitud y te contactaremos en menos de 24 horas.");

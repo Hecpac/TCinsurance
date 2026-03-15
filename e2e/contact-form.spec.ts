@@ -58,6 +58,47 @@ test.describe("Contact form", () => {
     await expect(errorText).toContainText("email", { ignoreCase: true });
   });
 
+  test("fires qualify_lead after a successful submit", async ({ page }) => {
+    await page.route("**/api/lead", async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ ok: true, leadId: "lead_test_123" }),
+      });
+    });
+
+    await page.locator("#name").fill("Test User");
+    await page.locator("#phone").fill("4691234567");
+
+    const submitButton = page.getByRole("button", { name: /solicitar/i });
+    await submitButton.click();
+
+    const statusMessage = page.locator("[data-testid='contact-section'] [role='status']").first();
+    await expect(statusMessage).toContainText("Gracias.");
+
+    const events = await page.evaluate(() =>
+      (window.dataLayer ?? [])
+        .filter((entry) => typeof entry === "object" && entry !== null)
+        .map((entry) => entry.event)
+    );
+
+    expect(events).toContain("lead_submit");
+    expect(events).toContain("qualify_lead");
+
+    const qualifyLeadEvent = await page.evaluate(() =>
+      (window.dataLayer ?? []).find(
+        (entry) => typeof entry === "object" && entry !== null && entry.event === "qualify_lead"
+      )
+    );
+
+    expect(qualifyLeadEvent).toMatchObject({
+      event: "qualify_lead",
+      lead_id: "lead_test_123",
+      insurance_type: "Salud",
+      source: "/",
+    });
+  });
+
   test("insurance type dropdown has options", async ({ page }) => {
     const select = page.locator("#insuranceType");
     const options = select.locator("option");
