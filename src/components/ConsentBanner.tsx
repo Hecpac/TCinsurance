@@ -32,9 +32,8 @@ function setCookie(name: string, value: string, days: number) {
 
 function updateGtagConsent(granted: boolean) {
   const state = granted ? "granted" : "denied";
-  const w = window as Record<string, unknown>;
-  if (typeof w.gtag === "function") {
-    (w.gtag as (...args: unknown[]) => void)("consent", "update", {
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", {
       ad_storage: state,
       analytics_storage: state,
       ad_user_data: state,
@@ -76,7 +75,7 @@ export default function ConsentBanner() {
     >
       <div className="mx-auto flex max-w-4xl flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-body text-swiss-black/90">
-          Usamos cookies para analytics y publicidad.{" "}
+          Usamos cookies para analytics y publicidad. {" "}
           <a href="/privacidad" className="underline hover:text-swiss-red-ink">
             Política de privacidad
           </a>
