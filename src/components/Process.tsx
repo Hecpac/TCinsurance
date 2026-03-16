@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import GridContainer from "@/components/GridContainer";
-import GlareCard from "@/components/ui/glare-card";
+import GlareCard from "@/components/ui/GlareCard";
 import { processSteps } from "@/data/process";
 import { runBackgroundTask } from "@/lib/schedule";
 import { HOME_SECTION_PATHS } from "@/config/site";

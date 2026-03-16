@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import GridContainer from "@/components/GridContainer";
-import GlareCard from "@/components/ui/glare-card";
+import GlareCard from "@/components/ui/GlareCard";
 import { runBackgroundTask } from "@/lib/schedule";
 
 const STATS = [

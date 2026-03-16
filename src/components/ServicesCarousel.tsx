@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { runBackgroundTask } from "@/lib/schedule";
-import GlareCard from "@/components/ui/glare-card";
+import GlareCard from "@/components/ui/GlareCard";
 import ServiceCard from "@/components/ServiceCard";
 import type { InsuranceService } from "@/data/services";
 

@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import GridContainer from "@/components/GridContainer";
-import GlareCard from "@/components/ui/glare-card";
+import GlareCard from "@/components/ui/GlareCard";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import ServiceCard from "@/components/ServiceCard";
 import { runBackgroundTask } from "@/lib/schedule";

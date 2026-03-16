@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GridContainer from "@/components/GridContainer";
-import GlareCard from "@/components/ui/glare-card";
+import GlareCard from "@/components/ui/GlareCard";
 import CTAInline from "@/components/CTAInline";
 import { HOME_SECTION_PATHS } from "@/config/site";
 import { formatBlogDateShort, getLatestPosts } from "@/data/blogPosts";

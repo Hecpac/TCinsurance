@@ -29,17 +29,6 @@ export const metadata: Metadata = {
   },
 };
 
-const processSteps = [
-  "Validar médicos y hospitales en red",
-  "Cruzar medicamentos con cobertura Part D",
-  "Comparar costo mensual vs. costo total anual",
-  "Definir opción más estable para tu caso",
-];
-const expectedResults = [
-  "Plan compatible con médicos y recetas",
-  "Menor riesgo de sorpresas de costo",
-  "Decisión de Medicare con criterio técnico",
-];
 const faqItems = [
   {
     question: "¿Advantage o suplemento?",
@@ -134,7 +123,7 @@ export default function ServiceLandingPage() {
         <section className="col-span-12 md:col-start-3 md:col-span-7 pt-10 space-y-7 text-body text-swiss-black/90">
           <h2 className="text-headline text-swiss-black">¿Qué es Medicare y por qué necesitas asesoría?</h2>
           <p>
-            Medicare es el programa federal de seguro de salud para personas de 65 años o más (y ciertas personas más jóvenes con discapacidades). Sin embargo, inscribirse no significa que "todo es gratis". El sistema de Medicare original tiene vacíos de cobertura que pueden llevarte a pagar miles de dólares en deducibles y copagos si no lo complementas adecuadamente.
+            Medicare es el programa federal de seguro de salud para personas de 65 años o más (y ciertas personas más jóvenes con discapacidades). Sin embargo, inscribirse no significa que &quot;todo es gratis&quot;. El sistema de Medicare original tiene vacíos de cobertura que pueden llevarte a pagar miles de dólares en deducibles y copagos si no lo complementas adecuadamente.
           </p>
           <p>
             En TC Insurance, nos especializamos en ayudar a la comunidad hispana en Texas a descifrar la sopa de letras de Medicare (Partes A, B, C y D) para que elijas el plan que mejor se adapte a tus necesidades de salud y a tu bolsillo.

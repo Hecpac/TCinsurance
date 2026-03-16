@@ -3,7 +3,7 @@ import Link from "next/link";
 import GridContainer from "@/components/GridContainer";
 import Philosophy from "@/components/Philosophy";
 import AboutContent from "./components/AboutContent";
-import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Tatiana Castañeda — Agente de Seguros en Español, Lewisville TX | TC Insurance",
