@@ -7,7 +7,7 @@ import Link from "next/link";
 import { HOME_SECTION_PATHS } from "@/config/site";
 import { runBackgroundTask } from "@/lib/schedule";
 import { trackEvent } from "@/lib/tracking";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { HoverBorderGradient } from "@/components/ui/HoverBorderGradient";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);

@@ -28,17 +28,6 @@ export const metadata: Metadata = {
   },
 };
 
-const processSteps = [
-  "Revisar red de dentistas disponibles en tu zona",
-  "Comparar periodos de espera y coberturas por procedimiento",
-  "Evaluar topes anuales y copagos",
-  "Elegir opción útil para adultos y niños",
-];
-const expectedResults = [
-  "Prevención constante y menor gasto inesperado",
-  "Mejor acceso a tratamientos frecuentes",
-  "Plan dental coherente con tu presupuesto",
-];
 const faqItems = [
   {
     question: "¿Cubre limpiezas y revisiones?",
@@ -153,7 +142,7 @@ export default function ServiceLandingPage() {
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
             <li><strong>100% (Preventivo):</strong> Limpiezas (usualmente 2 anuales), exámenes rutinarios y radiografías cubiertas al 100% (Tú pagas /bin/zsh).</li>
             <li><strong>80% (Básicos):</strong> Empastes de caries y extracciones simples. El seguro paga el 80% y tú el 20% del costo negociado.</li>
-            <li><strong>50% (Mayores):</strong> Tratamientos de conducto, coronas, implantes y prótesis. Tú pagas la mitad (50%). A menudo requieren pasar un "período de espera" de 6 a 12 meses.</li>
+            <li><strong>50% (Mayores):</strong> Tratamientos de conducto, coronas, implantes y prótesis. Tú pagas la mitad (50%). A menudo requieren pasar un &quot;período de espera&quot; de 6 a 12 meses.</li>
           </ul>
 
           <h2 className="text-headline text-swiss-black mt-10">Nuestro proceso de asesoría</h2>

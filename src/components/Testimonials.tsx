@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ComponentType } from "react";
 import "swiper/css";
 import GridContainer from "@/components/GridContainer";
-import GlareCard from "@/components/ui/glare-card";
+import GlareCard from "@/components/ui/GlareCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import { testimonials } from "@/data/testimonials";
 import { runBackgroundTask } from "@/lib/schedule";

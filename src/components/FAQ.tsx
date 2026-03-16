@@ -8,7 +8,7 @@ import { faqItems } from "@/data/faq";
 import { runBackgroundTask } from "@/lib/schedule";
 import { trackEvent } from "@/lib/tracking";
 import { addCardHoverLift } from "@/lib/gsapCardLift";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { HoverBorderGradient } from "@/components/ui/HoverBorderGradient";
 
 export default function FAQ() {
   const sectionRef = useRef<HTMLDivElement>(null);

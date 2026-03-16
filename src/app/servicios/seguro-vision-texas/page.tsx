@@ -28,17 +28,6 @@ export const metadata: Metadata = {
   },
 };
 
-const processSteps = [
-  "Validar frecuencia de exámenes por miembro",
-  "Comparar beneficios de lentes y armazones",
-  "Revisar red de ópticas y especialistas",
-  "Seleccionar plan con mejor valor anual",
-];
-const expectedResults = [
-  "Ahorro en exámenes y lentes",
-  "Seguimiento visual más constante",
-  "Cobertura práctica para adultos y niños",
-];
 const faqItems = [
   {
     question: "¿Qué cubre típicamente?",
