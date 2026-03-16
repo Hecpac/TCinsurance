@@ -28,17 +28,6 @@ export const metadata: Metadata = {
   },
 };
 
-const processSteps = [
-  "Revisar póliza principal y brechas de cobertura",
-  "Definir nivel de respaldo en efectivo necesario",
-  "Comparar triggers de pago y exclusiones",
-  "Alinear complemento con riesgo familiar real",
-];
-const expectedResults = [
-  "Más liquidez ante eventos críticos",
-  "Mejor manejo de deducibles y copagos altos",
-  "Protección adicional sin duplicar coberturas",
-];
 const faqItems = [
   {
     question: "¿Reemplaza mi seguro principal?",
@@ -136,12 +125,12 @@ export default function ServiceLandingPage() {
             Incluso con un buen seguro de salud, una estadía en el hospital puede dejarte con miles de dólares en facturas por culpa de tu deducible (Out-of-Pocket). Aquí entra el seguro de indemnización. A diferencia del médico tradicional que le paga a la clínica, una póliza de indemnización <strong>te deposita efectivo directamente a ti</strong>.
           </p>
           <p>
-            Te depositamos dinero (libre de impuestos) por cada día de hospitalización, por accidentes en la sala de emergencias, o si sufres una enfermedad grave. En TC Insurance, usamos este seguro como un "escudo financiero" para que puedas pagar tu hipoteca, comida, y deudas mientras te recuperas sin ingresos.
+            Te depositamos dinero (libre de impuestos) por cada día de hospitalización, por accidentes en la sala de emergencias, o si sufres una enfermedad grave. En TC Insurance, usamos este seguro como un &quot;escudo financiero&quot; para que puedas pagar tu hipoteca, comida, y deudas mientras te recuperas sin ingresos.
           </p>
 
           <h2 className="text-headline text-swiss-black mt-10">Tipos de Cobertura y Cuánto Pagan</h2>
           <p>
-            Las pólizas (con primas muy accesibles,  a /mes) se pueden personalizar añadiendo "cláusulas" (riders) a la medida:
+            Las pólizas (con primas muy accesibles,  a /mes) se pueden personalizar añadiendo &quot;cláusulas&quot; (riders) a la medida:
           </p>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
             <li><strong>Hospitalización (Hospital Indemnity):</strong> Paga un monto fijo (ej. ,000) el día de ingreso, más un monto diario (ej. ) por los días que pases internado en cama o UCI.</li>
@@ -151,8 +140,8 @@ export default function ServiceLandingPage() {
 
           <h2 className="text-headline text-swiss-black mt-10">¿A quién le conviene este seguro?</h2>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            <li><strong>Portadores de planes médicos de alto deducible (HDHP) o "Bronze" de Obamacare,</strong> donde enfrentas de entrada un riesgo de bolsillo enorme.</li>
-            <li><strong>Contratistas, Freelancers o dueños de negocios:</strong> personas que no cuentan con "días de enfermedad pagados" (PTO) y cuyos ingresos mueren en cuanto pisan un hospital.</li>
+            <li><strong>Portadores de planes médicos de alto deducible (HDHP) o &quot;Bronze&quot; de Obamacare,</strong> donde enfrentas de entrada un riesgo de bolsillo enorme.</li>
+            <li><strong>Contratistas, Freelancers o dueños de negocios:</strong> personas que no cuentan con &quot;días de enfermedad pagados&quot; (PTO) y cuyos ingresos mueren en cuanto pisan un hospital.</li>
             <li><strong>Familias muy activas con hijos menores:</strong> donde las visitas constantes a urgencias o urgent care por fracturas y deportes son una realidad.</li>
           </ul>
 
