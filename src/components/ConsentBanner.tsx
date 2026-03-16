@@ -32,9 +32,8 @@ function setCookie(name: string, value: string, days: number) {
 
 function updateGtagConsent(granted: boolean) {
   const state = granted ? "granted" : "denied";
-  const w = window as unknown as Record<string, unknown>;
-  if (typeof w.gtag === "function") {
-    (w.gtag as (...args: unknown[]) => void)("consent", "update", {
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", {
       ad_storage: state,
       analytics_storage: state,
       ad_user_data: state,
