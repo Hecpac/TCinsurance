@@ -2,7 +2,6 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import GridContainer from "@/components/GridContainer";
 import { HOME_SECTION_PATHS, LEGAL_PATHS, siteConfig } from "@/config/site";
 

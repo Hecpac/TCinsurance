@@ -28,17 +28,6 @@ export const metadata: Metadata = {
   },
 };
 
-const processSteps = [
-  "Definir objetivo de protección (ingreso, deuda, educación)",
-  "Comparar temporal vs. permanente según etapa de vida",
-  "Ajustar monto a presupuesto sostenible",
-  "Documentar beneficiarios y ruta de activación",
-];
-const expectedResults = [
-  "Protección financiera concreta para tu hogar",
-  "Cobertura alineada a tus compromisos reales",
-  "Menor riesgo de endeudamiento familiar",
-];
 const faqItems = [
   {
     question: "¿Temporal o permanente?",
@@ -145,7 +134,7 @@ export default function ServiceLandingPage() {
           </p>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
             <li><strong>Pólizas Temporales (Term Life):</strong> Son las más económicas. Para una persona sana de 35 años, una póliza de ,000 por 20 años puede costar entre  y  al mes. Proporcionan la máxima cobertura por el menor costo durante los años de mayor riesgo financiero.</li>
-            <li><strong>Pólizas Permanentes (Whole Life / IUL):</strong> Tienen primas sustancialmente más altas (-+ al mes), pero garantizan pago por fallecimiento sin importar cuándo ocurra. Además, acumulan un "valor en efectivo" (cash value) que crece con ventajas fiscales.</li>
+            <li><strong>Pólizas Permanentes (Whole Life / IUL):</strong> Tienen primas sustancialmente más altas (-+ al mes), pero garantizan pago por fallecimiento sin importar cuándo ocurra. Además, acumulan un &quot;valor en efectivo&quot; (cash value) que crece con ventajas fiscales.</li>
             <li><strong>Monto Recomendado:</strong> La regla general es multiplicar tu ingreso anual por 10 a 15 veces, sumando deudas mayores e hipotecas, para calcular el beneficio por muerte necesario.</li>
           </ul>
 

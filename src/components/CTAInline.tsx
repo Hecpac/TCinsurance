@@ -5,7 +5,7 @@ import Link from "next/link";
 import { runBackgroundTask } from "@/lib/schedule";
 import { addCardHoverLift } from "@/lib/gsapCardLift";
 import { trackEvent } from "@/lib/tracking";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { HoverBorderGradient } from "@/components/ui/HoverBorderGradient";
 
 interface CTAButton {
   label: string;

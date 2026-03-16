@@ -29,17 +29,6 @@ export const metadata: Metadata = {
   },
 };
 
-const processSteps = [
-  "Comparar HMO y PPO según tus médicos actuales",
-  "Revisar deducibles, copagos y gasto máximo anual",
-  "Validar cobertura para tu familia y medicamentos clave",
-  "Definir plan alineado a presupuesto real",
-];
-const expectedResults = [
-  "Cobertura médica usable en tu zona",
-  "Menos sorpresas de costo durante el año",
-  "Decisión clara y documentada",
-];
 const faqItems = [
   {
     question: "¿Qué diferencia hay entre HMO y PPO?",
@@ -166,7 +155,7 @@ export default function ServiceLandingPage() {
           <h2 className="text-headline text-swiss-black mt-10">Cómo trabajamos tu caso</h2>
           <ul className="space-y-2 pl-6 list-decimal marker:text-swiss-red font-semibold">
             <li><span className="font-normal"><strong>Validación de médicos actuales:</strong> Revisamos si tu pediatra o especialista acepta la red del nuevo seguro.</span></li>
-            <li><span className="font-normal"><strong>Revisión de medicamentos (Rx):</strong> Verificamos en qué "Tier" cae tu medicina en aseguradoras como Ambetter o BCBS.</span></li>
+            <li><span className="font-normal"><strong>Revisión de medicamentos (Rx):</strong> Verificamos en qué &quot;Tier&quot; cae tu medicina en aseguradoras como Ambetter o BCBS.</span></li>
             <li><span className="font-normal"><strong>Proyección de uso médico:</strong> Balanceamos el costo de la prima con el deducible según tus necesidades anuales.</span></li>
             <li><span className="font-normal"><strong>Definir plan alineado a presupuesto:</strong> Aseguramos que la póliza elegida proteja tus finanzas sin asfixiarte mes a mes.</span></li>
           </ul>
