@@ -1,5 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { escapeHtml, toSafeHtmlMultiline } from "@/lib/escapeHtml";
+import {
+  isGa4MeasurementConfigured,
+  normalizeClientId,
+  sendGa4MeasurementEvent,
+} from "@/lib/ga4MeasurementProtocol";
+import { KEY_EVENTS } from "@/lib/keyEvents";
+import { buildUserProvidedData, deriveUserIdFromContact } from "@/lib/userProvidedData";
+import { checkDistributedRateLimit } from "@/lib/distributedRateLimit";
 
 type AttributionKey =
   | "utm_source"
@@ -11,6 +19,10 @@ type AttributionKey =
   | "fbclid"
   | "msclkid";
 
+interface LeadAnalyticsContext {
+  clientId?: string;
+}
+
 interface LeadPayload {
   name: string;
   phone?: string;
@@ -21,14 +33,10 @@ interface LeadPayload {
   pageUrl?: string;
   website?: string;
   attribution?: Partial<Record<AttributionKey, string>>;
+  analytics?: LeadAnalyticsContext;
 }
 
 type LeadField = "name" | "phone" | "email" | "insuranceType" | "message" | "contact";
-
-type RateLimitEntry = {
-  count: number;
-  expiresAt: number;
-};
 
 type LeadRecord = {
   id: string;
@@ -41,7 +49,7 @@ type LeadRecord = {
   insuranceType: string;
   message: string;
   attribution: Partial<Record<AttributionKey, string>>;
-  ip: string;
+  analytics: LeadAnalyticsContext;
 };
 
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
@@ -57,44 +65,11 @@ const insuranceTypes = new Set([
   "Otro",
 ]);
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const rateLimitStore = new Map<string, RateLimitEntry>();
-const leadStore: LeadRecord[] = [];
 
 function parseClientIp(request: NextRequest) {
   const forwarded = request.headers.get("x-forwarded-for");
   if (forwarded) return forwarded.split(",")[0]?.trim() || "unknown";
   return request.headers.get("x-real-ip") ?? "unknown";
-}
-
-function clearExpiredRateLimitEntries(now: number) {
-  for (const [ip, entry] of rateLimitStore.entries()) {
-    if (entry.expiresAt <= now) rateLimitStore.delete(ip);
-  }
-}
-
-function checkRateLimit(ip: string) {
-  const now = Date.now();
-  clearExpiredRateLimitEntries(now);
-
-  const existing = rateLimitStore.get(ip);
-  if (!existing) {
-    rateLimitStore.set(ip, {
-      count: 1,
-      expiresAt: now + RATE_LIMIT_WINDOW_MS,
-    });
-    return { allowed: true } as const;
-  }
-
-  if (existing.count >= RATE_LIMIT_MAX_REQUESTS) {
-    return {
-      allowed: false,
-      retryAfterSeconds: Math.max(1, Math.ceil((existing.expiresAt - now) / 1000)),
-    } as const;
-  }
-
-  existing.count += 1;
-  rateLimitStore.set(ip, existing);
-  return { allowed: true } as const;
 }
 
 function responseError(status: number, error: string, field?: LeadField) {
@@ -125,6 +100,11 @@ function sanitizeAttribution(
   }
 
   return sanitized;
+}
+
+function sanitizeAnalyticsContext(analytics: LeadPayload["analytics"]): LeadAnalyticsContext {
+  const clientId = normalizeClientId(analytics?.clientId);
+  return clientId ? { clientId } : {};
 }
 
 function validatePayload(payload: LeadPayload) {
@@ -179,6 +159,8 @@ function validatePayload(payload: LeadPayload) {
   const pageUrl = payload.pageUrl?.trim() || "";
   const website = payload.website?.trim() || "";
   const attribution = sanitizeAttribution(payload.attribution);
+  const analytics = sanitizeAnalyticsContext(payload.analytics);
+
   return {
     ok: true as const,
     value: {
@@ -191,6 +173,7 @@ function validatePayload(payload: LeadPayload) {
       pageUrl,
       website,
       attribution,
+      analytics,
     },
   };
 }
@@ -215,7 +198,7 @@ function formatAttributionRows(attribution: Partial<Record<AttributionKey, strin
   return { html, text };
 }
 
-async function sendLeadEmail(lead: Omit<LeadRecord, "id" | "ip">): Promise<SendLeadEmailResult> {
+async function sendLeadEmail(lead: Omit<LeadRecord, "id">): Promise<SendLeadEmailResult> {
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.LEAD_TO_EMAIL ?? process.env.CONTACT_TO_EMAIL;
   const fromEmail = process.env.LEAD_FROM_EMAIL ?? process.env.CONTACT_FROM_EMAIL;
@@ -239,6 +222,7 @@ async function sendLeadEmail(lead: Omit<LeadRecord, "id" | "ip">): Promise<SendL
     <p><strong>Teléfono:</strong> ${escapeHtml(lead.phone || "-")}</p>
     <p><strong>Email:</strong> ${escapeHtml(lead.email || "-")}</p>
     <p><strong>Tipo de seguro:</strong> ${escapeHtml(lead.insuranceType)}</p>
+    <p><strong>GA client ID:</strong> ${escapeHtml(lead.analytics.clientId || "-")}</p>
     <p><strong>Atribución:</strong></p>
     <ul>${attributionRows.html}</ul>
     <p><strong>Mensaje:</strong><br/>${toSafeHtmlMultiline(lead.message || "-")}</p>
@@ -253,6 +237,7 @@ async function sendLeadEmail(lead: Omit<LeadRecord, "id" | "ip">): Promise<SendL
     `Teléfono: ${lead.phone || "-"}`,
     `Email: ${lead.email || "-"}`,
     `Tipo de seguro: ${lead.insuranceType}`,
+    `GA client ID: ${lead.analytics.clientId || "-"}`,
     "Atribución:",
     ...attributionRows.text,
     "Mensaje:",
@@ -302,7 +287,17 @@ export async function POST(request: NextRequest) {
   }
 
   const ip = parseClientIp(request);
-  const rateLimit = checkRateLimit(ip);
+  const rateLimit = await checkDistributedRateLimit({
+    namespace: "lead",
+    key: ip,
+    windowSeconds: RATE_LIMIT_WINDOW_MS / 1000,
+    maxRequests: RATE_LIMIT_MAX_REQUESTS,
+  });
+
+  if (!rateLimit.allowed && rateLimit.backend === "unconfigured") {
+    return responseError(503, rateLimit.error || "Protección temporalmente no disponible.");
+  }
+
   if (!rateLimit.allowed) {
     return NextResponse.json(
       {
@@ -321,19 +316,16 @@ export async function POST(request: NextRequest) {
   const lead: LeadRecord = {
     id: `lead_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`,
     submittedAt: new Date().toISOString(),
-    ip,
     name: validated.value.name,
     phone: validated.value.phone,
     email: validated.value.email,
     insuranceType: validated.value.insuranceType,
     message: validated.value.message,
     attribution: validated.value.attribution,
+    analytics: validated.value.analytics,
     source: validated.value.source,
     pageUrl: validated.value.pageUrl,
   };
-
-  leadStore.unshift(lead);
-  if (leadStore.length > 200) leadStore.length = 200;
 
   console.info("[lead_submit]", {
     id: lead.id,
@@ -341,6 +333,7 @@ export async function POST(request: NextRequest) {
     source: lead.source,
     insuranceType: lead.insuranceType,
     attribution: lead.attribution,
+    clientId: lead.analytics.clientId ?? null,
   });
 
   const emailResult = await sendLeadEmail({
@@ -353,10 +346,37 @@ export async function POST(request: NextRequest) {
     insuranceType: lead.insuranceType,
     message: lead.message,
     attribution: lead.attribution,
+    analytics: lead.analytics,
   });
 
   if (!emailResult.ok) {
     return responseError(500, emailResult.error);
+  }
+
+  if (isGa4MeasurementConfigured()) {
+    const measurementResult = await sendGa4MeasurementEvent({
+      eventName: KEY_EVENTS.qualifyLead,
+      clientId: lead.analytics.clientId,
+      userId: deriveUserIdFromContact({ email: lead.email, phone: lead.phone }),
+      userData: buildUserProvidedData({ email: lead.email, phone: lead.phone }),
+      params: {
+        lead_id: lead.id,
+        source: lead.source,
+        page_location: lead.pageUrl || undefined,
+        insurance_type: lead.insuranceType,
+        gclid: lead.attribution.gclid,
+        utm_source: lead.attribution.utm_source,
+        utm_medium: lead.attribution.utm_medium,
+        utm_campaign: lead.attribution.utm_campaign,
+      },
+    });
+
+    if (!measurementResult.ok) {
+      console.warn("[qualify_lead_forward_failed]", {
+        leadId: lead.id,
+        error: measurementResult.error,
+      });
+    }
   }
 
   return NextResponse.json({
@@ -364,5 +384,6 @@ export async function POST(request: NextRequest) {
     leadId: lead.id,
     submittedAt: lead.submittedAt,
     emailDelivered: true,
+    gaClientId: lead.analytics.clientId ?? null,
   });
 }

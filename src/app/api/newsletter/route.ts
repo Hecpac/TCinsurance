@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { escapeHtml } from "@/lib/escapeHtml";
+import { checkDistributedRateLimit } from "@/lib/distributedRateLimit";
 
 interface NewsletterPayload {
   email: string;
@@ -8,51 +9,13 @@ interface NewsletterPayload {
 
 type NewsletterField = "email";
 
-type RateLimitEntry = {
-  count: number;
-  expiresAt: number;
-};
-
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 6;
-const rateLimitStore = new Map<string, RateLimitEntry>();
-
 function parseClientIp(request: NextRequest) {
   const forwarded = request.headers.get("x-forwarded-for");
   if (forwarded) return forwarded.split(",")[0]?.trim() || "unknown";
   return request.headers.get("x-real-ip") ?? "unknown";
-}
-
-function clearExpiredRateLimitEntries(now: number) {
-  for (const [ip, entry] of rateLimitStore.entries()) {
-    if (entry.expiresAt <= now) rateLimitStore.delete(ip);
-  }
-}
-
-function checkRateLimit(ip: string) {
-  const now = Date.now();
-  clearExpiredRateLimitEntries(now);
-
-  const existing = rateLimitStore.get(ip);
-  if (!existing) {
-    rateLimitStore.set(ip, {
-      count: 1,
-      expiresAt: now + RATE_LIMIT_WINDOW_MS,
-    });
-    return { allowed: true } as const;
-  }
-
-  if (existing.count >= RATE_LIMIT_MAX_REQUESTS) {
-    return {
-      allowed: false,
-      retryAfterSeconds: Math.max(1, Math.ceil((existing.expiresAt - now) / 1000)),
-    } as const;
-  }
-
-  existing.count += 1;
-  rateLimitStore.set(ip, existing);
-  return { allowed: true } as const;
 }
 
 function responseError(status: number, error: string, field?: NewsletterField) {
@@ -144,7 +107,17 @@ export async function POST(request: NextRequest) {
   }
 
   const ip = parseClientIp(request);
-  const rateLimit = checkRateLimit(ip);
+  const rateLimit = await checkDistributedRateLimit({
+    namespace: "newsletter",
+    key: ip,
+    windowSeconds: RATE_LIMIT_WINDOW_MS / 1000,
+    maxRequests: RATE_LIMIT_MAX_REQUESTS,
+  });
+
+  if (!rateLimit.allowed && rateLimit.backend === "unconfigured") {
+    return responseError(503, rateLimit.error || "Protección temporalmente no disponible.");
+  }
+
   if (!rateLimit.allowed) {
     return NextResponse.json(
       {

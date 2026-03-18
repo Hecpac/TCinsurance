@@ -53,8 +53,9 @@ export function GoogleConsentModeHead() {
 
       var countryCode = normalizeCountryCode(readCookieValue(geoCookieName));
       var consentState = parseConsentState(readCookieValue(consentCookieName));
-      var requiresConsent = countryCode ? consentRequiredCountries.has(countryCode) : false;
-      var consentGranted = !requiresConsent || consentState === 'accepted';
+      var countryKnown = countryCode !== null;
+      var requiresConsent = !countryKnown || consentRequiredCountries.has(countryCode);
+      var consentGranted = countryKnown && (!requiresConsent || consentState === 'accepted');
       var waitForUpdate = requiresConsent && consentState === null ? 500 : 0;
       var consentDefaults = consentGranted
         ? {
