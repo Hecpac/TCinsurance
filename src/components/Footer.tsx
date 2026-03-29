@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import GridContainer from "@/components/GridContainer";
 import { HOME_SECTION_PATHS, LEGAL_PATHS, siteConfig } from "@/config/site";
+import { trackEvent } from "@/lib/tracking";
 
 interface NewsletterResponse {
   ok: boolean;
@@ -79,6 +80,7 @@ export default function Footer() {
       setNewsletterStatus("success");
       setNewsletterMessage("Suscripción confirmada. Recibirás novedades pronto.");
       setNewsletterEmail("");
+      trackEvent("newsletter_signup", { source: "footer" }, { dedupeKey: `newsletter:${normalizedEmail}`, dedupeWindowMs: 2000 });
     } catch {
       setNewsletterStatus("error");
       setNewsletterMessage("Error de red. Intenta nuevamente.");
@@ -206,6 +208,7 @@ export default function Footer() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => trackEvent("social_click", { platform: item.label.toLowerCase(), href: item.href })}
                     className="tap-target inline-flex items-center gap-2 text-body text-swiss-black/82 hover:text-swiss-red-ink"
                   >
                     <span className="inline-flex h-5 w-5 items-center justify-center border border-current text-[9px] font-semibold leading-none">

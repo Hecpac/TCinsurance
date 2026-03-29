@@ -14,6 +14,7 @@ declare global {
     dataLayer?: Array<Record<string, unknown>>;
     gtag?: (...args: unknown[]) => void;
     fbq?: (...args: unknown[]) => void;
+    __tcGtagEventsEnabled?: boolean;
   }
 }
 
@@ -74,6 +75,7 @@ function pushDataLayer(payload: Record<string, unknown>) {
 }
 
 function pushGa4(eventName: string, params: Record<string, unknown>) {
+  if (window.__tcGtagEventsEnabled !== true) return;
   if (typeof window.gtag !== "function") return;
   window.gtag("event", eventName, params);
 }

@@ -93,7 +93,11 @@ function runClaude(seoSubcommand) {
       ],
       {
         cwd: PROJECT_ROOT,
-        env: { ...process.env, FORCE_COLOR: "0" },
+        env: {
+          ...process.env,
+          FORCE_COLOR: "0",
+          ANTHROPIC_API_KEY: "",  // clear API key so CLI uses subscription auth
+        },
         stdio: ["ignore", "pipe", "pipe"],
         timeout: 600_000, // 10 min max
       }
@@ -119,6 +123,44 @@ function runClaude(seoSubcommand) {
             `claude exited with code ${code}${detail ? `\n${detail}` : ""}`
           )
         );
+      }
+    });
+
+    child.on("error", (err) => {
+      rejectP(new Error(`Failed to spawn claude: ${err.message}`));
+    });
+  });
+}
+
+function runClaudeRaw(prompt) {
+  return new Promise((resolveP, rejectP) => {
+    const child = spawn(
+      "claude",
+      ["-p", prompt, "--output-format", "text", "--max-turns", "30"],
+      {
+        cwd: PROJECT_ROOT,
+        env: {
+          ...process.env,
+          FORCE_COLOR: "0",
+          ANTHROPIC_API_KEY: "",
+        },
+        stdio: ["ignore", "pipe", "pipe"],
+        timeout: 600_000,
+      }
+    );
+
+    let stdout = "";
+    let stderr = "";
+
+    child.stdout.on("data", (chunk) => { stdout += chunk.toString(); });
+    child.stderr.on("data", (chunk) => { stderr += chunk.toString(); });
+
+    child.on("close", (code) => {
+      if (code === 0) {
+        resolveP(stdout.trim());
+      } else {
+        const detail = (stderr || stdout).trim().slice(0, 500);
+        rejectP(new Error(`claude exited with code ${code}${detail ? `\n${detail}` : ""}`));
       }
     });
 
@@ -258,6 +300,21 @@ bot.command("start", async (ctx) => {
   );
 });
 
+// Typing indicator that repeats every 4s until stopped
+function startTyping(ctx) {
+  let active = true;
+  const send = () => {
+    if (!active) return;
+    ctx.replyWithChatAction("typing").catch(() => {});
+  };
+  send();
+  const timer = setInterval(send, 4000);
+  return () => {
+    active = false;
+    clearInterval(timer);
+  };
+}
+
 // SEO commands
 for (const [cmd, def] of Object.entries(SEO_COMMANDS)) {
   bot.command(cmd, async (ctx) => {
@@ -271,11 +328,14 @@ for (const [cmd, def] of Object.entries(SEO_COMMANDS)) {
     running = true;
     runningCommand = cmd;
 
+    console.log(`[${new Date().toISOString()}] /${cmd} requested`);
     await ctx.reply(`Running ${def.label}... This may take a few minutes.`);
+    const stopTyping = startTyping(ctx);
 
     try {
-      const output = runClaude(def.seoCmd);
-      const result = await output;
+      const result = await runClaude(def.seoCmd);
+      stopTyping();
+      console.log(`[${new Date().toISOString()}] /${cmd} completed (${result.length} chars)`);
 
       if (result) {
         await sendLong(ctx, result);
@@ -283,6 +343,8 @@ for (const [cmd, def] of Object.entries(SEO_COMMANDS)) {
         await ctx.reply("Command completed but produced no output.");
       }
     } catch (err) {
+      stopTyping();
+      console.error(`[${new Date().toISOString()}] /${cmd} failed:`, err.message);
       await ctx.reply(`Command failed:\n${String(err.message).slice(0, 500)}`);
     } finally {
       running = false;
@@ -290,6 +352,44 @@ for (const [cmd, def] of Object.entries(SEO_COMMANDS)) {
     }
   });
 }
+
+// Free-text messages → pass to Claude directly
+bot.on("message:text", async (ctx) => {
+  const text = ctx.message.text;
+  if (!text || text.startsWith("/")) return;
+
+  if (running) {
+    await ctx.reply(
+      `Another command is running (/${runningCommand}). Please wait for it to finish.`
+    );
+    return;
+  }
+
+  running = true;
+  runningCommand = "chat";
+
+  console.log(`[${new Date().toISOString()}] Free text: "${text.slice(0, 80)}"`);
+  const stopTyping = startTyping(ctx);
+
+  try {
+    const result = await runClaudeRaw(text);
+    stopTyping();
+    console.log(`[${new Date().toISOString()}] Chat completed (${result.length} chars)`);
+
+    if (result) {
+      await sendLong(ctx, result);
+    } else {
+      await ctx.reply("No output.");
+    }
+  } catch (err) {
+    stopTyping();
+    console.error(`[${new Date().toISOString()}] Chat failed:`, err.message);
+    await ctx.reply(`Failed:\n${String(err.message).slice(0, 500)}`);
+  } finally {
+    running = false;
+    runningCommand = "";
+  }
+});
 
 /* ------------------------------------------------------------------ */
 /*  Start                                                             */
