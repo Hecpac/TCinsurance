@@ -78,7 +78,7 @@ export default function ServicesPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <h1 className="text-display tracking-[-0.055em] text-swiss-black">
-            Seguros de Salud, Vida
+            Seguros de Salud, Vida{" "}
             <br />
             y Gastos Finales en Dallas / Fort Worth / Lewisville.
           </h1>

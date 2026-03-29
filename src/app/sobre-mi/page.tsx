@@ -6,9 +6,9 @@ import AboutContent from "./components/AboutContent";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Tatiana Castañeda — Agente de Seguros en Español, Lewisville TX | TC Insurance",
+  title: "Tatiana Castañeda — Agente de Seguros | TC Insurance",
   description:
-    "Tatiana Castañeda es agente licenciada de seguros de salud, vida y gastos finales en Lewisville, Texas. Asesoría personalizada en español para familias latinas en DFW. Agenda tu consulta gratuita.",
+    "Tatiana Castañeda, agente licenciada de seguros en Lewisville TX. Asesoría en español para salud, vida y gastos finales en DFW.",
   alternates: {
     canonical: `${siteConfig.seo.siteUrl}/sobre-mi`,
   },

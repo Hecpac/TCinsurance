@@ -8,21 +8,21 @@ const PAGE_PATH = "/servicios/seguro-vision-texas";
 const PAGE_URL = `${siteConfig.seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes",
+  title: "Seguro de Visión en Texas | TC Insurance",
   description: "Comparación de planes de visión en Texas para cubrir exámenes, lentes y beneficios anuales con mejor control de costos.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes",
+    title: "Seguro de Visión en Texas | TC Insurance",
     description: "Comparación de planes de visión en Texas para cubrir exámenes, lentes y beneficios anuales con mejor control de costos.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
-    images: [{ url: "/blog/editorial-v3/health-plan-texas.jpg", width: 1200, height: 630, alt: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes" }],
+    images: [{ url: "/blog/editorial-v3/health-plan-texas.jpg", width: 1200, height: 630, alt: "Seguro de Visión en Texas | TC Insurance" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes",
+    title: "Seguro de Visión en Texas | TC Insurance",
     description: "Comparación de planes de visión en Texas para cubrir exámenes, lentes y beneficios anuales con mejor control de costos.",
     images: ["/blog/editorial-v3/health-plan-texas.jpg"],
   },
@@ -57,14 +57,14 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.seo.siteUrl },
     { "@type": "ListItem", position: 2, name: "Servicios", item: `${siteConfig.seo.siteUrl}/servicios` },
-    { "@type": "ListItem", position: 3, name: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes", item: PAGE_URL },
+    { "@type": "ListItem", position: 3, name: "Seguro de Visión en Texas | TC Insurance", item: PAGE_URL },
   ],
 };
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Seguro de Visión en Dallas, Fort Worth y Lewisville, Texas | Exámenes y Lentes",
+  name: "Seguro de Visión en Texas | TC Insurance",
   areaServed: [
     { "@type": "City", name: "Dallas" },
     { "@type": "City", name: "Fort Worth" },

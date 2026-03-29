@@ -9,7 +9,9 @@
     "lint": "eslint",
     "agent:news": "node scripts/research-agent.mjs",
     "test:e2e": "npx playwright test",
-    "test:e2e:headed": "npx playwright test --headed"
+    "test:e2e:headed": "npx playwright test --headed",
+    "bot:start": "node bot/seo-bot.mjs",
+    "bot:dev": "node --watch bot/seo-bot.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

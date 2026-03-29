@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "texas-hb2067-explicaciones-automaticas-seguros-2026",
     title: "Texas HB 2067 (2026): ahora las aseguradoras deben explicar por escrito cancelaciones y no renovaciones",
-    excerpt: "Desde 2026, en Texas las aseguradoras de auto y hogar deben explicar por escrito decisiones de declinación, cancelación o no renovación. Qué significa para ti y cómo actuar.",
+    excerpt: "Texas exige desde 2026 que aseguradoras expliquen por escrito decisiones de cancelación o no renovación. Qué significa y cómo actuar.",
     category: "NOTICIAS",
     publishedAt: "2026-02-27",
     readTime: "4 MIN",
@@ -238,7 +238,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "agente-seguros-salud-lewisville-tx",
     title: "Agente de Seguros de Salud en Lewisville, TX: Cómo Encontrar el Plan Correcto en 2026",
-    excerpt: "Busca un agente de seguros de salud bilingüe en Lewisville, TX? Tatiana Castañeda te ayuda a comparar planes ACA, Medicare y Medicaid sin costo. Consulta gratis.",
+    excerpt: "Agente de seguros bilingüe en Lewisville TX. Compara planes ACA, Medicare y Medicaid sin costo con Tatiana Castañeda.",
     category: "SALUD",
     publishedAt: "2026-03-06",
     readTime: "12 MIN",
@@ -357,7 +357,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "subsidios-aca-2026-texas",
     title: "Subsidios ACA 2026 en Texas: Qué Cambió, Cuánto Sube Tu Prima y Qué Puedes Hacer",
-    excerpt: "Los subsidios mejorados del ACA expiraron el 31 de diciembre de 2025. Las primas en Texas subieron hasta un 34%. Si tenías seguro de salud subsidiado, esto te afecta directamente.",
+    excerpt: "Los subsidios mejorados del ACA expiraron en 2025. Las primas en Texas subieron hasta 34%. Qué opciones tienes ahora.",
     category: "SALUD",
     publishedAt: "2026-03-10",
     readTime: "9 MIN",
@@ -419,7 +419,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "medicaid-texas-2026-como-renovar-cobertura",
     title: "Medicaid en Texas 2026: Cómo Renovar Tu Cobertura Sin Perderla",
-    excerpt: "Texas está revisando la elegibilidad de millones de beneficiarios de Medicaid. Si tú o tus hijos tienen Medicaid o CHIP, necesitas actuar antes de que tu cobertura expire sin aviso.",
+    excerpt: "Texas revisa la elegibilidad de millones en Medicaid. Si tú o tus hijos tienen Medicaid o CHIP, actúa antes de perder cobertura.",
     category: "SALUD",
     publishedAt: "2026-03-10",
     readTime: "8 MIN",
@@ -473,7 +473,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "medicare-prior-authorization-texas-2026",
     title: "Medicare en Texas 2026: El Nuevo Programa de Autorización Previa y Cómo Te Afecta",
-    excerpt: "Texas es uno de los estados piloto de un nuevo programa de autorización previa de Medicare que comenzó en 2026. Si tienes Medicare Original, algunos servicios ahora requieren aprobación antes de recibirlos.",
+    excerpt: "Texas es estado piloto de autorización previa en Medicare desde 2026. Algunos servicios requieren aprobación antes de recibirlos.",
     category: "MEDICARE",
     publishedAt: "2026-03-10",
     readTime: "7 MIN",

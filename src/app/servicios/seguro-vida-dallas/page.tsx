@@ -8,22 +8,22 @@ const PAGE_PATH = "/servicios/seguro-vida-dallas";
 const PAGE_URL = `${siteConfig.seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
-  description: "Evalúa opciones de seguro de vida en Dallas con enfoque en liquidez, protección de ingresos y estabilidad familiar ante imprevistos.",
+  title: "Seguro de Vida en Dallas TX | TC Insurance",
+  description: "Compara pólizas de vida temporal y permanente en Dallas, Fort Worth y Lewisville. Asesoría personalizada en español. Agenda tu consulta gratis hoy.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: "Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
-    description: "Evalúa opciones de seguro de vida en Dallas con enfoque en liquidez, protección de ingresos y estabilidad familiar ante imprevistos.",
+    title: "Seguro de Vida en Dallas TX | TC Insurance",
+    description: "Compara pólizas de vida temporal y permanente en Dallas, Fort Worth y Lewisville. Asesoría personalizada en español. Agenda tu consulta gratis hoy.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
-    images: [{ url: "/blog/editorial-v3/life-insurance-family.jpg", width: 1200, height: 630, alt: "Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español" }],
+    images: [{ url: "/blog/editorial-v3/life-insurance-family.jpg", width: 1200, height: 630, alt: "Seguro de Vida en Dallas TX | TC Insurance" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seguro de Vida en Dallas, Fort Worth y Lewisville, Texas | Asesoría en Español",
-    description: "Evalúa opciones de seguro de vida en Dallas con enfoque en liquidez, protección de ingresos y estabilidad familiar ante imprevistos.",
+    title: "Seguro de Vida en Dallas TX | TC Insurance",
+    description: "Compara pólizas de vida temporal y permanente en Dallas, Fort Worth y Lewisville. Asesoría personalizada en español. Agenda tu consulta gratis hoy.",
     images: ["/blog/editorial-v3/life-insurance-family.jpg"],
   },
 };

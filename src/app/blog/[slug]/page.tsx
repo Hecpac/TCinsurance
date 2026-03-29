@@ -141,7 +141,7 @@ export async function generateMetadata({
     : `${siteConfig.seo.siteUrl}${siteConfig.seo.defaultOgImage}`;
 
   return {
-    title: `${post.title} | TC Insurance`,
+    title: post.title.length > 48 ? post.title : `${post.title} | TC Insurance`,
     description: post.excerpt,
     ...(post.status === "legacy" && { robots: { index: false, follow: false } }),
     alternates: {

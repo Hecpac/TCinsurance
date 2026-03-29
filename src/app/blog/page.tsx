@@ -10,7 +10,7 @@ const blogUrl = `${siteConfig.seo.siteUrl}/blog`;
 const ogImage = `${siteConfig.seo.siteUrl}${siteConfig.seo.defaultOgImage}`;
 
 export const metadata: Metadata = {
-  title: "Blog | TC Insurance",
+  title: "Guías de Seguros en Texas | Blog TC Insurance",
   description:
     "Educación en seguros de salud, vida y gastos finales para familias en Texas.",
   alternates: {
@@ -72,7 +72,7 @@ export default function BlogPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-10 pt-8">
           <h1 className="text-display tracking-[-0.055em]">
-            Blog
+            Blog{" "}
             <br />
             estratégico.
           </h1>

@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node scripts/playwright-audit.mjs:*)"
+      "Bash(node scripts/playwright-audit.mjs:*)",
+      "Bash(node scripts/seo-crawl.mjs:*)"
     ]
   },
   "env": {

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: `Términos de Uso | ${siteConfig.brand.name}`,
   description:
     "Términos de uso y alcance informativo de los servicios de asesoría en seguros de TC Insurance, LLC.",
+  robots: { index: false, follow: true },
   alternates: {
     canonical: `${siteConfig.seo.siteUrl}/terminos`,
   },
