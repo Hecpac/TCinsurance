@@ -9,22 +9,22 @@ const PAGE_PATH = "/servicios/medicare-texas";
 const PAGE_URL = `${siteConfig.seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Medicare en Texas | TC Insurance",
-  description: "Asesoría en español para Medicare en Texas: comparar médicos, recetas y costos mensuales para elegir plan sin errores.",
+  title: "Compara Planes Medicare en Texas | Asesoría en Español — TC Insurance",
+  description: "Elige entre Medicare Advantage, Medigap y Part D en Texas. Asesoría gratuita en español para comparar médicos, recetas y costos.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: "Medicare en Texas | TC Insurance",
-    description: "Asesoría en español para Medicare en Texas: comparar médicos, recetas y costos mensuales para elegir plan sin errores.",
+    title: "Compara Planes Medicare en Texas | Asesoría en Español — TC Insurance",
+    description: "Elige entre Medicare Advantage, Medigap y Part D en Texas. Asesoría gratuita en español para comparar médicos, recetas y costos.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
-    images: [{ url: "/blog/editorial-v3/health-plan-texas.jpg", width: 1200, height: 630, alt: "Medicare en Texas | TC Insurance" }],
+    images: [{ url: "/blog/editorial-v3/health-plan-texas.jpg", width: 1200, height: 630, alt: "Compara planes Medicare en Texas con TC Insurance" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medicare en Texas | TC Insurance",
-    description: "Asesoría en español para Medicare en Texas: comparar médicos, recetas y costos mensuales para elegir plan sin errores.",
+    title: "Compara Planes Medicare en Texas | Asesoría en Español — TC Insurance",
+    description: "Elige entre Medicare Advantage, Medigap y Part D en Texas. Asesoría gratuita en español para comparar médicos, recetas y costos.",
     images: ["/blog/editorial-v3/health-plan-texas.jpg"],
   },
 };

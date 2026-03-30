@@ -9,22 +9,22 @@ const PAGE_PATH = "/servicios/seguro-salud-texas";
 const PAGE_URL = `${siteConfig.seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Seguro de Salud en Texas | TC Insurance",
-  description: "Comparación de planes de salud en Texas con enfoque en red médica, deducibles y costo total mensual para familias y trabajadores independientes.",
+  title: "Cotiza Seguro de Salud en Texas | Asesoría Gratis — TC Insurance",
+  description: "Compara planes HMO, PPO y EPO en Texas. Revisamos red médica, deducibles y subsidios para que elijas el mejor seguro de salud para tu familia.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: "Seguro de Salud en Texas | TC Insurance",
-    description: "Comparación de planes de salud en Texas con enfoque en red médica, deducibles y costo total mensual para familias y trabajadores independientes.",
+    title: "Cotiza Seguro de Salud en Texas | Asesoría Gratis — TC Insurance",
+    description: "Compara planes HMO, PPO y EPO en Texas. Revisamos red médica, deducibles y subsidios para que elijas el mejor seguro de salud para tu familia.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
-    images: [{ url: "/blog/editorial-v3/health-plan-texas.jpg", width: 1200, height: 630, alt: "Seguro de Salud en Texas | TC Insurance" }],
+    images: [{ url: "/blog/editorial-v3/health-plan-texas.jpg", width: 1200, height: 630, alt: "Cotiza seguro de salud en Texas con TC Insurance" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seguro de Salud en Texas | TC Insurance",
-    description: "Comparación de planes de salud en Texas con enfoque en red médica, deducibles y costo total mensual para familias y trabajadores independientes.",
+    title: "Cotiza Seguro de Salud en Texas | Asesoría Gratis — TC Insurance",
+    description: "Compara planes HMO, PPO y EPO en Texas. Revisamos red médica, deducibles y subsidios para que elijas el mejor seguro de salud para tu familia.",
     images: ["/blog/editorial-v3/health-plan-texas.jpg"],
   },
 };

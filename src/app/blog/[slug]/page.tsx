@@ -18,7 +18,7 @@ import ShareButtons from "@/components/ShareButtons";
 
 function renderInlineMarkdown(text: string): ReactNode[] {
   const tokens = text
-    .split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g)
+    .split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g)
     .filter(Boolean);
 
   return tokens.map((token, index) => {
@@ -35,6 +35,21 @@ function renderInlineMarkdown(text: string): ReactNode[] {
         <em key={`em-${index}`} className="italic">
           {token.slice(1, -1)}
         </em>
+      );
+    }
+
+    const linkMatch = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      const href = linkMatch[2];
+      const isInternal = href.startsWith("/");
+      return isInternal ? (
+        <Link key={`link-${index}`} href={href} className="text-swiss-red hover:text-swiss-red-ink underline underline-offset-2">
+          {linkMatch[1]}
+        </Link>
+      ) : (
+        <a key={`link-${index}`} href={href} target="_blank" rel="noopener noreferrer" className="text-swiss-red hover:text-swiss-red-ink underline underline-offset-2">
+          {linkMatch[1]}
+        </a>
       );
     }
 

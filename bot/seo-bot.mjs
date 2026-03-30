@@ -69,6 +69,7 @@ const SEO_COMMANDS = {
 
 let running = false;
 let runningCommand = "";
+let hasSession = false; // tracks if a conversation session exists to continue
 
 /* ------------------------------------------------------------------ */
 /*  Claude Code runner                                                */
@@ -89,17 +90,18 @@ function runClaude(seoSubcommand) {
         "--output-format",
         "text",
         "--max-turns",
-        "50",
+        "80",
+        "--allowedTools",
+        "Bash,Read,Write,Edit,Glob,Grep,Agent,Skill,WebSearch,WebFetch",
       ],
       {
         cwd: PROJECT_ROOT,
         env: {
           ...process.env,
           FORCE_COLOR: "0",
-          ANTHROPIC_API_KEY: "",  // clear API key so CLI uses subscription auth
+          ANTHROPIC_API_KEY: "",
         },
         stdio: ["ignore", "pipe", "pipe"],
-        timeout: 600_000, // 10 min max
       }
     );
 
@@ -132,11 +134,15 @@ function runClaude(seoSubcommand) {
   });
 }
 
-function runClaudeRaw(prompt) {
+function runClaudeRaw(prompt, continueSession = false) {
   return new Promise((resolveP, rejectP) => {
+    const args = ["-p", prompt, "--output-format", "text", "--max-turns", "80",
+       "--allowedTools", "Bash,Read,Write,Edit,Glob,Grep,Agent,Skill,WebSearch,WebFetch"];
+    if (continueSession) args.push("--continue");
+
     const child = spawn(
       "claude",
-      ["-p", prompt, "--output-format", "text", "--max-turns", "30"],
+      args,
       {
         cwd: PROJECT_ROOT,
         env: {
@@ -145,7 +151,6 @@ function runClaudeRaw(prompt) {
           ANTHROPIC_API_KEY: "",
         },
         stdio: ["ignore", "pipe", "pipe"],
-        timeout: 600_000,
       }
     );
 
@@ -230,6 +235,12 @@ bot.use(async (ctx, next) => {
   await next();
 });
 
+// /new - reset conversation
+bot.command("new", async (ctx) => {
+  hasSession = false;
+  await ctx.reply("Session reset. Next message starts a new conversation.");
+});
+
 // /help
 bot.command("help", async (ctx) => {
   const lines = [
@@ -243,6 +254,7 @@ bot.command("help", async (ctx) => {
   }
   lines.push("");
   lines.push("/status - Bot status and last reports");
+  lines.push("/new - Reset conversation (start fresh)");
   lines.push("/help - This message");
   await ctx.reply(lines.join("\n"), { parse_mode: "Markdown" });
 });
@@ -372,7 +384,8 @@ bot.on("message:text", async (ctx) => {
   const stopTyping = startTyping(ctx);
 
   try {
-    const result = await runClaudeRaw(text);
+    const result = await runClaudeRaw(text, hasSession);
+    hasSession = true;
     stopTyping();
     console.log(`[${new Date().toISOString()}] Chat completed (${result.length} chars)`);
 
@@ -413,6 +426,7 @@ await bot.api.setMyCommands([
   { command: "full", description: "Full SEO audit (all areas)" },
   { command: "report", description: "View latest report" },
   { command: "status", description: "Bot status and last reports" },
+  { command: "new", description: "Reset conversation (start fresh)" },
   { command: "help", description: "List all commands" },
 ]);
 
