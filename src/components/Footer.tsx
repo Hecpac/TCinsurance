@@ -150,13 +150,19 @@ export default function Footer() {
         <div className="col-span-12 mt-10 border-t border-[var(--color-border-soft)] pt-10">
           <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-4 md:gap-12">
             <div className="flex flex-col gap-4">
-              <h3 className="text-meta text-swiss-gray">Oficina</h3>
+              <p className="text-meta text-swiss-gray">Oficina</p>
               <p className="text-body text-swiss-black/78">{siteConfig.location.full}</p>
+              <a
+                href="tel:+12039932369"
+                className="text-body text-swiss-black/82 hover:text-swiss-red-ink"
+              >
+                +1 (203) 993-2369
+              </a>
               <p className="text-body text-swiss-black/58">{siteConfig.legal.licenseStatement}</p>
             </div>
 
             <div className="flex flex-col gap-3">
-              <h3 className="text-meta text-swiss-gray">Navegación</h3>
+              <p className="text-meta text-swiss-gray">Navegación</p>
               <Link
                 href={HOME_SECTION_PATHS.services}
                 className="tap-target text-body text-swiss-black/82 hover:text-swiss-red-ink"
@@ -184,7 +190,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <h3 className="text-meta text-swiss-gray">Legal</h3>
+              <p className="text-meta text-swiss-gray">Legal</p>
               <Link
                 href={LEGAL_PATHS.privacy}
                 className="tap-target text-body text-swiss-black/82 hover:text-swiss-red-ink"
@@ -200,7 +206,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <h3 className="text-meta text-swiss-gray">Social</h3>
+              <p className="text-meta text-swiss-gray">Social</p>
               {socialLinks.length > 0 ? (
                 socialLinks.map((item) => (
                   <a

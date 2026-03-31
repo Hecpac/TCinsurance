@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Compara planes HMO, PPO y EPO en Texas. Revisamos red médica, deducibles y subsidios para que elijas el mejor seguro de salud para tu familia.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    type: "article",
+    type: "website",
     url: PAGE_URL,
     title: "Cotiza Seguro de Salud en Texas | Asesoría Gratis — TC Insurance",
     description: "Compara planes HMO, PPO y EPO en Texas. Revisamos red médica, deducibles y subsidios para que elijas el mejor seguro de salud para tu familia.",

@@ -20,8 +20,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/seguros-fort-worth-tx",
     "/sobre-mi",
     "/blog",
-    "/privacidad",
-    "/terminos",
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({

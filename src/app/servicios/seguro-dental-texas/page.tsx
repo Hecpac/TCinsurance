@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Compara planes dentales DHMO y PPO en Texas desde $15/mes. Limpiezas, tratamientos y ortodoncia con asesoría gratuita en español.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    type: "article",
+    type: "website",
     url: PAGE_URL,
     title: "Cotiza Seguro Dental en Texas | DHMO y PPO — TC Insurance",
     description: "Compara planes dentales DHMO y PPO en Texas desde $15/mes. Limpiezas, tratamientos y ortodoncia con asesoría gratuita en español.",

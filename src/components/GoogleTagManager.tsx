@@ -110,6 +110,21 @@ function isGoogleAdsEnabled(id?: string | null) {
   return Boolean(id && id !== "AW-XXXXXXXXX");
 }
 
+export function GoogleTagManagerBody({ gtmId }: GoogleTagManagerProps) {
+  if (!isEnabled(gtmId)) return null;
+  return (
+    <noscript>
+      <iframe
+        src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+        height="0"
+        width="0"
+        style={{ display: "none", visibility: "hidden" }}
+        title="gtm-noscript"
+      />
+    </noscript>
+  );
+}
+
 export function GoogleAdsHead({ googleAdsId }: GoogleAdsProps) {
   if (!isGoogleAdsEnabled(googleAdsId)) return null;
 
@@ -128,7 +143,7 @@ export function GoogleAdsHead({ googleAdsId }: GoogleAdsProps) {
             window.dataLayer = window.dataLayer || [];
             window.gtag = window.gtag || function gtag(){window.dataLayer.push(arguments);};
             gtag('js', new Date());
-            gtag('config', '${googleAdsId}');
+            gtag('config', '${googleAdsId}', { send_page_view: false });
           `,
         }}
       />

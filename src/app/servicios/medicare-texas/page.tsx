@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Elige entre Medicare Advantage, Medigap y Part D en Texas. Asesoría gratuita en español para comparar médicos, recetas y costos.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    type: "article",
+    type: "website",
     url: PAGE_URL,
     title: "Compara Planes Medicare en Texas | Asesoría en Español — TC Insurance",
     description: "Elige entre Medicare Advantage, Medigap y Part D en Texas. Asesoría gratuita en español para comparar médicos, recetas y costos.",

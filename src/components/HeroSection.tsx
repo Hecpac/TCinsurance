@@ -215,6 +215,13 @@ export default function HeroSection() {
           opciones y te entregamos una recomendación clara para tu caso.
         </p>
 
+        <p
+          data-hero-copy
+          className="col-span-12 md:col-span-6 text-meta text-swiss-gray max-w-[var(--measure-body)]"
+        >
+          TC Insurance es una agencia de seguros licenciada en Texas que ofrece asesoría bilingüe en seguros de salud, vida, gastos finales, dental, visión y Medicare para familias en Dallas, Fort Worth y Lewisville.
+        </p>
+
         <div
           data-hero-cta
           className="order-3 col-span-12 md:order-none md:col-span-7 mt-8 pb-12 md:pb-16"

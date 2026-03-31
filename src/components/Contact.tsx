@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import GridContainer from "@/components/GridContainer";
 import { siteConfig } from "@/config/site";
 import { readAnalyticsContext } from "@/lib/analyticsContext";
-import { KEY_EVENTS } from "@/lib/keyEvents";
 import { runBackgroundTask } from "@/lib/schedule";
 import { trackEvent } from "@/lib/tracking";
 
@@ -251,13 +250,10 @@ export default function Contact() {
       };
       const eventKey = `${pathname || "/"}:${formData.insuranceType}:${data.leadId ?? "unknown"}`;
 
+      // Only fire lead_submit client-side. qualify_lead is fired server-side
+      // via Measurement Protocol in api/lead to avoid double-counting.
       trackEvent("lead_submit", eventParams, {
         dedupeKey: `lead_submit:${eventKey}`,
-        dedupeWindowMs: 2000,
-      });
-
-      trackEvent(KEY_EVENTS.qualifyLead, eventParams, {
-        dedupeKey: `qualify_lead:${eventKey}`,
         dedupeWindowMs: 2000,
       });
 

@@ -4,6 +4,8 @@ export interface BlogPost {
   excerpt: string;
   category: string;
   publishedAt: string;
+  updatedAt?: string;
+  keywords?: string;
   readTime: string;
   author: string;
   featured?: boolean;
@@ -20,10 +22,12 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "texas-hb2067-explicaciones-automaticas-seguros-2026",
-    title: "Texas HB 2067 (2026): ahora las aseguradoras deben explicar por escrito cancelaciones y no renovaciones",
+    title: "Texas HB 2067: Explicaciones de Cancelaciones en Texas",
     excerpt: "Texas exige desde 2026 que aseguradoras expliquen por escrito decisiones de cancelación o no renovación. Qué significa y cómo actuar.",
     category: "NOTICIAS",
     publishedAt: "2026-02-27",
+    updatedAt: "2026-03-31",
+    keywords: "texas hb 2067, cancelación seguro texas, no renovación póliza texas, TDI texas 2026",
     readTime: "4 MIN",
     author: "TC Insurance Editorial",
     status: "active",
@@ -46,11 +50,13 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "seguro-gastos-finales-texas-guia-completa",
-    title: "Seguro de Gastos Finales en Texas: Qué Es, Costos y Cómo Protege a Tu Familia",
+    title: "Seguro de Gastos Finales en Texas: Guía Completa",
     excerpt:
       "Guía completa en español sobre seguro de gastos finales en Texas: costos reales, cómo funciona el pago a beneficiarios y cómo elegir una póliza sin errores.",
     category: "LEGADO",
     publishedAt: "2026-02-12",
+    updatedAt: "2026-03-31",
+    keywords: "seguro gastos finales texas, burial insurance dallas, seguro funeral texas, final expense insurance español",
     readTime: "10 MIN",
     author: "Tatiana Castañeda",
     featured: true,
@@ -152,6 +158,8 @@ export const blogPosts: BlogPost[] = [
       "Guía práctica para elegir un seguro de salud en Texas: cómo comparar redes, deducibles y topes de gasto con criterio financiero familiar.",
     category: "SALUD",
     publishedAt: "2026-01-29",
+    updatedAt: "2026-03-31",
+    keywords: "seguro de salud texas, planes ACA texas, elegir plan de salud, deducible seguro médico texas",
     readTime: "7 MIN",
     author: "Tatiana Castañeda",
     status: "active",
@@ -194,6 +202,8 @@ export const blogPosts: BlogPost[] = [
       "Cómo estructurar un seguro de vida en Texas que proteja ingresos y compromisos clave del hogar.",
     category: "VIDA",
     publishedAt: "2026-01-15",
+    updatedAt: "2026-03-31",
+    keywords: "seguro de vida texas, seguro de vida dallas, póliza de vida, seguro temporal vs permanente texas",
     readTime: "8 MIN",
     author: "Tatiana Castañeda",
     status: "active",
@@ -237,10 +247,12 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "agente-seguros-salud-lewisville-tx",
-    title: "Agente de Seguros de Salud en Lewisville, TX: Cómo Encontrar el Plan Correcto en 2026",
+    title: "Agente de Seguros de Salud en Lewisville, TX",
     excerpt: "Agente de seguros bilingüe en Lewisville TX. Compara planes ACA, Medicare y Medicaid sin costo con Tatiana Castañeda.",
     category: "SALUD",
     publishedAt: "2026-03-06",
+    updatedAt: "2026-03-31",
+    keywords: "agente de seguros lewisville tx, seguros en español texas, seguro de salud lewisville, TC Insurance",
     readTime: "12 MIN",
     author: "Tatiana Castañeda",
     featured: false,
@@ -299,6 +311,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "¿Confundido entre Medicare Original, Medicare Advantage y Medigap en Texas? Esta guía explica las diferencias, costos y fechas clave para 2026 en español.",
     category: "MEDICARE",
     publishedAt: "2026-03-05",
+    updatedAt: "2026-03-31",
+    keywords: "medicare texas 2026, medicare advantage texas, medigap texas, medicare part d texas",
     readTime: "11 MIN",
     author: "Tatiana Castañeda",
     featured: false,
@@ -356,10 +370,12 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "subsidios-aca-2026-texas",
-    title: "Subsidios ACA 2026 en Texas: Qué Cambió, Cuánto Sube Tu Prima y Qué Puedes Hacer",
+    title: "Subsidios ACA 2026 en Texas: Cambios y Opciones",
     excerpt: "Los subsidios mejorados del ACA expiraron en 2025. Las primas en Texas subieron hasta 34%. Qué opciones tienes ahora.",
     category: "SALUD",
     publishedAt: "2026-03-10",
+    updatedAt: "2026-03-31",
+    keywords: "subsidios ACA 2026 texas, obamacare texas, prima seguro salud texas, marketplace seguros texas",
     readTime: "9 MIN",
     author: "Tatiana Castañeda",
     featured: false,
@@ -423,6 +439,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Texas revisa la elegibilidad de millones en Medicaid. Si tú o tus hijos tienen Medicaid o CHIP, actúa antes de perder cobertura.",
     category: "SALUD",
     publishedAt: "2026-03-10",
+    updatedAt: "2026-03-31",
+    keywords: "medicaid texas 2026, renovar medicaid texas, CHIP texas, redeterminación medicaid",
     readTime: "8 MIN",
     author: "Tatiana Castañeda",
     featured: false,
@@ -474,10 +492,12 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "medicare-prior-authorization-texas-2026",
-    title: "Medicare en Texas 2026: El Nuevo Programa de Autorización Previa y Cómo Te Afecta",
+    title: "Autorización Previa Medicare en Texas 2026",
     excerpt: "Texas es estado piloto de autorización previa en Medicare desde 2026. Algunos servicios requieren aprobación antes de recibirlos.",
     category: "MEDICARE",
     publishedAt: "2026-03-10",
+    updatedAt: "2026-03-31",
+    keywords: "autorización previa medicare texas, prior authorization medicare 2026, medicare original texas",
     readTime: "7 MIN",
     author: "Tatiana Castañeda",
     featured: false,

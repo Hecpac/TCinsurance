@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Recibe efectivo directo por hospitalización, accidentes o enfermedades críticas en Texas. Desde $15/mes. Asesoría gratuita en español.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    type: "article",
+    type: "website",
     url: PAGE_URL,
     title: "Seguro de Indemnización en Texas | Efectivo por Hospitalización — TC Insurance",
     description: "Recibe efectivo directo por hospitalización, accidentes o enfermedades críticas en Texas. Desde $15/mes. Asesoría gratuita en español.",
@@ -113,7 +113,7 @@ export default function ServiceLandingPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray">Servicio especializado</p>
-          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Recibe Efectivo Directo ante Hospitalizaciones Inesperadas</h1>
+          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro de Indemnización en Texas: Efectivo Directo ante Hospitalizaciones</h1>
           <p className="text-body text-swiss-gray mt-8 max-w-3xl">Este seguro complementa tu póliza principal y aporta efectivo para cubrir deducibles o gastos inesperados por eventos críticos.</p>
         </div>
 

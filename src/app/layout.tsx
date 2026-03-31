@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import ScrollProgress from "@/components/ScrollProgress";
 import HashScroller from "@/components/HashScroller";
 import FloatingCTA from "@/components/FloatingCTA";
+import ScrollDepthTracker from "@/components/ScrollDepthTracker";
 import Floating3DLogo from "@/components/Floating3DLogo";
 import ScrollToTop from "@/components/ScrollToTop";
 import LocalBusinessJsonLd from "@/components/LocalBusinessJsonLd";
@@ -17,8 +18,10 @@ import SkipLink from "@/components/SkipLink";
 import {
   GoogleConsentModeHead,
   GoogleTagManagerHead,
+  GoogleTagManagerBody,
   GoogleAdsHead,
 } from "@/components/GoogleTagManager";
+import { MetaPixelHead } from "@/components/MetaPixel";
 import { siteConfig } from "@/config/site";
 import { ScrollSnapProvider } from "@/contexts/ScrollSnapContext";
 
@@ -106,6 +109,7 @@ export default function RootLayout({
         <GoogleConsentModeHead />
         <GoogleTagManagerHead gtmId={siteConfig.analytics.gtmId} />
         <GoogleAdsHead googleAdsId={siteConfig.analytics.googleAdsId} />
+        <MetaPixelHead pixelId={siteConfig.analytics.metaPixelId} />
         <meta name="geo.region" content="US-TX" />
         <meta name="geo.placename" content={siteConfig.location.full} />
         {hasGeo ? (
@@ -123,6 +127,7 @@ export default function RootLayout({
         <LocalBusinessJsonLd />
       </head>
       <body className="bg-swiss-paper text-swiss-black antialiased">
+        <GoogleTagManagerBody gtmId={siteConfig.analytics.gtmId} />
         <ScrollSnapProvider>
           <SkipLink />
           <Suspense
@@ -161,6 +166,7 @@ export default function RootLayout({
               <ScrollToTop />
             </Suspense>
           </aside>
+          <ScrollDepthTracker />
           <ConsentBanner />
         </ScrollSnapProvider>
         <Analytics />

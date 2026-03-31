@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
-    type: "article",
+    type: "website",
     url: PAGE_URL,
     title: "Seguro de Gastos Finales en Texas | TC Insurance",
     description:

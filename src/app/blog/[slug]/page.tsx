@@ -232,7 +232,7 @@ export default async function BlogPostPage({
     headline: post.title,
     description: post.excerpt,
     datePublished: `${post.publishedAt}T12:00:00-06:00`,
-    dateModified: `${post.publishedAt}T12:00:00-06:00`,
+    dateModified: `${post.updatedAt ?? post.publishedAt}T12:00:00-06:00`,
     articleSection: post.category,
     wordCount: post.content.join(" ").split(/\s+/).length,
     inLanguage: "es-US",
@@ -261,9 +261,10 @@ export default async function BlogPostPage({
       url: siteConfig.seo.siteUrl,
     },
     keywords:
-      post.slug === "seguro-gastos-finales-texas-guia-completa"
+      post.keywords ??
+      (post.slug === "seguro-gastos-finales-texas-guia-completa"
         ? "seguro de gastos finales texas, seguro funeral texas, final expense insurance dallas español"
-        : post.category,
+        : post.category),
   };
 
   const faqJsonLd =

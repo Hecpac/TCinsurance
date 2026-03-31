@@ -4,7 +4,7 @@ import GridContainer from "@/components/GridContainer";
 import PostCTA from "@/components/PostCTA";
 import BlogCategoryFilter from "@/components/BlogCategoryFilter";
 import { siteConfig } from "@/config/site";
-import { featuredPost, getVisiblePosts, getCategories } from "@/data/blogPosts";
+import { activePosts, featuredPost, getVisiblePosts, getCategories } from "@/data/blogPosts";
 
 const blogUrl = `${siteConfig.seo.siteUrl}/blog`;
 const ogImage = `${siteConfig.seo.siteUrl}${siteConfig.seo.defaultOgImage}`;
@@ -12,7 +12,7 @@ const ogImage = `${siteConfig.seo.siteUrl}${siteConfig.seo.defaultOgImage}`;
 export const metadata: Metadata = {
   title: "Guías de Seguros en Texas | Blog TC Insurance",
   description:
-    "Educación en seguros de salud, vida y gastos finales para familias en Texas.",
+    "Guías prácticas sobre seguros de salud, vida y gastos finales para familias en Texas. Escrito por Tatiana Castañeda, agente bilingüe en Lewisville, TX.",
   alternates: {
     canonical: blogUrl,
   },
@@ -51,6 +51,20 @@ const breadcrumbJsonLd = {
   ],
 };
 
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Guías de seguros en Texas",
+  description: "Artículos educativos sobre seguros de salud, vida y gastos finales en Texas",
+  numberOfItems: activePosts.length,
+  itemListElement: activePosts.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    url: `${siteConfig.seo.siteUrl}/blog/${post.slug}`,
+    name: post.title,
+  })),
+};
+
 export default function BlogPage() {
   const posts = getVisiblePosts();
   const categories = getCategories();
@@ -58,6 +72,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <GridContainer
         as="section"
         data-testid="blog-index"
@@ -72,9 +87,7 @@ export default function BlogPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-10 pt-8">
           <h1 className="text-display tracking-[-0.055em]">
-            Blog{" "}
-            <br />
-            estratégico.
+            Guías de Seguros de Salud y Vida en Texas
           </h1>
         </div>
 

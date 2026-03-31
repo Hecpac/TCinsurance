@@ -14,7 +14,6 @@ export default function LocalBusinessJsonLd() {
 
   const organizationId = `${siteConfig.seo.siteUrl}/#organization`;
   const websiteId = `${siteConfig.seo.siteUrl}/#website`;
-  const homePageId = `${siteConfig.seo.siteUrl}/#home`;
   const hasGeo =
     Boolean(siteConfig.business.geo.latitude) && Boolean(siteConfig.business.geo.longitude);
 
@@ -45,7 +44,14 @@ export default function LocalBusinessJsonLd() {
         image: `${siteConfig.seo.siteUrl}${siteConfig.seo.defaultOgImage}`,
         logo: `${siteConfig.seo.siteUrl}${siteConfig.brand.logoPath}`,
         priceRange: "$$",
-        openingHours: "Mo-Fr 09:00-18:00",
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "18:00",
+          },
+        ],
         address: {
           "@type": "PostalAddress",
           ...siteConfig.business.address,
@@ -59,7 +65,46 @@ export default function LocalBusinessJsonLd() {
               },
             }
           : {}),
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Servicios de Seguros",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Seguro de Salud ACA" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Seguro de Vida" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Seguro de Gastos Finales" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Medicare" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Seguro Dental" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Seguro de Visión" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Seguro de Indemnización" } },
+          ],
+        },
+        serviceArea: {
+          "@type": "AdministrativeArea",
+          name: "Dallas-Fort Worth Metroplex, Texas",
+        },
         sameAs,
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.8",
+          reviewCount: "6",
+          bestRating: "5",
+          worstRating: "1",
+        },
+        hasCredential: {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "license",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Texas Department of Insurance",
+            url: "https://www.tdi.texas.gov",
+          },
+          identifier: "2629251",
+        },
+        identifier: {
+          "@type": "PropertyValue",
+          name: "NPN",
+          value: "19630324",
+        },
       },
       {
         "@type": "WebSite",
@@ -68,15 +113,6 @@ export default function LocalBusinessJsonLd() {
         url: siteConfig.seo.siteUrl,
         inLanguage: "es-US",
         publisher: { "@id": organizationId },
-      },
-      {
-        "@type": "WebPage",
-        "@id": homePageId,
-        url: siteConfig.seo.siteUrl,
-        name: siteConfig.seo.defaultTitle,
-        description: siteConfig.seo.defaultDescription,
-        isPartOf: { "@id": websiteId },
-        about: { "@id": organizationId },
       },
     ],
   };

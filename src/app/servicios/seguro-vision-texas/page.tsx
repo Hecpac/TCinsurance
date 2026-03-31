@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Planes de visión desde $10/mes en Texas. Exámenes anuales, crédito para lentes y descuentos en ópticas. Asesoría gratuita en español.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    type: "article",
+    type: "website",
     url: PAGE_URL,
     title: "Cotiza Seguro de Visión en Texas | VSP y EyeMed — TC Insurance",
     description: "Planes de visión desde $10/mes en Texas. Exámenes anuales, crédito para lentes y descuentos en ópticas. Asesoría gratuita en español.",
@@ -113,7 +113,7 @@ export default function ServiceLandingPage() {
 
         <div className="col-span-12 md:col-start-2 md:col-span-9 pt-8">
           <p className="text-meta uppercase tracking-[0.16em] text-swiss-gray">Servicio especializado</p>
-          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Cuida tu Vista con Cobertura para Exámenes y Lentes</h1>
+          <h1 className="text-display tracking-[-0.05em] text-swiss-black mt-4">Seguro de Visión en Texas: Exámenes, Lentes y Más</h1>
           <p className="text-body text-swiss-gray mt-8 max-w-3xl">Te ayudamos a elegir cobertura de visión que realmente reduzca el costo de exámenes y lentes en tu hogar.</p>
         </div>
 

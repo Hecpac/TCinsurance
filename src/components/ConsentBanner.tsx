@@ -27,7 +27,7 @@ function getCookie(name: string): string | null {
 
 function setCookie(name: string, value: string, days: number) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)};expires=${expires};path=/;SameSite=Lax`;
+  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)};expires=${expires};path=/;SameSite=Lax;Secure`;
 }
 
 function updateGtagConsent(granted: boolean) {
@@ -40,6 +40,7 @@ function updateGtagConsent(granted: boolean) {
       ad_personalization: state,
     });
   }
+  window.__tcGtagEventsEnabled = granted;
 }
 
 function shouldShowBanner(): boolean {

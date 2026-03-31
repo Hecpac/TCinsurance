@@ -80,9 +80,22 @@ function pushGa4(eventName: string, params: Record<string, unknown>) {
   window.gtag("event", eventName, params);
 }
 
+const META_STANDARD_EVENTS: Record<string, string> = {
+  qualify_lead: "Lead",
+  lead_submit: "Lead",
+  contact_click_phone: "Contact",
+  contact_click_whatsapp: "Contact",
+  contact_click_email: "Contact",
+};
+
 function pushMeta(eventName: string, params: Record<string, unknown>) {
   if (typeof window.fbq !== "function") return;
-  window.fbq("trackCustom", eventName, params);
+  const standardEvent = META_STANDARD_EVENTS[eventName];
+  if (standardEvent) {
+    window.fbq("track", standardEvent, params);
+  } else {
+    window.fbq("trackCustom", eventName, params);
+  }
 }
 
 export function trackEvent(
