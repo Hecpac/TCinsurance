@@ -581,8 +581,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 MIN",
     author: "Tatiana Castañeda",
     status: "active",
-    featuredImage: "/blog/editorial-v3/dental-insurance-texas.jpg",
-    featuredImageAlt: "Representación abstracta de cobertura dental y prevención en Texas",
+    featuredImage: "/blog/editorial-v3/health-plan-family.jpg",
+    featuredImageAlt: "Familia evaluando opciones de cobertura dental en Texas",
     content: [
       "### ¿Por qué necesitas un seguro dental en Texas?",
       "Ignorar la salud bucal en Texas puede salirte muy caro. Una limpieza cuesta alrededor de $100, pero un tratamiento de conducto (root canal) puede superar los $1,000 y una corona los $1,288. Si necesitas un puente dental, estás hablando de $2,000 a $5,000. Y los frenos para tus hijos: entre $3,000 y $7,000.",
@@ -653,8 +653,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 MIN",
     author: "Tatiana Castañeda",
     status: "active",
-    featuredImage: "/blog/editorial-v3/vision-insurance-texas.jpg",
-    featuredImageAlt: "Representación abstracta de salud visual y cobertura de visión en Texas",
+    featuredImage: "/blog/editorial-v3/medical-checkup-minimal.jpg",
+    featuredImageAlt: "Examen visual y salud preventiva para familias en Texas",
     content: [
       "### ¿Vale la pena un seguro de visión?",
       "Un examen visual sin seguro cuesta entre $100 y $250. Un par de anteojos graduados (montura + lentes) puede costar entre $196 y $500. Si multiplicas eso por cada miembro de tu familia, estás viendo $400 a $750 al año en gastos de visión — sin contar emergencias o cambios de receta.",
@@ -717,8 +717,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 MIN",
     author: "Tatiana Castañeda",
     status: "active",
-    featuredImage: "/blog/editorial-v3/indemnity-insurance-texas.jpg",
-    featuredImageAlt: "Representación abstracta de protección financiera por hospitalización en Texas",
+    featuredImage: "/blog/editorial-v3/obamacare-finance-stress.jpg",
+    featuredImageAlt: "Protección financiera ante gastos de hospitalización en Texas",
     content: [
       "### ¿Qué es el seguro de indemnización y por qué lo necesitas?",
       "Incluso con un buen seguro de salud, una estadía en el hospital puede dejarte con miles de dólares en facturas. Tu deducible, copagos y coseguros se acumulan rápido — y mientras estás en el hospital, no estás generando ingresos.",
