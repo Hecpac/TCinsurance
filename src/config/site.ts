@@ -120,7 +120,6 @@ export const siteConfig = {
       addressCountry: "US",
     },
     areaServed: "Texas, USA",
-    telephone: CONTACT_PHONE_DISPLAY,
     geo: {
       latitude: process.env.NEXT_PUBLIC_GEO_LAT ?? "33.0072796",
       longitude: process.env.NEXT_PUBLIC_GEO_LNG ?? "-96.9622064",
