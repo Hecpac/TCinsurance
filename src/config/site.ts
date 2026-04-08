@@ -16,14 +16,14 @@ const RAW_SITE_URL = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 
 function normalizeSiteUrl(value: string | undefined): string {
   if (!value) {
-    return "https://tcinsurancetx.com";
+    return "https://www.tcinsurancetx.com";
   }
 
   const sanitized = value.replace(/\/$/, "");
 
   // Failsafe for legacy domain values still present in old envs.
   if (sanitized.includes("tcinsurance-llc.com")) {
-    return "https://tcinsurancetx.com";
+    return "https://www.tcinsurancetx.com";
   }
 
   return sanitized;
