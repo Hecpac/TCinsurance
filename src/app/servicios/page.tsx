@@ -8,16 +8,16 @@ import { servicesCatalog } from "@/data/services";
 export const metadata: Metadata = {
   title: "Seguros en Dallas, Fort Worth y Lewisville, Texas | TC Insurance",
   description:
-    "Catálogo técnico de coberturas: salud, vida, gastos finales, dental, Medicare, visión y pólizas de indemnización.",
+    "Compara seguros de salud, vida, gastos finales, dental, Medicare, visión e indemnización en Dallas, Fort Worth y Lewisville. Asesoría bilingüe y gratuita.",
   alternates: {
     canonical: `${siteConfig.seo.siteUrl}/servicios`,
   },
   openGraph: {
     type: "website",
-    url: "/servicios",
+    url: `${siteConfig.seo.siteUrl}/servicios`,
     title: "Seguros en Dallas, Fort Worth y Lewisville, Texas | TC Insurance",
     description:
-      "Catálogo técnico de coberturas: salud, vida, gastos finales, dental, Medicare, visión y pólizas de indemnización.",
+      "Compara seguros de salud, vida, gastos finales, dental, Medicare, visión e indemnización en Dallas, Fort Worth y Lewisville. Asesoría bilingüe y gratuita.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
     images: [
@@ -35,7 +35,7 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.seo.siteUrl },
+    { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.seo.siteUrl },
     { "@type": "ListItem", position: 2, name: "Servicios", item: `${siteConfig.seo.siteUrl}/servicios` },
   ],
 };

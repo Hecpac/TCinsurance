@@ -3,7 +3,7 @@ import Link from "next/link";
 import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Seguros en Fort Worth, TX | Salud, Vida y Gastos Finales | TC Insurance",
+  title: "Seguros Fort Worth TX | Salud, Vida y Gastos Finales | TC Insurance",
   description:
     "Asesoría en español para seguros de salud, vida y gastos finales en Fort Worth, TX. Define tu cobertura con comparativa clara y soporte continuo.",
   alternates: {

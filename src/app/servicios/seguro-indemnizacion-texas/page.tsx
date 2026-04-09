@@ -8,13 +8,13 @@ const PAGE_PATH = "/servicios/seguro-indemnizacion-texas";
 const PAGE_URL = `${siteConfig.seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Seguro de Indemnización en Texas | Efectivo por Hospitalización — TC Insurance",
+  title: "Seguro de Indemnización Texas | Hospitalización | TC Insurance",
   description: "Recibe efectivo directo por hospitalización, accidentes o enfermedades críticas en Texas. Desde $15/mes. Asesoría gratuita en español.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "website",
     url: PAGE_URL,
-    title: "Seguro de Indemnización en Texas | Efectivo por Hospitalización — TC Insurance",
+    title: "Seguro de Indemnización Texas | Hospitalización | TC Insurance",
     description: "Recibe efectivo directo por hospitalización, accidentes o enfermedades críticas en Texas. Desde $15/mes. Asesoría gratuita en español.",
     siteName: siteConfig.brand.name,
     locale: "es_US",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seguro de Indemnización en Texas | Efectivo por Hospitalización — TC Insurance",
+    title: "Seguro de Indemnización Texas | Hospitalización | TC Insurance",
     description: "Recibe efectivo directo por hospitalización, accidentes o enfermedades críticas en Texas. Desde $15/mes. Asesoría gratuita en español.",
     images: ["/blog/editorial-v3/obamacare-prices.jpg"],
   },

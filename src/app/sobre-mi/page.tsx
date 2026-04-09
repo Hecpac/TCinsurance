@@ -35,7 +35,7 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.seo.siteUrl },
+    { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.seo.siteUrl },
     { "@type": "ListItem", position: 2, name: "Sobre Mí", item: `${siteConfig.seo.siteUrl}/sobre-mi` },
   ],
 };
@@ -74,6 +74,17 @@ const personJsonLd = {
       { "@type": "City", name: "Denton" },
       { "@type": "State", name: "Texas" }
     ]
+  },
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "license",
+    name: "Texas Licensed Insurance Agent",
+    recognizedBy: {
+      "@type": "GovernmentOrganization",
+      name: "Texas Department of Insurance",
+      url: "https://www.tdi.texas.gov"
+    },
+    identifier: "2629251"
   },
   sameAs: [
     "https://www.instagram.com/tcinsurance1",

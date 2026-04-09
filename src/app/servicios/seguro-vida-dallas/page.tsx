@@ -133,8 +133,8 @@ export default function ServiceLandingPage() {
             El costo mensual de tu seguro de vida depende de la edad de emisión, historial médico, ocupación y tipo de póliza elegida.
           </p>
           <ul className="space-y-2 pl-6 list-disc marker:text-swiss-red">
-            <li><strong>Pólizas Temporales (Term Life):</strong> Son las más económicas. Para una persona sana de 35 años, una póliza de ,000 por 20 años puede costar entre  y  al mes. Proporcionan la máxima cobertura por el menor costo durante los años de mayor riesgo financiero.</li>
-            <li><strong>Pólizas Permanentes (Whole Life / IUL):</strong> Tienen primas sustancialmente más altas (-+ al mes), pero garantizan pago por fallecimiento sin importar cuándo ocurra. Además, acumulan un &quot;valor en efectivo&quot; (cash value) que crece con ventajas fiscales.</li>
+            <li><strong>Pólizas Temporales (Term Life):</strong> Son las más económicas. Para una persona sana de 35 años, una póliza de $500,000 por 20 años puede costar entre $25 y $40 al mes. Proporcionan la máxima cobertura por el menor costo durante los años de mayor riesgo financiero.</li>
+            <li><strong>Pólizas Permanentes (Whole Life / IUL):</strong> Tienen primas sustancialmente más altas ($200–$500+ al mes), pero garantizan pago por fallecimiento sin importar cuándo ocurra. Además, acumulan un &quot;valor en efectivo&quot; (cash value) que crece con ventajas fiscales.</li>
             <li><strong>Monto Recomendado:</strong> La regla general es multiplicar tu ingreso anual por 10 a 15 veces, sumando deudas mayores e hipotecas, para calcular el beneficio por muerte necesario.</li>
           </ul>
 

@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { escapeHtml } from "@/lib/escapeHtml";
 import { checkDistributedRateLimit } from "@/lib/distributedRateLimit";
+import {
+  isGa4MeasurementConfigured,
+  sendGa4MeasurementEvent,
+} from "@/lib/ga4MeasurementProtocol";
 
 interface NewsletterPayload {
   email: string;
@@ -136,6 +140,16 @@ export async function POST(request: NextRequest) {
   const result = await sendNewsletterEmail(validated.value.email);
   if (!result.ok) {
     return responseError(500, result.error);
+  }
+
+  if (isGa4MeasurementConfigured()) {
+    const mpResult = await sendGa4MeasurementEvent({
+      eventName: "newsletter_signup",
+      params: { method: "footer_form" },
+    });
+    if (!mpResult.ok) {
+      console.warn("[newsletter_mp_failed]", mpResult.error);
+    }
   }
 
   return NextResponse.json({ ok: true });

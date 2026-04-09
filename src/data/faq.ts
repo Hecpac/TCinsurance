@@ -44,4 +44,29 @@ export const faqItems: FAQItem[] = [
     answer:
       "Sí. Ofrecemos atención bilingüe para que entiendas cada opción de cobertura con claridad antes de decidir.",
   },
+  {
+    question: "¿Cuánto cuesta un seguro de salud en Texas en 2026?",
+    answer:
+      "Depende de tus ingresos, edad y el plan que elijas. Con los subsidios básicos del ACA (Marketplace), muchas familias en Texas pagan entre $0 y $200/mes. Sin subsidio, un plan individual puede costar $400–$700/mes. Una llamada gratuita con un agente te da el número exacto para tu situación.",
+  },
+  {
+    question: "¿Perdí la inscripción abierta del ACA, puedo inscribirme ahora?",
+    answer:
+      "Solo si calificas para un Período Especial de Inscripción (SEP). Eventos como pérdida de empleo, matrimonio, nacimiento de un hijo, mudanza o pérdida de Medicaid abren una ventana de 60 días. Contáctanos para verificar si tu situación aplica.",
+  },
+  {
+    question: "¿Los trabajadores independientes (freelancers) pueden obtener seguro de salud?",
+    answer:
+      "Sí. Los trabajadores por cuenta propia, contratistas 1099 y dueños de negocio pueden inscribirse en planes del Marketplace, y muchos califican para subsidios según sus ingresos anuales estimados. También pueden explorar pólizas de indemnización como complemento financiero.",
+  },
+  {
+    question: "¿Qué documentos necesito para aplicar a Medicaid en Texas?",
+    answer:
+      "Generalmente: identificación con foto, comprobante de ingresos (talones de pago o carta de empleador), comprobante de residencia en Texas (recibo de servicios o estado de cuenta), y actas de nacimiento de los menores si aplica. El proceso se hace en YourTexasBenefits.com o llamando al 1-877-541-7905.",
+  },
+  {
+    question: "¿Qué es un Período Especial de Inscripción (SEP)?",
+    answer:
+      "Es una ventana de 60 días fuera de la inscripción abierta (noviembre–enero) que se activa por eventos de vida: pérdida de cobertura, cambio de trabajo, matrimonio, nacimiento, mudanza a otro estado o pérdida de Medicaid. Si tuviste alguno de estos eventos, es posible que todavía puedas inscribirte en un plan de salud.",
+  },
 ];

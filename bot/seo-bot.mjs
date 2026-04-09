@@ -20,7 +20,7 @@ async function loadEnv() {
         if (eq === -1) continue;
         const key = trimmed.slice(0, eq).trim();
         const value = trimmed.slice(eq + 1).trim().replace(/^["']|["']$/g, "");
-        if (!process.env[key]) process.env[key] = value;
+        process.env[key] = value;
       }
     } catch {
       // file doesn't exist, skip

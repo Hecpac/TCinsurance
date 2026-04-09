@@ -247,13 +247,20 @@ export default async function BlogPostPage({
       jobTitle: "Agente de seguros en Texas",
       url: `${siteConfig.seo.siteUrl}/sobre-mi`,
     },
-    about: {
-      "@type": "InsuranceProduct",
-      name:
-        post.slug === "seguro-gastos-finales-texas-guia-completa"
-          ? "Seguro de gastos finales en Texas"
-          : post.category,
-    },
+    about: post.category === "NOTICIAS"
+      ? { "@type": "Thing", name: "Seguros en Texas" }
+      : {
+          "@type": "InsuranceProduct",
+          name:
+            ({
+              SALUD: "Seguro de salud en Texas",
+              VIDA: "Seguro de vida en Texas",
+              LEGADO: "Seguro de gastos finales en Texas",
+              MEDICARE: "Medicare en Texas",
+              DENTAL: "Seguro dental en Texas",
+              VISION: "Seguro de visión en Texas",
+            } as Record<string, string>)[post.category] ?? post.category,
+        },
     publisher: {
       "@type": "Organization",
       "@id": `${siteConfig.seo.siteUrl}/#organization`,

@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Blog Estratégico | TC Insurance",
+    title: "Guías de Seguros en Texas | Blog TC Insurance",
     description:
-      "Guías claras para tomar mejores decisiones sobre salud, vida y protección familiar de largo plazo.",
+      "Guías prácticas sobre seguros de salud, vida y gastos finales para familias en Texas. Escrito por Tatiana Castañeda, agente bilingüe en Lewisville, TX.",
     url: blogUrl,
     siteName: siteConfig.brand.name,
     locale: "es_US",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog Estratégico | TC Insurance",
+    title: "Guías de Seguros en Texas | Blog TC Insurance",
     description:
-      "Guías claras para tomar mejores decisiones sobre salud, vida y protección familiar de largo plazo.",
+      "Guías prácticas sobre seguros de salud, vida y gastos finales para familias en Texas. Escrito por Tatiana Castañeda, agente bilingüe en Lewisville, TX.",
     images: [ogImage],
   },
 };
@@ -46,7 +46,7 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.seo.siteUrl },
+    { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.seo.siteUrl },
     { "@type": "ListItem", position: 2, name: "Blog", item: `${siteConfig.seo.siteUrl}/blog` },
   ],
 };

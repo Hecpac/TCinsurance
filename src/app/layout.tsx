@@ -19,6 +19,7 @@ import {
   GoogleConsentModeHead,
   GoogleTagManagerHead,
   GoogleTagManagerBody,
+  GoogleGA4Head,
   GoogleAdsHead,
 } from "@/components/GoogleTagManager";
 import { MetaPixelHead } from "@/components/MetaPixel";
@@ -108,6 +109,7 @@ export default function RootLayout({
       <head>
         <GoogleConsentModeHead />
         <GoogleTagManagerHead gtmId={siteConfig.analytics.gtmId} />
+        <GoogleGA4Head ga4Id={siteConfig.analytics.ga4Id} />
         <GoogleAdsHead googleAdsId={siteConfig.analytics.googleAdsId} />
         <MetaPixelHead pixelId={siteConfig.analytics.metaPixelId} />
         <meta name="geo.region" content="US-TX" />

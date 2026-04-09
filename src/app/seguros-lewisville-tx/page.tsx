@@ -3,7 +3,7 @@ import Link from "next/link";
 import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Seguros en Lewisville, TX | Salud, Vida y Gastos Finales | TC Insurance",
+  title: "Seguros Lewisville TX | Salud, Vida y Gastos Finales | TC Insurance",
   description:
     "Asesoría en español para seguros de salud, vida y gastos finales en Lewisville, TX. Compara opciones y recibe recomendación clara en una llamada.",
   alternates: {

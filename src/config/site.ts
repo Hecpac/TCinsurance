@@ -131,6 +131,7 @@ export const siteConfig = {
       (optionalUrl(process.env.NEXT_PUBLIC_INSTAGRAM_URL) ?? "https://www.instagram.com/tcinsurance1"),
       (optionalUrl(process.env.NEXT_PUBLIC_FACEBOOK_URL) ?? "https://www.facebook.com/TatianaCastanedaSeguros"),
       optionalUrl(process.env.NEXT_PUBLIC_LINKEDIN_URL),
+      "https://www.google.com/maps/place/?q=place_id:ChIJ-St2_0kvTIYR_PWr32g7d6A",
     ].filter(Boolean) as string[],
   },
 } as const;

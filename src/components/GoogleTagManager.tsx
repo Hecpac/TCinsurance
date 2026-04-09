@@ -54,8 +54,8 @@ export function GoogleConsentModeHead() {
       var countryCode = normalizeCountryCode(readCookieValue(geoCookieName));
       var consentState = parseConsentState(readCookieValue(consentCookieName));
       var countryKnown = countryCode !== null;
-      var requiresConsent = !countryKnown || consentRequiredCountries.has(countryCode);
-      var consentGranted = countryKnown && (!requiresConsent || consentState === 'accepted');
+      var requiresConsent = countryKnown && consentRequiredCountries.has(countryCode);
+      var consentGranted = !requiresConsent || consentState === 'accepted';
       var waitForUpdate = requiresConsent && consentState === null ? 500 : 0;
       var consentDefaults = consentGranted
         ? {
@@ -122,6 +122,31 @@ export function GoogleTagManagerBody({ gtmId }: GoogleTagManagerProps) {
         title="gtm-noscript"
       />
     </noscript>
+  );
+}
+
+export function GoogleGA4Head({ ga4Id }: { ga4Id?: string }) {
+  if (!ga4Id || ga4Id === "G-XXXXXXXXXX") return null;
+  return (
+    <>
+      <Script
+        id="ga4-js"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
+      />
+      <Script
+        id="ga4-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function gtag(){window.dataLayer.push(arguments);};
+            gtag('js', new Date());
+            gtag('config', '${ga4Id}', { send_page_view: true });
+          `,
+        }}
+      />
+    </>
   );
 }
 
