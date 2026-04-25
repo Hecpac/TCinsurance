@@ -1,0 +1,52 @@
+{
+  "Brand": {
+    "tagline": "Claridad para proteger a tu familia",
+    "shortName": "TIC Insurance"
+  },
+  "Nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Sobre Tatiana",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "quote": "Cotiza ahora"
+  },
+  "Cta": {
+    "whatsapp": "Escríbeme por WhatsApp",
+    "callNow": "Llámame ahora",
+    "scheduleFree": "Agenda tu asesoría gratuita",
+    "compareOptions": "Comparar opciones"
+  },
+  "Hero": {
+    "kicker": "Seguros bilingües en Texas",
+    "headline": "Claridad bilingüe para proteger a tu familia.",
+    "subheadline": "Salud, Vida, Gastos Finales, Medicare y Dental/Visión — explicado en español o en inglés, sin letras chicas."
+  },
+  "Services": {
+    "salud": "Seguro de salud",
+    "vida": "Seguro de vida",
+    "gastosFinales": "Gastos finales",
+    "medicare": "Medicare",
+    "dentalVision": "Dental y visión"
+  },
+  "Footer": {
+    "rights": "Todos los derechos reservados",
+    "license": "TIC Insurance Agency Services, LLC es una agencia de seguros licenciada en el estado de Texas.",
+    "languageLabel": "Idioma"
+  },
+  "LanguageSwitcher": {
+    "label": "Idioma",
+    "spanish": "Español",
+    "english": "English"
+  },
+  "Cotizador": {
+    "title": "Cotiza tu seguro en menos de 60 segundos",
+    "step": "Paso {step} de {total}",
+    "back": "Atrás",
+    "continue": "Continuar",
+    "submit": "Enviar solicitud",
+    "submitting": "Enviando…",
+    "received": "Solicitud recibida",
+    "errorNetwork": "Error de red. Verifica tu conexión e intenta de nuevo."
+  }
+}

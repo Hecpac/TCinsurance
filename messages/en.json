@@ -1,0 +1,52 @@
+{
+  "Brand": {
+    "tagline": "Clarity to protect your family",
+    "shortName": "TIC Insurance"
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Tatiana",
+    "blog": "Blog",
+    "contact": "Contact",
+    "quote": "Get a quote"
+  },
+  "Cta": {
+    "whatsapp": "Message me on WhatsApp",
+    "callNow": "Call me now",
+    "scheduleFree": "Book your free consultation",
+    "compareOptions": "Compare options"
+  },
+  "Hero": {
+    "kicker": "Bilingual insurance in Texas",
+    "headline": "Bilingual clarity to protect your family.",
+    "subheadline": "Health, Life, Final Expense, Medicare, and Dental/Vision — explained in Spanish or English, with no fine-print surprises."
+  },
+  "Services": {
+    "salud": "Health insurance",
+    "vida": "Life insurance",
+    "gastosFinales": "Final expense",
+    "medicare": "Medicare",
+    "dentalVision": "Dental & vision"
+  },
+  "Footer": {
+    "rights": "All rights reserved",
+    "license": "TIC Insurance Agency Services, LLC is a licensed insurance agency in the state of Texas.",
+    "languageLabel": "Language"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "spanish": "Español",
+    "english": "English"
+  },
+  "Cotizador": {
+    "title": "Get a quote in under 60 seconds",
+    "step": "Step {step} of {total}",
+    "back": "Back",
+    "continue": "Continue",
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "received": "Request received",
+    "errorNetwork": "Network error. Check your connection and try again."
+  }
+}
