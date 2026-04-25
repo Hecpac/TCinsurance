@@ -8,10 +8,13 @@ export default function AboutContent() {
       <GridContainer as="section" className="pt-16 pb-16">
         <div className="col-span-12 md:col-start-3 md:col-span-8 text-body text-swiss-black/90 space-y-7">
           <p className="text-xl leading-relaxed font-medium">
-            No es solo un problema financiero — es una carga emocional que se multiplica cuando no entiendes los documentos, no hablas el idioma o no tienes a quién preguntarle. Eso es lo que quise cambiar.
+            Crecí entendiendo lo que significa empezar de nuevo en otro país, hablar dos idiomas y cuidar a los tuyos sin red de seguridad.
           </p>
           <p>
-            Hoy trabajo con cada cliente como si fuera parte de mi familia: escucho tu situación, comparo opciones reales, explico cada detalle en español — incluyendo la letra pequeña — y te acompaño desde la primera llamada hasta la renovación.
+            Por eso me hice agente de seguros: vi a demasiada gente firmar pólizas que no entendía, pagar por cobertura que no servía, y descubrirlo en el peor momento. Decidí que conmigo eso no iba a pasar.
+          </p>
+          <p>
+            Trabajo con cada familia con una sola promesa: <strong>claridad para proteger a tu familia.</strong> Te explico cada opción en tu idioma, comparo planes contigo, y solo te recomiendo lo que tiene sentido para tu vida real — no para mi comisión.
           </p>
           
           <h2 className="text-headline text-swiss-black mt-12 mb-6">Cómo trabajo</h2>
@@ -72,18 +75,60 @@ export default function AboutContent() {
         </div>
       </GridContainer>
 
-      <GridContainer as="section" className="pt-10 border-t border-swiss-black/15">
-        <div className="col-span-12 md:col-start-4 md:col-span-6 text-center space-y-6">
-          <h2 className="text-display tracking-[-0.05em] text-swiss-black">¿Lista para hablar?</h2>
-          <p className="text-body text-swiss-black/80">En 15 minutos revisamos tu situación y te doy un siguiente paso claro. Sin costo, sin compromiso, en español.</p>
-          
+      <GridContainer
+        as="section"
+        className="pt-16 pb-20 mt-10"
+        style={{ background: "var(--color-tic-cream)" }}
+      >
+        <div className="col-span-12 md:col-start-3 md:col-span-8 text-center space-y-6">
+          <p
+            className="text-meta uppercase tracking-[0.18em]"
+            style={{ color: "var(--color-tic-orange)" }}
+          >
+            Claridad para proteger a tu familia
+          </p>
+          <h2
+            className="text-display tracking-[-0.05em]"
+            style={{
+              color: "var(--color-tic-navy)",
+              fontFamily: "var(--font-tic-headline)",
+            }}
+          >
+            ¿Hablamos 15 minutos?
+          </h2>
+          <p
+            className="text-body max-w-xl mx-auto"
+            style={{
+              color: "var(--color-tic-navy)",
+              fontFamily: "var(--font-tic-body)",
+            }}
+          >
+            Revisamos tu situación, te doy un siguiente paso claro y respondo todas tus dudas en español o inglés. Sin costo, sin compromiso.
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <Link href="/#contacto" className="primary-cta tap-target px-8 py-4 text-meta text-swiss-paper bg-swiss-black hover:bg-swiss-red transition-colors">
-              Agenda tu asesoría gratuita &rarr;
-            </Link>
-            <a href="https://wa.me/12039932369?text=Hola%20Tatiana%2C%20quiero%20agendar%20una%20asesor%C3%ADa." target="_blank" rel="noopener noreferrer" className="primary-cta tap-target px-8 py-4 text-meta text-swiss-black border border-swiss-black hover:text-swiss-red-ink transition-colors">
+            <a
+              href="https://wa.me/12039932369?text=Hola%20Tatiana%2C%20quiero%20agendar%20una%20asesor%C3%ADa."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="tap-target inline-flex items-center justify-center px-8 py-4 text-meta uppercase tracking-[0.12em] font-semibold transition-colors"
+              style={{
+                background: "var(--color-tic-orange)",
+                color: "var(--color-tic-navy)",
+              }}
+            >
               Escríbeme por WhatsApp &rarr;
             </a>
+            <Link
+              href="/cotizar"
+              className="tap-target inline-flex items-center justify-center px-8 py-4 text-meta uppercase tracking-[0.12em] font-semibold border-2 transition-colors"
+              style={{
+                borderColor: "var(--color-tic-navy)",
+                color: "var(--color-tic-navy)",
+              }}
+            >
+              Cotiza ahora &rarr;
+            </Link>
           </div>
         </div>
       </GridContainer>
