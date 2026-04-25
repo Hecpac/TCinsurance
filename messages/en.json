@@ -6,10 +6,13 @@
   "Nav": {
     "home": "Home",
     "services": "Services",
-    "about": "About Tatiana",
+    "about": "About me",
     "blog": "Blog",
     "contact": "Contact",
-    "quote": "Get a quote"
+    "quote": "Get a quote",
+    "ctaShort": "Book consult",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "Cta": {
     "whatsapp": "Message me on WhatsApp",

@@ -5,16 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
 import TicWordmark from "@/components/TicWordmark";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { trackEvent } from "@/lib/tracking";
 import { useScroll } from "@/hooks/useScroll";
 import { runBackgroundTask } from "@/lib/schedule";
-
-const NAV_LINKS = [
-  { label: "Servicios", href: HOME_SECTION_PATHS.services },
-  { label: "Sobre mí", href: HOME_SECTION_PATHS.about },
-  { label: "Blog", href: HOME_SECTION_PATHS.blog },
-  { label: "Contacto", href: HOME_SECTION_PATHS.contact },
-];
+import { useClientMessages } from "@/i18n/useClientLocale";
 
 function resolveHomeHash(pathname: string, href: string) {
   if (pathname !== "/") return href;
@@ -26,6 +21,14 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isAtTop } = useScroll({ threshold: 10 });
+  const messages = useClientMessages();
+
+  const NAV_LINKS = [
+    { label: messages.Nav.services, href: HOME_SECTION_PATHS.services },
+    { label: messages.Nav.about, href: HOME_SECTION_PATHS.about },
+    { label: messages.Nav.blog, href: HOME_SECTION_PATHS.blog },
+    { label: messages.Nav.contact, href: HOME_SECTION_PATHS.contact },
+  ];
 
   const contactHref = pathname === "/" ? "#contacto" : HOME_SECTION_PATHS.contact;
   const navLinks = NAV_LINKS.map((link) => {
@@ -158,6 +161,7 @@ export default function Navbar() {
             </div>
 
             <div className="hidden min-w-0 shrink-0 items-center justify-end gap-2.5 md:flex lg:gap-3 xl:gap-4">
+              <LanguageSwitcher />
               <p className="hidden whitespace-nowrap text-meta text-swiss-gray 2xl:block">
                 {siteConfig.location.short}
               </p>
@@ -177,7 +181,7 @@ export default function Navbar() {
                 }
                 className="primary-cta tap-target min-w-[164px] shrink-0 items-center justify-center border px-4 py-2 text-meta whitespace-nowrap md:inline-flex xl:min-w-[168px] xl:px-5"
               >
-                Agenda asesoría
+                {messages.Nav.ctaShort}
               </Link>
             </div>
 
@@ -185,7 +189,7 @@ export default function Navbar() {
               type="button"
               aria-controls="mobile-nav-panel"
               aria-expanded={isMenuOpen}
-              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-label={isMenuOpen ? messages.Nav.menuClose : messages.Nav.menuOpen}
               data-testid="mobile-nav-toggle"
               onClick={() => setIsMenuOpen((open) => !open)}
               className="tap-target flex h-11 w-11 items-center justify-center border border-[var(--color-border-soft)] text-swiss-black md:hidden"
@@ -239,6 +243,9 @@ export default function Navbar() {
             <p className="pt-1 text-meta text-swiss-gray" data-mobile-nav-link>
               {siteConfig.location.short}
             </p>
+            <div data-mobile-nav-link className="pt-1">
+              <LanguageSwitcher />
+            </div>
             <Link
               href={contactHref}
               onClick={() => {
@@ -257,7 +264,7 @@ export default function Navbar() {
               data-mobile-nav-link
               className="primary-cta tap-target mt-1 inline-flex w-fit border px-4 py-2 text-meta"
             >
-              Agenda asesoría
+              {messages.Nav.ctaShort}
             </Link>
           </div>
         </div>
