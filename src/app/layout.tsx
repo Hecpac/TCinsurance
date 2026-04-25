@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import { Archivo, IBM_Plex_Mono, Montserrat, Poppins } from "next/font/google";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -39,6 +39,20 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["700"],
+  display: "swap",
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.siteUrl),
   title: siteConfig.seo.defaultTitle,
@@ -73,7 +87,7 @@ export const metadata: Metadata = {
         url: siteConfig.seo.defaultOgImage,
         width: 1200,
         height: 630,
-        alt: "TC Insurance - Asesoría de seguros en Texas",
+        alt: "TIC Insurance - Asesoría de seguros en Texas",
       },
     ],
   },
@@ -105,7 +119,10 @@ export default function RootLayout({
   );
 
   return (
-    <html lang="es" className={`${archivo.variable} ${ibmPlexMono.variable}`}>
+    <html
+      lang="es"
+      className={`${archivo.variable} ${ibmPlexMono.variable} ${montserrat.variable} ${poppins.variable}`}
+    >
       <head>
         <GoogleConsentModeHead />
         <GoogleTagManagerHead gtmId={siteConfig.analytics.gtmId} />

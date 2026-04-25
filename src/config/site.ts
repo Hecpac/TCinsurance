@@ -57,7 +57,7 @@ function optionalUrl(value: string | undefined) {
 
 export const siteConfig = {
   brand: {
-    name: "TC Insurance Agency Services, LLC",
+    name: "TIC Insurance Agency Services, LLC",
     footerName: "TC INSURANCE",
     logoPath: "/tc-logo-clean-cropped.png",
     logoWidth: 205,
@@ -110,7 +110,7 @@ export const siteConfig = {
     defaultOgImage: "/og-tc-insurance.jpg",
   },
   business: {
-    name: "TC Insurance Agency Services, LLC",
+    name: "TIC Insurance Agency Services, LLC",
     type: "InsuranceAgency",
     address: {
       streetAddress: BUSINESS_STREET_ADDRESS,
