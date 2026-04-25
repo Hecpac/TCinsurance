@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { trackEvent } from "@/lib/tracking";
 import { siteConfig } from "@/config/site";
@@ -47,6 +47,18 @@ export default function CotizarFlow() {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
+  useEffect(() => {
+    trackEvent("cotizador_start", { entry_step: 1 }, { dedupeKey: "session" });
+  }, []);
+
+  useEffect(() => {
+    trackEvent(
+      "cotizador_step_view",
+      { step, service: form.service },
+      { dedupeKey: `step-${step}` }
+    );
+  }, [step, form.service]);
+
   const goNext = () => {
     if (step >= TOTAL_STEPS) return;
     trackEvent("cotizador_step", {
@@ -78,9 +90,14 @@ export default function CotizarFlow() {
       };
       if (!response.ok || !data.ok) {
         setSubmitError(data.error ?? "No pudimos enviar tu solicitud. Intenta de nuevo.");
+        trackEvent("cotizador_submit_error", {
+          service: form.service,
+          status: response.status,
+        });
         return;
       }
       setSubmitted(true);
+      trackEvent("lead_submit", { service: form.service, source: "cotizador" });
     } catch {
       setSubmitError("Error de red. Verifica tu conexión e intenta de nuevo.");
     } finally {
