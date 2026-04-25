@@ -29,7 +29,13 @@ const nextConfig: NextConfig = {
     qualities: [60, 72, 75, 90],
   },
   async redirects() {
-    return legacyBlogSlugRedirects.map((rule) => ({ ...rule, permanent: true }));
+    const wwwRedirect = {
+      source: "/:path*",
+      has: [{ type: "host" as const, value: "www.tcinsurancetx.com" }],
+      destination: "https://tcinsurancetx.com/:path*",
+      permanent: true,
+    };
+    return [...legacyBlogSlugRedirects.map((rule) => ({ ...rule, permanent: true })), wwwRedirect];
   },
 };
 

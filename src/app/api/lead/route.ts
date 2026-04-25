@@ -8,6 +8,7 @@ import {
 import { KEY_EVENTS } from "@/lib/keyEvents";
 import { buildUserProvidedData, deriveUserIdFromContact } from "@/lib/userProvidedData";
 import { checkDistributedRateLimit } from "@/lib/distributedRateLimit";
+import { metaCapi } from "@/lib/metaCapi";
 
 type AttributionKey =
   | "utm_source"
@@ -351,6 +352,32 @@ export async function POST(request: NextRequest) {
 
   if (!emailResult.ok) {
     return responseError(500, emailResult.error);
+  }
+
+  if (metaCapi.isConfigured()) {
+    const capiResult = await metaCapi.sendEvent({
+      eventName: "Lead",
+      eventId: lead.id,
+      eventSourceUrl: lead.pageUrl || undefined,
+      email: lead.email,
+      phone: lead.phone,
+      firstName: lead.name.split(" ")[0],
+      fbclid: lead.attribution.fbclid,
+      clientIp: ip,
+      clientUserAgent: request.headers.get("user-agent"),
+      customData: {
+        lead_id: lead.id,
+        insurance_type: lead.insuranceType,
+        content_name: lead.source,
+      },
+    });
+
+    if (!capiResult.ok) {
+      console.warn("[meta_capi_lead_failed]", {
+        leadId: lead.id,
+        error: capiResult.error,
+      });
+    }
   }
 
   if (isGa4MeasurementConfigured()) {

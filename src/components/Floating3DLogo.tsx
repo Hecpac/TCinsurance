@@ -54,7 +54,7 @@ export default function Floating3DLogo() {
             <Image
               ref={imgRef}
               src={siteConfig.brand.logoPath}
-              alt="TC Insurance Logo"
+              alt="TIC Insurance Logo"
               width={siteConfig.brand.logoWidth}
               height={siteConfig.brand.logoHeight}
               className="h-[5rem] w-auto object-contain drop-shadow-[0_15px_15px_rgba(0,0,0,0.4)]"
