@@ -6,10 +6,13 @@
   "Nav": {
     "home": "Inicio",
     "services": "Servicios",
-    "about": "Sobre Tatiana",
+    "about": "Sobre mí",
     "blog": "Blog",
     "contact": "Contacto",
-    "quote": "Cotiza ahora"
+    "quote": "Cotiza ahora",
+    "ctaShort": "Agenda asesoría",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú"
   },
   "Cta": {
     "whatsapp": "Escríbeme por WhatsApp",

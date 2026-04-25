@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono, Montserrat, Poppins } from "next/font/google";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/next";
+import { getServerLocale } from "@/i18n/getLocale";
 import "./globals.css";
 import ConsentBanner from "@/components/ConsentBanner";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -99,11 +100,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getServerLocale();
   const hasGeo =
     Boolean(siteConfig.business.geo.latitude) && Boolean(siteConfig.business.geo.longitude);
 
@@ -120,7 +122,7 @@ export default function RootLayout({
 
   return (
     <html
-      lang="es"
+      lang={locale}
       className={`${archivo.variable} ${ibmPlexMono.variable} ${montserrat.variable} ${poppins.variable}`}
     >
       <head>
