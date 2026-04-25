@@ -44,6 +44,8 @@ export default function CotizarFlow() {
     notes: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const goNext = () => {
     if (step >= TOTAL_STEPS) return;
@@ -60,11 +62,30 @@ export default function CotizarFlow() {
     setStep(step - 1);
   };
 
-  const submit = () => {
-    trackEvent("cotizador_submit_stub", {
-      service: form.service,
-    });
-    setSubmitted(true);
+  const submit = async () => {
+    setSubmitError(null);
+    setSubmitting(true);
+    trackEvent("cotizador_submit", { service: form.service });
+    try {
+      const response = await fetch("/api/cotizar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, lang: "es" }),
+      });
+      const data = (await response.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+      };
+      if (!response.ok || !data.ok) {
+        setSubmitError(data.error ?? "No pudimos enviar tu solicitud. Intenta de nuevo.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Error de red. Verifica tu conexión e intenta de nuevo.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const canAdvance = (() => {
@@ -100,10 +121,6 @@ export default function CotizarFlow() {
             Hablar por WhatsApp
           </a>
         </div>
-        <p className="mt-6 text-meta text-swiss-gray">
-          Nota: este flujo es un placeholder. La persistencia de leads se activa
-          en la siguiente fase del rediseño.
-        </p>
       </div>
     );
   }
@@ -242,13 +259,19 @@ export default function CotizarFlow() {
           <button
             type="button"
             onClick={submit}
-            className="primary-cta tap-target inline-flex items-center border px-6 py-3 text-meta"
+            disabled={submitting}
+            className="primary-cta tap-target inline-flex items-center border px-6 py-3 text-meta disabled:opacity-60"
             data-testid="cotizar-submit"
           >
-            Enviar solicitud
+            {submitting ? "Enviando…" : "Enviar solicitud"}
           </button>
         )}
       </div>
+      {submitError && (
+        <p className="mt-4 text-meta text-[var(--color-error)]" role="alert">
+          {submitError}
+        </p>
+      )}
     </div>
   );
 }
