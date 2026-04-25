@@ -219,7 +219,7 @@ export default function HeroSection() {
           data-hero-copy
           className="col-span-12 md:col-span-6 text-meta text-swiss-gray max-w-[var(--measure-body)]"
         >
-          TC Insurance es una agencia de seguros licenciada en Texas que ofrece asesoría bilingüe en seguros de salud, vida, gastos finales, dental, visión y Medicare para familias en Dallas, Fort Worth y Lewisville.
+          TIC Insurance es una agencia de seguros licenciada en Texas que ofrece asesoría bilingüe en seguros de salud, vida, gastos finales, dental, visión y Medicare para familias en Dallas, Fort Worth y Lewisville. Claridad para proteger a tu familia.
         </p>
 
         <div
@@ -234,13 +234,13 @@ export default function HeroSection() {
               className="!bg-transparent !p-0"
             >
               <Link
-                href={HOME_SECTION_PATHS.contact}
+                href="/cotizar"
                 onClick={() =>
                   trackEvent(
                     "cta_click_inline_hero",
                     {
                       slot: "primary",
-                      label: "Agenda asesoría gratuita",
+                      label: "Cotiza ahora",
                       tracking_id: "hero",
                     },
                     {
@@ -250,7 +250,7 @@ export default function HeroSection() {
                 }
                 className="primary-cta tap-target inline-flex items-center border px-6 py-4 text-meta"
               >
-                Agenda asesoría gratuita
+                Cotiza ahora
               </Link>
             </HoverBorderGradient>
             <Link
