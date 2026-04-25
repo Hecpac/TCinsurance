@@ -39,7 +39,7 @@ const CONTACT_PHONE_DISPLAY =
   process.env.NEXT_PUBLIC_CONTACT_PHONE_DISPLAY ?? "+1 (203) 993-2369";
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "12039932369";
 const WHATSAPP_TEXT = encodeURIComponent(
-  "Hola TC Insurance, quiero agendar una asesoría gratuita."
+  "Hola TIC Insurance, quiero agendar una asesoría gratuita."
 );
 const BUSINESS_STREET_ADDRESS =
   process.env.NEXT_PUBLIC_BUSINESS_STREET_ADDRESS ??
@@ -58,7 +58,7 @@ function optionalUrl(value: string | undefined) {
 export const siteConfig = {
   brand: {
     name: "TIC Insurance Agency Services, LLC",
-    footerName: "TC INSURANCE",
+    footerName: "TIC INSURANCE",
     logoPath: "/tc-logo-clean-cropped.png",
     logoWidth: 205,
     logoHeight: 139,
@@ -83,7 +83,7 @@ export const siteConfig = {
   },
   legal: {
     licenseStatement:
-      "TC Insurance Agency Services, LLC is a licensed insurance agency in the state of Texas.",
+      "TIC Insurance Agency Services, LLC is a licensed insurance agency in the state of Texas.",
     effectiveDate: "8 de febrero de 2026",
   },
   social: {

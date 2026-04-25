@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { HOME_SECTION_PATHS, siteConfig } from "@/config/site";
+import TicWordmark from "@/components/TicWordmark";
 import { trackEvent } from "@/lib/tracking";
 import { useScroll } from "@/hooks/useScroll";
 import { runBackgroundTask } from "@/lib/schedule";
@@ -136,15 +136,7 @@ export default function Navbar() {
               className="tap-target inline-flex items-center"
               aria-label={siteConfig.brand.name}
             >
-              <Image
-                src={siteConfig.brand.logoPath}
-                alt="TC Insurance"
-                width={siteConfig.brand.logoWidth}
-                height={siteConfig.brand.logoHeight}
-                priority
-                sizes="(min-width: 768px) 150px, 128px"
-                className="h-[2.7rem] w-auto object-contain object-center md:h-[3.1rem]"
-              />
+              <TicWordmark className="text-[1.3rem] md:text-[1.55rem]" />
             </Link>
 
             <div className="hidden items-center gap-5 md:flex lg:gap-6">
